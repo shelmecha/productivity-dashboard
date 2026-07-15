@@ -1,0 +1,56 @@
+name: Refresh HubSpot feeds
+
+on:
+  schedule:
+    - cron: '15 * * * *'   # hourly at :15 UTC — Claude-free refresh
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check token
+        id: token
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          if [ -z "$HUBSPOT_TOKEN" ]; then
+            echo "HUBSPOT_TOKEN secret not set — skipping refresh (add it in Settings → Secrets and variables → Actions)."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.token.outputs.present == 'true'
+        with:
+          node-version: '20'
+
+      - name: Refresh feeds
+        if: steps.token.outputs.present == 'true'
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/refresh-hubspot.js
+
+      - name: Commit and push if changed
+        if: steps.token.outputs.present == 'true'
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "actions@github.com"
+          git add tasks/
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Auto-refresh HubSpot feeds"
+            git pull --rebase origin main || true
+            git push
+          fi

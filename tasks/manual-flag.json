@@ -1,0 +1,12 @@
+{
+  "taskKey": "manual-flag",
+  "taskTitle": "Manual Flag",
+  "description": "Your personal flag queue — manually capture items across Gmail, HubSpot, Slack, Notion, InFlow, etc. that need follow-up but don't fit into an automated workflow. Grouped by platform, then by skill, so you can batch-action similar items.",
+  "flaggedCriteria": "Local only — items you add here. Persists in browser localStorage under db-manual-flags. Not synced to HubSpot.",
+  "slashCommand": "—",
+  "schedule": "User-maintained · no cron",
+  "lastRunAt": null,
+  "lastWriter": "user",
+  "isUserManaged": true,
+  "summary": "Add a manual flag to capture anything that needs follow-up."
+}

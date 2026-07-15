@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "refreshedAt": "2026-04-27T22:13:12+00:00",
+    "generatedAt": "2026-04-27T22:13:12+00:00",
+    "source": "live HubSpot pull via MCP - AU Global Operations pipeline (749963562) stage 1105295898 (New Ticket), country=Australia"
+  },
+  "rows": [],
+  "buckets": {
+    "standard": [],
+    "customisation": []
+  },
+  "summary": {
+    "newTickets": 0,
+    "customisationHolds": 0,
+    "lastUpdated": "2026-04-28T08:13:12+10:00"
+  },
+  "_note": "Empty queue — no AU tickets currently in New Ticket stage. SO-creation queue clear."
+}

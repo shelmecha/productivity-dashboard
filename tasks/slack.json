@@ -1,0 +1,15 @@
+{
+  "taskKey": "slack",
+  "taskTitle": "Slack — Forgotten Replies",
+  "description": "DMs + @-mentions across every channel Shelvi is a member of where the last message is NOT from her and is >24h old. High-precision feed — excludes threads where Shelvi has replied on any topic within the DM conversation. Bot/notification senders (HubSpot Breeze, Google Calendar) excluded.",
+  "flaggedCriteria": "Slack messages · to:<@U063NRZ97A4> OR @-mention · last sender ≠ Shelvi · latestAt older than 24h · channel Shelvi is a member of · sender is not a bot. Excluded: any thread where Shelvi has posted in the last 24h on any topic.",
+  "schedule": "Every 30 min · 07:00-19:00 Sydney",
+  "slackUserId": "U063NRZ97A4",
+  "meta": {
+    "refreshedAt": "2026-04-28T12:00:00+10:00",
+    "generatedAt": "2026-04-28T12:00:00+10:00",
+    "source": "refresh-slack (Slack MCP — live pull)"
+  },
+  "summary": "0 Slack threads awaiting reply",
+  "rows": []
+}

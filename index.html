@@ -9111,18 +9111,30 @@ function closeTemplatesModal() {
   }
 })();
 
-// Placeholder for the slash-command runner. Real implementation was lost; this
-// falls back to copying the command to the clipboard so Shelvi can paste it.
-function runInCowork(cmd) {
-  if (!cmd) return;
+// Refresh buttons reload the newest available data in place — no Cowork
+// round-trip. Fresh data is produced by the hourly refresh cron (which also
+// syncs + pushes the GitHub mirror); this just re-fetches data.json and every
+// tasks/* feed and re-renders the current page. The separate copy-icon button
+// (data-task-action="copy-cmd") still copies the slash command for a manual
+// deep refresh in Cowork.
+function runInCowork() { reloadDashboardData(); }
+
+async function reloadDashboardData() {
+  if (typeof showToast === 'function') showToast('Reloading latest data…');
   try {
-    navigator.clipboard.writeText(cmd).then(
-      () => typeof showToast === 'function' && showToast('Copied: ' + cmd + ' — paste in Cowork'),
-      () => typeof showToast === 'function' && showToast('Copy failed — run manually: ' + cmd)
-    );
-  } catch(e) {
-    if (typeof showToast === 'function') showToast('Run in Cowork: ' + cmd);
-  }
+    const r = await fetch('./data.json?ts=' + Date.now(), { cache: 'no-store' });
+    if (r.ok) window.DASHBOARD_DATA = await r.json();
+  } catch (e) { /* file:// or offline — keep the data.js payload already loaded */ }
+  // Drop every cached feed so pages re-fetch (fetch on http, cache-busted
+  // script fallback on file://) when they re-render.
+  taskCache = {};
+  Object.keys(window).forEach(k => {
+    if (k.indexOf('TASK_DATA__') === 0) { try { window[k] = undefined; } catch (e) {} }
+  });
+  try { updateTS(); } catch (e) {}
+  try { renderTopTabs(); } catch (e) {}
+  handleRoute();
+  if (typeof showToast === 'function') showToast('Reloaded with the latest synced data');
 }
 
 // Click dispatcher for [data-task-action] elements. Restored + extended to

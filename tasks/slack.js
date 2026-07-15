@@ -6,34 +6,23 @@ window.TASK_DATA__slack = {
   "schedule": "Every 30 min · 07:00-19:00 Sydney",
   "slackUserId": "U063NRZ97A4",
   "meta": {
-    "refreshedAt": "2026-04-22T08:00:00+10:00",
-    "generatedAt": "2026-04-22T08:00:00+10:00",
+    "refreshedAt": "2026-07-15T18:50:13+10:00",
+    "generatedAt": "2026-07-15T18:50:13+10:00",
     "source": "refresh-slack (Slack MCP — live pull)"
   },
-  "summary": "2 Slack threads awaiting reply",
+  "summary": "1 Slack thread awaiting reply",
   "rows": [
     {
-      "id": "slack-gdm-alex-escalation",
+      "id": "slack-dm-carlos-ledesma",
       "kind": "dm",
-      "channel": "G-TNGO-SHELVI-ALEX-BECKY-PAUL-EMELIE",
-      "channelLabel": "Group DM · Tyler Ngo, Alex DeRenzis, Becky Ledbetter, Paul Sajor, Emelie Cardem",
-      "from": "Alex DeRenzis",
-      "title": "Client escalation — unresolved, customer reached out again frustrated",
-      "snippet": "Hi team - this is still left unresolved and the client has reached out again frustrated. Can we please ensure this gets actioned ASAP. Alex followed up: \"Hi Shelvi. I will forward you the email chain.\" — no reply from Shelvi yet.",
-      "latestAt": "2026-04-20T19:00:00+10:00",
-      "priority": "asap",
-      "url": null
-    },
-    {
-      "id": "slack-gdm-becky-kickoff",
-      "kind": "dm",
-      "channel": "G-SHELVI-COURTNEY-BECKY",
-      "channelLabel": "Group DM · Courtney Butler, Becky Ledbetter",
-      "from": "Becky Ledbetter",
-      "title": "How did the kick off call go?",
-      "snippet": "Becky following up on the CA/AU rectifications kick-off call. Shelvi hasn't replied in this group DM.",
-      "latestAt": "2026-04-20T22:00:00+10:00",
-      "priority": "today",
+      "channel": "D0AUGTYD4DP",
+      "channelLabel": "Direct message · Carlos Ledesma",
+      "from": "Carlos Ledesma",
+      "fromUserId": "U0AJS786TV3",
+      "title": "Hi Shelvi, we have our tech partner lined up for the service all now.",
+      "snippet": "Shelvi earlier: \"Hi Carlos, can we please schedule the Tillage one ASAP?\" · Hi Shelvi, we have our tech partner lined up for the service all now.",
+      "latestAt": "2026-07-08T23:38:10+10:00",
+      "priority": "normal",
       "url": null
     }
   ]

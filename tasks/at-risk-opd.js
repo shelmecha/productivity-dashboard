@@ -1,64 +1,13 @@
 window.TASK_DATA__at_risk_opd = {
   "meta": {
-    "refreshedAt": "2026-04-27T22:14:00+00:00",
+    "refreshedAt": "2026-07-15T08:53:00+00:00",
+    "generatedAt": "2026-07-15T08:53:00+00:00",
     "source": "HubSpot AU Global Operations pipeline (749963562) — AMBER 15-21d OPD window",
-    "generatedAt": "2026-04-27T22:14:00+00:00",
-    "rule": "AMBER 15-21d, pre-scheduled stages only, flag-and-notify (no auto-push)"
+    "rule": "AMBER opd_days in [15,21] vs Sydney midnight 2026-07-15, pre-scheduled stages only (1105295898/1105295899/1091283321), confirmed_scheduled_date blank, flag-and-notify (no auto-push)",
+    "notes": "No AU ticket in the pre-scheduled stage set has an OPD inside the 15-21 day window (2026-07-30 to 2026-08-05). Nearest AU OPD is 2026-08-14 (30d out)."
   },
-  "rows": [
-    {
-      "id": "44914635375",
-      "ticketId": "44914635375",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44914635375",
-      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/44914635375",
-      "customer": "TaylorMade Golf Australia PTY LTD",
-      "so": "SO-001822",
-      "subject": "SO-001822 | TaylorMade Golf Australia PTY LTD",
-      "stage": "Delivery Details / Pending SO",
-      "stageId": "1105295899",
-      "opd": "2026-05-17",
-      "daysToOpd": 19,
-      "_bucket": "amber",
-      "classification": "NO_CONTEXT",
-      "classificationNote": "AMBER 15-21d window — flag-and-notify only",
-      "nextStep": "Payment-pressure nudge · OPD 19d"
-    },
-    {
-      "id": "43670908417",
-      "ticketId": "43670908417",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43670908417",
-      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/43670908417",
-      "customer": "Dover House / Little Group Cremorne",
-      "so": "SO-001749",
-      "subject": "SO-001749 | Dover House / Little Group Cremorne",
-      "stage": "Delivery Details / Pending SO",
-      "stageId": "1105295899",
-      "opd": "2026-05-18",
-      "daysToOpd": 20,
-      "_bucket": "amber",
-      "classification": "NO_CONTEXT",
-      "classificationNote": "AMBER 15-21d window — flag-and-notify only",
-      "nextStep": "Payment-pressure nudge · OPD 20d"
-    },
-    {
-      "id": "43522885696",
-      "ticketId": "43522885696",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43522885696",
-      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/43522885696",
-      "customer": "Aquilla Interiors",
-      "so": "SO-001728",
-      "subject": "SO-001728 | Aquilla Interiors",
-      "stage": "Delivery Details / Pending SO",
-      "stageId": "1105295899",
-      "opd": "2026-05-13",
-      "daysToOpd": 15,
-      "_bucket": "amber",
-      "classification": "NO_CONTEXT",
-      "classificationNote": "AMBER 15-21d window — flag-and-notify only",
-      "nextStep": "Payment-pressure nudge · OPD 15d"
-    }
-  ],
+  "rows": [],
   "buckets": {
-    "amber": 3
+    "amber": 0
   }
 };

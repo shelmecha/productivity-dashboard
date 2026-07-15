@@ -1,1 +1,271 @@
-window.TASK_DATA__courtney_prep = {"taskKey": "courtney-prep", "taskTitle": "1:1 Meeting \u2014 Courtney", "description": "Pre-meeting prep for Shelvi's weekly 1:1 with Courtney (AU Ops Lead). Auto-populated from last-7d HubSpot activity (AU Global Operations pipeline), Radaro install flow, and dashboard AU feeds. Scope is AU tactical only \u2014 customisation holds, OPD detail, Radaro, installs. Strategic/cross-region topics live on the Rebecca 1:1 page.", "schedule": "Auto-refreshed Monday 07:00 Sydney + on-demand from page Refresh button", "meetingCadence": "weekly", "meetingAttendee": {"name": "Courtney", "role": "AU Ops Lead"}, "owner": "Shelvi Alferez \u2014 Global Quality Lead", "weekOf": "2026-04-21", "windowStart": "2026-04-21", "windowEnd": "2026-04-27", "meta": {"refreshedAt": "2026-04-28T04:30:00+00:00", "generatedAt": "2026-04-28T04:30:00+00:00", "source": "prep-courtney-1-1 (HubSpot MCP + local feeds)", "scheduledRunNote": "Saturday auto-refresh \u2014 feed counters synced to live HubSpot/Gmail pulls. Manual concerns/questions/commitments preserved. Notion 1:1 db upsert will run on the Monday cadence."}, "summary": "Week of Apr 20 \u2014 0 AU new tickets in queue (cleared), 6 RED OPDs pending Monday push, 5 AMBER flagged, 3 Radaro PODs awaiting close-out, 14 pre-delivery checklists outstanding.", "executiveSummary": ["Customisation refusal authority (v5 \u00a76.4) exercised cleanly twice \u2014 both Mula-style line-item/SO mismatches caught before SO creation. Zero leakage into production.", "RED OPD sweep on Monday cleared 7 tickets, zero carryover into Tuesday. Customisation tickets correctly excluded from date push per \u00a76.4 \u2014 tagged Courtney instead.", "Radaro close-out SLA slipping \u2014 3 reports past 48h. One ('Stake') carries 'damaged on arrival' flag that needs routing to service queue, not ignored in ops."], "lastWeek": {"newTickets": {"standardProcessed": 4, "customisationHolds": 2, "refusedOrRerouted": 0, "salesCoordinationLoops": 1, "commentary": "2 customisation holds (Mula-style). 1 sales coordination loop on a grey-case hold where sales wanted to proceed \u2014 Shelvi kept the hold per v5 \u00a76.4."}, "opd": {"redPushed": 7, "amberFlagged": 5, "overduePushed": 0, "customisationGuarded": 2, "notesPosted": 12, "commentary": "Customisation guard working \u2014 2 tickets with order_customisation_notes populated were tagged to Courtney instead of having dates pushed. Zero complaints from sales."}, "installs": {"scheduled": 4, "completed": 3, "installerFlagsEscalated": 0, "standardizedNotesPosted": 3, "commentary": "All 3 completions had standardized install notes posted within 48h per v5 \u00a711.1.1. Installer side clean this week."}, "radaro": {"reportsReceived": 6, "closedOut": 3, "pendingCloseOut": 3, "driverFlags": 1, "oldestPendingDays": 4, "commentary": "Stake install flagged 'damaged on arrival' \u2014 routed to service queue Thursday. Other 2 pending are waiting on Courtney's forward from Radaro."}, "preDelivery": {"checklistsSent": 8, "cadenceAdhered": true, "paymentChasesLinked": 3, "commentary": "Tues + Fri cadence held. 3 checklists linked to open payment chases \u2014 Teya escalation queued for Friday."}}, "charts": {"auPipelineByStage": [{"label": "New Ticket", "count": 1, "color": "#3b7cff"}, {"label": "Delivery Details", "count": 4, "color": "#a78bfa"}, {"label": "Pending Sales Order", "count": 7, "color": "#8b5cf6"}, {"label": "Customer Info Received", "count": 3, "color": "#06b6d4"}, {"label": "Approved for Scheduling", "count": 5, "color": "#10b981"}, {"label": "Installation Scheduled", "count": 4, "color": "#f5a623"}, {"label": "Holding Status", "count": 2, "color": "#ef4444"}], "customisationFlowLast4w": [{"week": "Mar 30", "held": 1, "refused": 0, "released": 1}, {"week": "Apr 6", "held": 3, "refused": 1, "released": 2}, {"week": "Apr 13", "held": 2, "refused": 0, "released": 2}, {"week": "Apr 20", "held": 2, "refused": 0, "released": 0}], "installCompletionTrend": [{"week": "Mar 30", "completed": 2}, {"week": "Apr 6", "completed": 4}, {"week": "Apr 13", "completed": 3}, {"week": "Apr 20", "completed": 3}], "tacticalQueueHealth": [{"queue": "AU New Tickets", "count": 1, "sla": "24h", "oldestDays": 0}, {"queue": "Customisation Holds", "count": 2, "sla": "48h", "oldestDays": 3}, {"queue": "RED OPD (pending MOVE)", "count": 0, "sla": "weekly", "oldestDays": 0}, {"queue": "Radaro PODs (pending)", "count": 3, "sla": "48h", "oldestDays": 4}, {"queue": "Installs this week", "count": 4, "sla": "24h", "oldestDays": 1}]}, "concerns": [{"id": "c-radaro-courtney-fwd-delay", "severity": "high", "title": "3 Radaro reports waiting >3 days on Courtney's forward", "detail": "3 install reports pending close-out \u2014 oldest is 4 days. Breaks the 48h Standardized Install Note SLA (v5 \u00a711.1.1). Stake install with 'damaged on arrival' flag already rerouted to service. The other 2 need Courtney's forward or a rule for when service routes ahead of ops close-out.", "evidence": ["tasks/radaro-post-install.json"], "autoDetected": true}, {"id": "c-customisation-grey-case", "severity": "med", "title": "1 customisation hold escalated by sales \u2014 decision needed on grey-case path", "detail": "Hold stood per v5 \u00a76.4 refusal authority, but sales pushed back. Need a documented internal escalation path (Courtney \u2192 Shelvi \u2192 Rebecca) for disputed holds so this doesn't have to get re-argued every time.", "evidence": ["tasks/aus-ops.json"], "autoDetected": true}, {"id": "c-amber-payment-context", "severity": "med", "title": "4 of 5 AMBER OPDs lack payment-chase context \u2014 will drop to RED next Monday", "detail": "AMBER = OPD 15\u201321 days out. 4 tickets show no approved_ticket_status and no recent activity. Action for Courtney: help surface these to Teya by Thursday so they don't convert to RED without audit trail.", "evidence": ["tasks/at-risk-opd.json"], "autoDetected": true}], "questions": [{"id": "q-radaro-forward-sla", "topic": "Radaro forward SLA", "question": "Can we set a 24h SLA on forwarding Radaro reports to me/service? Right now we're at 3\u20134 days on pending close-outs \u2014 breaks the 48h install note SLA. Or do you want me to pull reports directly from Radaro and skip the forward step?", "context": "v5 \u00a711.1.1 says install notes within 48h. We're missing that every week.", "priority": "high", "seeded": true}, {"id": "q-customisation-escalation-path", "topic": "Customisation holds \u2014 escalation", "question": "When sales escalates a customisation hold, what's our ladder? I want to write it into the playbook so you're not re-arguing the same pattern each time. Proposed: sales \u2192 you \u2192 me \u2192 Rebecca, with documented timestamps on each step.", "context": "Had one grey case this week. v5 \u00a76.4 gives us refusal authority \u2014 let's make the path explicit.", "priority": "high", "seeded": true}, {"id": "q-pre-delivery-followup-ownership", "topic": "Pre-delivery checklist follow-up", "question": "Checklists going out Tues + Fri is clean. But when the client doesn't respond in 7 days, who chases \u2014 you (AU ops) or the deal owner? Right now it's falling between the cracks.", "context": "3 checklists from last week still unacknowledged. Unclear owner = no chase happens.", "priority": "med", "seeded": true}, {"id": "q-install-post-comms-template", "topic": "Post-install client comms", "question": "v5 \u00a711.1.1 \u2014 deal owner emails customer post-install, not ops. One sales rep pushed back saying they're too thin. Should I ship a template pack so it's one-click for sales?", "context": "Template pack = more scalable but technically not our lane. Want your read before I build it.", "priority": "med", "seeded": true}], "theirActionItems": [{"id": "ta-prev-1", "fromMeetingDate": "2026-04-17", "item": "Clear Radaro forward backlog + set recurring Tuesday forward slot", "status": "in_progress", "owner": "Courtney"}, {"id": "ta-prev-2", "fromMeetingDate": "2026-04-17", "item": "Review 2 customisation holds + confirm both stay on hold", "status": "done", "owner": "Courtney"}], "myCommitments": [{"id": "mc-prev-1", "fromMeetingDate": "2026-04-17", "item": "Document customisation escalation ladder in Notion playbook v5 \u00a76.4", "status": "pending"}, {"id": "mc-prev-2", "fromMeetingDate": "2026-04-17", "item": "Run first RED OPD sweep under new customisation-guard logic (v5 \u00a76.4)", "status": "done"}, {"id": "mc-prev-3", "fromMeetingDate": "2026-04-17", "item": "Flag Stake damaged-on-arrival to service queue", "status": "done"}]};
+window.TASK_DATA__courtney_prep = {
+  "taskKey": "courtney-prep",
+  "taskTitle": "1:1 Meeting — Courtney",
+  "description": "Pre-meeting prep for Shelvi's weekly 1:1 with Courtney (AU Ops Lead). Auto-populated from last-7d HubSpot activity (AU Global Operations pipeline), Radaro install flow, and dashboard AU feeds. Scope is AU tactical only — customisation holds, OPD detail, Radaro, installs. Strategic/cross-region topics live on the Rebecca 1:1 page.",
+  "schedule": "Auto-refreshed Monday 07:00 Sydney + on-demand from page Refresh button",
+  "meetingCadence": "weekly",
+  "meetingAttendee": {
+    "name": "Courtney",
+    "role": "AU Ops Lead"
+  },
+  "owner": "Shelvi Alferez — Global Quality Lead",
+  "weekOf": "2026-07-06",
+  "windowStart": "2026-07-06",
+  "windowEnd": "2026-07-12",
+  "meta": {
+    "refreshedAt": "2026-07-15T19:25:00+10:00",
+    "generatedAt": "2026-07-15T19:25:00+10:00",
+    "source": "prep-courtney-1-1 (HubSpot MCP + local feeds)"
+  },
+  "summary": "Week of Jul 6 — 1 AU new ticket processed, 0 customisation holds, 0 RED OPDs pushed, 6 installs completed, 9 Radaro reports pending close-out. 2 tactical concerns.",
+  "executiveSummary": [
+    "Quiet intake week — 1 standard ticket processed out of New Ticket, zero customisation holds. Shiels (New Ticket, 9 days) is ready for SO creation in Inflow.",
+    "OPD board fully clean: zero RED, AMBER, and overdue. 6 installs completed, 5 newly scheduled — install notes for the 6 completions still need a 48h-SLA spot-check.",
+    "Radaro inflow spiked post-window: 9 PODs landed Jul 14–15 awaiting close-out (all inside 48h SLA). Uptick door-glide noise and Cisco door-close caveat are the two to watch."
+  ],
+  "lastWeek": {
+    "newTickets": {
+      "standardProcessed": 1,
+      "customisationHolds": 0,
+      "refusedOrRerouted": 0,
+      "salesCoordinationLoops": 0,
+      "commentary": "1 standard ticket processed out of New Ticket (C Capital). 0 customisation holds; Shiels carries only a furniture co-delivery logistics note (standard path)."
+    },
+    "opd": {
+      "redPushed": 0,
+      "amberFlagged": 0,
+      "overduePushed": 0,
+      "customisationGuarded": 0,
+      "notesPosted": 0,
+      "commentary": "Zero RED, AMBER, and overdue AU tickets this window — nearest OPD is 30d out (Aug 14). No pushes needed; note count not scanned this run."
+    },
+    "installs": {
+      "scheduled": 5,
+      "completed": 6,
+      "installerFlagsEscalated": 0,
+      "standardizedNotesPosted": 0,
+      "commentary": "5 tickets entered Installation Scheduled, 6 completed in window. Standardized install-note check (48h, v5 §11.1.1) not verified this run — needs a spot-check."
+    },
+    "radaro": {
+      "reportsReceived": 0,
+      "closedOut": 0,
+      "pendingCloseOut": 9,
+      "driverFlags": 0,
+      "oldestPendingDays": 1,
+      "commentary": "9 PODs pending, all landed Jul 14–15 (oldest 1d, inside 48h SLA). 0 keyword flags; Uptick door-glide noise + Cisco door-close caveat worth a look."
+    },
+    "preDelivery": {
+      "checklistsSent": 0,
+      "cadenceAdhered": false,
+      "paymentChasesLinked": 0,
+      "commentary": "0 checklist emails sent Jul 6–12 — queue was empty (only ≤30d-OPD ticket is Ella-owned, excluded per handover rule). Tue/Fri cadence not exercised."
+    }
+  },
+  "charts": {
+    "auPipelineByStage": [
+      {
+        "label": "New Ticket",
+        "count": 1,
+        "color": "#3b7cff"
+      },
+      {
+        "label": "Delivery Details",
+        "count": 0,
+        "color": "#a78bfa"
+      },
+      {
+        "label": "Pending Sales Order",
+        "count": 9,
+        "color": "#8b5cf6"
+      },
+      {
+        "label": "Customer Info Received",
+        "count": 5,
+        "color": "#06b6d4"
+      },
+      {
+        "label": "Approved for Scheduling",
+        "count": 2,
+        "color": "#10b981"
+      },
+      {
+        "label": "Installation Scheduled",
+        "count": 5,
+        "color": "#f5a623"
+      },
+      {
+        "label": "Holding Status",
+        "count": 21,
+        "color": "#ef4444"
+      }
+    ],
+    "customisationFlowLast4w": [
+      {
+        "week": "Jun 15",
+        "held": 0,
+        "refused": 0,
+        "released": 0
+      },
+      {
+        "week": "Jun 22",
+        "held": 0,
+        "refused": 0,
+        "released": 0
+      },
+      {
+        "week": "Jun 29",
+        "held": 0,
+        "refused": 0,
+        "released": 0
+      },
+      {
+        "week": "Jul 6",
+        "held": 0,
+        "refused": 0,
+        "released": 0
+      }
+    ],
+    "installCompletionTrend": [
+      {
+        "week": "Jun 15",
+        "completed": 0
+      },
+      {
+        "week": "Jun 22",
+        "completed": 0
+      },
+      {
+        "week": "Jun 29",
+        "completed": 0
+      },
+      {
+        "week": "Jul 6",
+        "completed": 6
+      }
+    ],
+    "tacticalQueueHealth": [
+      {
+        "queue": "AU New Tickets",
+        "count": 1,
+        "sla": "24h",
+        "oldestDays": 9
+      },
+      {
+        "queue": "Customisation Holds",
+        "count": 0,
+        "sla": "48h",
+        "oldestDays": 0
+      },
+      {
+        "queue": "RED OPD (pending MOVE)",
+        "count": 0,
+        "sla": "weekly",
+        "oldestDays": 0
+      },
+      {
+        "queue": "Radaro PODs (pending)",
+        "count": 9,
+        "sla": "48h",
+        "oldestDays": 1
+      },
+      {
+        "queue": "Installs this week",
+        "count": 5,
+        "sla": "24h",
+        "oldestDays": 7
+      }
+    ]
+  },
+  "concerns": [
+    {
+      "id": "c-install-note-sla-miss",
+      "severity": "high",
+      "title": "Install notes for the 6 window completions not yet verified against 48h SLA",
+      "detail": "6 AU tickets entered Installation Complete in the Jul 6–12 window (incl. Ray White Dalkeith SO-001905), but standardized install notes (v5 §11.1.1) were not verified this refresh — the note scan was skipped, so the posted count reads 0. Action: spot-check the 6 tickets and backfill any missing notes before they age past the 48h mark.",
+      "evidence": [
+        "tasks/courtney-prep.json"
+      ],
+      "autoDetected": true
+    },
+    {
+      "id": "c-holding-stall-au",
+      "severity": "med",
+      "title": "21 AU tickets in Holding Status — oldest parked since December",
+      "detail": "Holding Status is the largest AU stage (21 of 47 open). Oldest entries (Squadron Energy, Harris Real Estate Salisbury, Cisco 2nd order) date to Dec 2025 / Jan 2026. Action for Courtney: joint triage pass to reconfirm hold reasons and release, reschedule, or cancel the stale ones.",
+      "evidence": [
+        "tasks/courtney-prep.json"
+      ],
+      "autoDetected": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-radaro-forward-sla",
+      "topic": "Radaro forward SLA",
+      "question": "Can we set a 24h SLA on forwarding Radaro reports to me/service? Right now we're at 3–4 days on pending close-outs — breaks the 48h install note SLA. Or do you want me to pull reports directly from Radaro and skip the forward step?",
+      "context": "v5 §11.1.1 says install notes within 48h. We're missing that every week.",
+      "priority": "high",
+      "seeded": true
+    },
+    {
+      "id": "q-customisation-escalation-path",
+      "topic": "Customisation holds — escalation",
+      "question": "When sales escalates a customisation hold, what's our ladder? I want to write it into the playbook so you're not re-arguing the same pattern each time. Proposed: sales → you → me → Rebecca, with documented timestamps on each step.",
+      "context": "Had one grey case this week. v5 §6.4 gives us refusal authority — let's make the path explicit.",
+      "priority": "high",
+      "seeded": true
+    },
+    {
+      "id": "q-pre-delivery-followup-ownership",
+      "topic": "Pre-delivery checklist follow-up",
+      "question": "Checklists going out Tues + Fri is clean. But when the client doesn't respond in 7 days, who chases — you (AU ops) or the deal owner? Right now it's falling between the cracks.",
+      "context": "3 checklists from last week still unacknowledged. Unclear owner = no chase happens.",
+      "priority": "med",
+      "seeded": true
+    },
+    {
+      "id": "q-install-post-comms-template",
+      "topic": "Post-install client comms",
+      "question": "v5 §11.1.1 — deal owner emails customer post-install, not ops. One sales rep pushed back saying they're too thin. Should I ship a template pack so it's one-click for sales?",
+      "context": "Template pack = more scalable but technically not our lane. Want your read before I build it.",
+      "priority": "med",
+      "seeded": true
+    }
+  ],
+  "theirActionItems": [
+    {
+      "id": "ta-prev-1",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Clear Radaro forward backlog + set recurring Tuesday forward slot",
+      "status": "in_progress",
+      "owner": "Courtney"
+    },
+    {
+      "id": "ta-prev-2",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Review 2 customisation holds + confirm both stay on hold",
+      "status": "done",
+      "owner": "Courtney"
+    }
+  ],
+  "myCommitments": [
+    {
+      "id": "mc-prev-1",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Document customisation escalation ladder in Notion playbook v5 §6.4",
+      "status": "pending"
+    },
+    {
+      "id": "mc-prev-2",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Run first RED OPD sweep under new customisation-guard logic (v5 §6.4)",
+      "status": "done"
+    },
+    {
+      "id": "mc-prev-3",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Flag Stake damaged-on-arrival to service queue",
+      "status": "done"
+    }
+  ]
+};

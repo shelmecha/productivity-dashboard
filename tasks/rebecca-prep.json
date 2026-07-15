@@ -1,6 +1,6 @@
 {
   "taskKey": "rebecca-prep",
-  "taskTitle": "1:1 Meeting \u2014 Rebecca",
+  "taskTitle": "1:1 Meeting — Rebecca",
   "description": "Pre-meeting prep for Shelvi's weekly 1:1. Auto-populated from last-7d HubSpot activity, current dashboard state, and recurring ops themes. Concerns and questions are editable and persist locally. Attendee is set via the meetingAttendee field.",
   "schedule": "Auto-refreshed Monday 07:00 Sydney + on-demand from page Refresh button",
   "meetingCadence": "weekly",
@@ -8,58 +8,57 @@
     "name": "Rebecca",
     "role": "COO"
   },
-  "owner": "Shelvi Alferez \u2014 Global Quality Lead",
-  "weekOf": "2026-04-21",
-  "windowStart": "2026-04-21",
-  "windowEnd": "2026-04-27",
+  "owner": "Shelvi Alferez — Global Quality Lead",
+  "weekOf": "2026-07-06",
+  "windowStart": "2026-07-06",
+  "windowEnd": "2026-07-12",
   "meta": {
-    "refreshedAt": "2026-04-28T04:30:00+00:00",
-    "generatedAt": "2026-04-28T04:30:00+00:00",
-    "source": "prep-rebecca-1-1 (HubSpot MCP + local feeds)",
-    "scheduledRunNote": "Saturday auto-refresh \u2014 feed counters synced to live HubSpot/Gmail pulls. Manual concerns/questions/commitments preserved. Notion 1:1 db upsert will run on the Monday cadence."
+    "refreshedAt": "2026-07-15T19:25:00+10:00",
+    "generatedAt": "2026-07-15T19:25:00+10:00",
+    "source": "prep-rebecca-1-1 (HubSpot MCP + local feeds)"
   },
-  "summary": "Week of Apr 20 \u2014 7 RED OPDs moved, 5 AMBER flagged, 20 CA service tickets in flight, 11 pre-delivery checklists queued. 3 concerns surfaced.",
+  "summary": "Week of Jul 6 — 0 RED OPDs moved, 0 AMBER flagged, 5 CA service tickets in flight, 0 pre-delivery checklists queued. 2 concerns surfaced.",
   "executiveSummary": [
-    "OPD hygiene held \u2014 7 RED moved on Monday, zero past-OPD carried into Tuesday. 5 AMBER flagged for payment chase.",
-    "CA service queue has grown to 20 open tickets owned by Shelvi \u2014 triage capacity is the constraint, not inbound volume.",
-    "v5 Playbook customisation ownership rolled out cleanly (first full week end-to-end). Zero line-item/SO mismatches escaped into production."
+    "OPD hygiene fully clean — zero RED, AMBER, or overdue AU tickets this window; nearest OPD sits 30 days out. 6 installs completed, 5 newly scheduled.",
+    "CA service queue is down to 5 Shelvi-owned open tickets (5 closed this window) — the capacity crunch has eased, but the oldest (DD West) has waited on parts since March.",
+    "Holding Status is now the biggest pool: 21 AU tickets parked, oldest since December — needs a triage pass to separate real holds from stale ones."
   ],
   "lastWeek": {
     "opd": {
-      "redMoved": 7,
-      "amberFlagged": 5,
+      "redMoved": 0,
+      "amberFlagged": 0,
       "overduePushed": 0,
-      "holdingPending": 0,
-      "notesPosted": 12,
+      "holdingPending": 21,
+      "notesPosted": 0,
       "pastOpdRemaining": 0,
-      "commentary": "Monday sweep cleared. 5 AMBER still awaiting payment status before conversion next Monday."
+      "commentary": "Zero RED, AMBER, or overdue this window — nearest AU OPD is 30d out (Aug 14). 21 tickets sit in Holding Status. Note count not scanned this run."
     },
     "tickets": {
-      "newTicketsProcessed": 6,
-      "customisationHolds": 2,
-      "scheduledForInstall": 4,
-      "installsCompleted": 3,
-      "commentary": "2 customisation holds (Mula-style line-item mismatch caught before SO creation). Refusal authority exercised cleanly per v5 \u00a76.4."
+      "newTicketsProcessed": 1,
+      "customisationHolds": 0,
+      "scheduledForInstall": 5,
+      "installsCompleted": 6,
+      "commentary": "1 ticket left New Ticket (C Capital), 5 entered Installation Scheduled, 6 installs completed. Zero customisation holds flagged."
     },
     "customerComms": {
-      "preDeliveryChecklistsSent": 8,
-      "paymentChasesResolved": 2,
-      "paymentChasesOpen": 3,
-      "clientUpdatesSent": 4,
-      "commentary": "Pre-delivery send cadence = Tuesdays + Fridays. 3 payment chases open >48h \u2014 Teya escalation on deck for Friday."
+      "preDeliveryChecklistsSent": 0,
+      "paymentChasesResolved": 0,
+      "paymentChasesOpen": 10,
+      "clientUpdatesSent": 0,
+      "commentary": "0 pre-delivery sends — queue empty (only ≤30d ticket is Ella-owned, excluded). 10 pre-scheduled AU tickets blank on approved_ticket_status, oldest Mar 17."
     },
     "globalServiceCA": {
-      "newTicketsIn": 5,
-      "ticketsClosed": 2,
-      "openEndOfWeek": 20,
-      "commentary": "Net +3. Shelvi absorbing Courtney's CA overflow while AU ops ramps. Not sustainable beyond Q2."
+      "newTicketsIn": 14,
+      "ticketsClosed": 5,
+      "openEndOfWeek": 5,
+      "commentary": "14 new CA tickets in, 5 closed in window. 5 Shelvi-owned open end-of-week — oldest (DD West) waiting on parts since Mar 4."
     },
     "radaro": {
-      "installReportsReceived": 6,
-      "ticketsClosedOut": 3,
-      "pendingCloseOut": 3,
-      "driverFlags": 1,
-      "commentary": "One driver comment flagged 'booth arrived damaged' on Stake install \u2014 routed to service queue, not ops."
+      "installReportsReceived": 0,
+      "ticketsClosedOut": 0,
+      "pendingCloseOut": 9,
+      "driverFlags": 0,
+      "commentary": "9 reports pending close-out, all landed Jul 14–15 (post-window), oldest 1 day — inside 48h SLA. In-window receipt count not scanned this run."
     }
   },
   "charts": {
@@ -71,153 +70,136 @@
       },
       {
         "label": "Delivery Details",
-        "count": 4,
+        "count": 0,
         "color": "#a78bfa"
       },
       {
         "label": "Pending Sales Order",
-        "count": 7,
+        "count": 9,
         "color": "#8b5cf6"
       },
       {
         "label": "Customer Info Received",
-        "count": 3,
+        "count": 5,
         "color": "#06b6d4"
       },
       {
         "label": "Approved for Scheduling",
-        "count": 5,
+        "count": 2,
         "color": "#10b981"
       },
       {
         "label": "Installation Scheduled",
-        "count": 4,
+        "count": 5,
         "color": "#f5a623"
       },
       {
         "label": "Holding Status",
-        "count": 2,
+        "count": 21,
         "color": "#ef4444"
       }
     ],
     "opdActionsLast4w": [
       {
-        "week": "Mar 30",
-        "red": 9,
-        "amber": 6,
-        "overdue": 2
+        "week": "Jun 15",
+        "red": 0,
+        "amber": 0,
+        "overdue": 0
       },
       {
-        "week": "Apr 6",
-        "red": 11,
-        "amber": 4,
-        "overdue": 3
+        "week": "Jun 22",
+        "red": 0,
+        "amber": 0,
+        "overdue": 0
       },
       {
-        "week": "Apr 13",
-        "red": 8,
-        "amber": 5,
-        "overdue": 1
+        "week": "Jun 29",
+        "red": 0,
+        "amber": 0,
+        "overdue": 0
       },
       {
-        "week": "Apr 20",
-        "red": 7,
-        "amber": 5,
+        "week": "Jul 6",
+        "red": 0,
+        "amber": 0,
         "overdue": 0
       }
     ],
     "installCompletionTrend": [
       {
-        "week": "Mar 30",
-        "completed": 2
+        "week": "Jun 15",
+        "completed": 0
       },
       {
-        "week": "Apr 6",
-        "completed": 4
+        "week": "Jun 22",
+        "completed": 0
       },
       {
-        "week": "Apr 13",
-        "completed": 3
+        "week": "Jun 29",
+        "completed": 0
       },
       {
-        "week": "Apr 20",
-        "completed": 3
+        "week": "Jul 6",
+        "completed": 6
       }
     ],
     "queueHealth": [
       {
         "queue": "New Tickets",
-        "count": 0,
+        "count": 1,
         "sla": "24h",
-        "oldestDays": 0
+        "oldestDays": 9
       },
       {
         "queue": "Pre-Delivery Checklist",
-        "count": 14,
-        "sla": "\u226430d OPD",
-        "oldestDays": 5
+        "count": 0,
+        "sla": "≤30d OPD",
+        "oldestDays": 0
       },
       {
         "queue": "AMBER OPD",
-        "count": 5,
-        "sla": "15\u201321d",
-        "oldestDays": 21
-      },
-      {
-        "queue": "RED OPD",
-        "count": 6,
-        "sla": "0\u201314d",
-        "oldestDays": 14
+        "count": 0,
+        "sla": "15–21d",
+        "oldestDays": 0
       },
       {
         "queue": "CA Service (Shelvi)",
-        "count": 21,
+        "count": 5,
         "sla": "5 biz d",
-        "oldestDays": 13
+        "oldestDays": 133
       },
       {
         "queue": "Radaro PODs",
-        "count": 3,
+        "count": 9,
         "sla": "48h",
-        "oldestDays": 3
+        "oldestDays": 1
       },
       {
         "queue": "Slack Forgotten",
-        "count": null,
+        "count": 1,
         "sla": "24h",
-        "oldestDays": null,
-        "note": "stale \u2014 refresh-slack pending"
+        "oldestDays": 7
       }
     ]
   },
   "concerns": [
     {
-      "id": "c-ca-queue-growth",
+      "id": "c-holding-stall",
+      "severity": "med",
+      "title": "21 AU tickets parked in Holding Status — oldest since December",
+      "detail": "Holding Status is now the largest stage in the AU pipeline (21 of 47 open tickets). Oldest entries (Squadron Energy, Harris Real Estate, Cisco 2nd order) date back to Dec 2025 / Jan 2026. Risk: stale holds hide real revenue and distort pipeline reads. Suggested action: a joint triage pass to reconfirm each hold reason and release or cancel dead ones.",
+      "evidence": [
+        "tasks/rebecca-prep.json"
+      ],
+      "autoDetected": true
+    },
+    {
+      "id": "c-payment-chase-aging",
       "severity": "high",
-      "title": "CA Service queue growing under my ownership \u2014 21 open tickets",
-      "detail": "Net +1 since last refresh (now 21 open). Shelvi is absorbing Courtney's CA overflow while AU ops ramps. Not sustainable past Q2 without a second Canada ops owner or triage model. Oldest ticket is 13 days open.",
+      "title": "10 pre-scheduled AU tickets blank on approved_ticket_status",
+      "detail": "10 of 16 tickets across New Ticket / Pending SO / Customer Info Received have no approved_ticket_status set — oldest (WAGEC repeat order) created Mar 17. Payment-signal scan was not run this refresh, so some may simply be unapproved paperwork rather than unpaid. Risk: unpaid tickets drifting toward scheduling. Suggested action: reconcile the 10 with Teya before next Monday's OPD sweep.",
       "evidence": [
-        "tasks/global-service-ca.json"
-      ],
-      "autoDetected": true
-    },
-    {
-      "id": "c-amber-no-context",
-      "severity": "med",
-      "title": "4 of 5 AMBER OPD tickets carry no payment-chase context",
-      "detail": "AMBER = OPD 15\u201321 days out. 4 tickets show no approved_ticket_status and no recent activity on the deal. Risk: drop to RED next Monday with no audit trail for the push. Action: surface to Teya for payment status by Thursday.",
-      "evidence": [
-        "tasks/at-risk-opd.json"
-      ],
-      "autoDetected": true
-    },
-    {
-      "id": "c-radaro-backlog",
-      "severity": "med",
-      "title": "Radaro PODs waiting >3 days on Courtney's fwd",
-      "detail": "3 install reports pending close-out \u2014 oldest is 4 days. Breaks the 48h Standardized Install Note SLA (v5 \u00a711.1.1). Stake install carries a 'damaged on arrival' driver flag that needs routing to service, not ignored.",
-      "evidence": [
-        "tasks/radaro-post-install.json"
+        "tasks/rebecca-prep.json"
       ],
       "autoDetected": true
     }
@@ -226,16 +208,16 @@
     {
       "id": "q-ca-ownership",
       "topic": "Resourcing / ownership",
-      "question": "CA service queue \u2014 is there a plan to bring on a second CA ops owner, or should I propose a triage cut-off (e.g., only warranty + escalations) and push the rest to a shared queue?",
+      "question": "CA service queue — is there a plan to bring on a second CA ops owner, or should I propose a triage cut-off (e.g., only warranty + escalations) and push the rest to a shared queue?",
       "context": "I'm at 20 open, net +3 this week. Willing to propose a triage rule if we want to hold the line without hiring.",
       "priority": "high",
       "seeded": true
     },
     {
       "id": "q-customisation-edge-cases",
-      "topic": "Playbook v5 \u2014 customisation authority",
-      "question": "v5 \u00a76.4 gives me end-to-end customisation authority incl. refusal. Two holds this week were clean, but I hit one grey case where sales escalated. Do we want a documented escalation path (me \u2192 you) for disputed holds, or leave it case-by-case?",
-      "context": "Mula-style line-item/SO mismatches \u2014 the reason we rewrote \u00a76.4 in the first place.",
+      "topic": "Playbook v5 — customisation authority",
+      "question": "v5 §6.4 gives me end-to-end customisation authority incl. refusal. Two holds this week were clean, but I hit one grey case where sales escalated. Do we want a documented escalation path (me → you) for disputed holds, or leave it case-by-case?",
+      "context": "Mula-style line-item/SO mismatches — the reason we rewrote §6.4 in the first place.",
       "priority": "high",
       "seeded": true
     },
@@ -250,7 +232,7 @@
     {
       "id": "q-post-install-comms",
       "topic": "Post-install client communication",
-      "question": "v5 \u00a711.1.1 \u2014 ops never emails customer post-install; Deal Owner handles it. One sales rep pushed back this week saying they're too thin to pick up the handoff. Do we reinforce the rule with sales leadership, or build a template pack to make it trivial for them?",
+      "question": "v5 §11.1.1 — ops never emails customer post-install; Deal Owner handles it. One sales rep pushed back this week saying they're too thin to pick up the handoff. Do we reinforce the rule with sales leadership, or build a template pack to make it trivial for them?",
       "context": "Template pack is more scalable but it's not our lane.",
       "priority": "med",
       "seeded": true
@@ -262,6 +244,22 @@
       "context": "Would like to pre-flag impacted tickets before Monday OPD review, not react after the OPD slips.",
       "priority": "med",
       "seeded": true
+    }
+  ],
+  "rebeccaActionItems": [
+    {
+      "id": "ra-prev-1",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Confirm Canada ops hiring timeline",
+      "status": "pending",
+      "owner": "Rebecca"
+    },
+    {
+      "id": "ra-prev-2",
+      "fromMeetingDate": "2026-04-17",
+      "item": "Loop Paul in on customisation refusals dispute process",
+      "status": "pending",
+      "owner": "Rebecca"
     }
   ],
   "theirActionItems": [
@@ -284,7 +282,7 @@
     {
       "id": "mc-prev-1",
       "fromMeetingDate": "2026-04-17",
-      "item": "Roll out v5 \u00a76.4 end-to-end customisation workflow \u2014 full week",
+      "item": "Roll out v5 §6.4 end-to-end customisation workflow — full week",
       "status": "done"
     },
     {
@@ -296,7 +294,7 @@
     {
       "id": "mc-prev-3",
       "fromMeetingDate": "2026-04-17",
-      "item": "Update Notion \u2014 refund/cancel SOP draft v2",
+      "item": "Update Notion — refund/cancel SOP draft v2",
       "status": "pending"
     }
   ]

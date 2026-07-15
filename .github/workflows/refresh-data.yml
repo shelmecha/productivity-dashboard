@@ -1,4 +1,4 @@
-name: Refresh HubSpot feeds
+name: Refresh dashboard data
 
 on:
   schedule:
@@ -18,39 +18,43 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Check token
-        id: token
+      - name: Detect available credentials
+        id: creds
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
-          if [ -z "$HUBSPOT_TOKEN" ]; then
-            echo "HUBSPOT_TOKEN secret not set — skipping refresh (add it in Settings → Secrets and variables → Actions)."
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          fi
+          [ -n "$HUBSPOT_TOKEN" ] && echo "hubspot=true" >> "$GITHUB_OUTPUT" || echo "hubspot=false" >> "$GITHUB_OUTPUT"
+          [ -n "$GOOGLE_REFRESH_TOKEN" ] && echo "google=true" >> "$GITHUB_OUTPUT" || echo "google=false" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v5
-        if: steps.token.outputs.present == 'true'
         with:
           node-version: '22'
 
-      - name: Refresh feeds
-        if: steps.token.outputs.present == 'true'
+      - name: Refresh HubSpot feeds
+        if: steps.creds.outputs.hubspot == 'true'
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: node scripts/refresh-hubspot.js
 
+      - name: Refresh Gmail + home counters
+        if: steps.creds.outputs.google == 'true'
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/refresh-gmail.js
+
       - name: Commit and push if changed
-        if: steps.token.outputs.present == 'true'
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@github.com"
-          git add tasks/
+          git add tasks/ data.js data.json
           if git diff --cached --quiet; then
             echo "No data changes."
           else
-            git commit -m "Auto-refresh HubSpot feeds"
+            git commit -m "Auto-refresh dashboard data"
             git pull --rebase origin main || true
             git push
           fi

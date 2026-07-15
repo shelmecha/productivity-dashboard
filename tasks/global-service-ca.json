@@ -1,13 +1,12 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-15T16:50:14+08:00",
-    "generatedAt": "2026-07-15T16:50:14+08:00",
-    "source": "refresh-global-service-ca (HubSpot MCP — live pull)",
+    "refreshedAt": "2026-07-15T09:50:59+00:00",
+    "generatedAt": "2026-07-15T09:50:59+00:00",
+    "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
-    "regionFilter": "Canada",
-    "totalRows": 5,
-    "note": "Excludes Solved (1123638123) + Cancelled (1314053420). 5 open tickets owned by Shelvi."
+    "totalRows": 9,
+    "note": "Excludes Solved + Cancelled. Sorted stalest-first."
   },
   "rows": [
     {
@@ -25,6 +24,22 @@
       "lastActivityAt": "2026-06-08T12:57:18.030Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43030077060",
       "lastActivityDays": 37
+    },
+    {
+      "id": "gsca-45856051257",
+      "ticketId": "45856051257",
+      "subject": "Firmus Technologies",
+      "customer": "Firmus Technologies",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-06-18T00:10:43.771Z",
+      "lastActivityAt": "2026-06-18T00:14:54.479Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45856051257",
+      "lastActivityDays": 27
     },
     {
       "id": "gsca-43646125656",
@@ -49,7 +64,7 @@
       "customer": "Luna Child and Youth Advocacy Centre",
       "stageId": "1344955515",
       "stage": "Waiting for Installer",
-      "nextStep": "Awaiting installer availability — chase scheduling confirmation.",
+      "nextStep": "Confirm installer booking / availability.",
       "description": null,
       "booth": null,
       "address": null,
@@ -57,6 +72,38 @@
       "lastActivityAt": "2026-07-06T22:50:39.283Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44536857363",
       "lastActivityDays": 9
+    },
+    {
+      "id": "gsca-45321432436",
+      "ticketId": "45321432436",
+      "subject": "Telstra - Missing Parts",
+      "customer": "Telstra - Missing Parts",
+      "stageId": "1123458864",
+      "stage": "Waiting for Parts",
+      "nextStep": "Chase supplier ETA on the part required to close out.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-05-15T02:05:38.952Z",
+      "lastActivityAt": "2026-07-07T05:30:24.021Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45321432436",
+      "lastActivityDays": 8
+    },
+    {
+      "id": "gsca-46683972264",
+      "ticketId": "46683972264",
+      "subject": "MPA",
+      "customer": "MPA",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-07-07T01:42:03.083Z",
+      "lastActivityAt": "2026-07-07T05:01:07.946Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46683972264",
+      "lastActivityDays": 8
     },
     {
       "id": "gsca-44398024518",
@@ -89,10 +136,22 @@
       "lastActivityAt": "2026-07-11T04:26:52.473Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
       "lastActivityDays": 4
+    },
+    {
+      "id": "gsca-45552950066",
+      "ticketId": "45552950066",
+      "subject": "shoppers drug mart inc",
+      "customer": "shoppers drug mart inc",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-05-27T14:39:46.463Z",
+      "lastActivityAt": "2026-07-14T15:07:41.195Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
+      "lastActivityDays": 1
     }
-  ],
-  "summary": {
-    "caOpenTickets": 5,
-    "lastUpdated": "2026-07-15T16:50:14+08:00"
-  }
+  ]
 }

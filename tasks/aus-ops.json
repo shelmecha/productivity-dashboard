@@ -1,8 +1,8 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-15T16:49:59+08:00",
-    "generatedAt": "2026-07-15T16:49:59+08:00",
-    "source": "live HubSpot pull via MCP - AU Global Operations pipeline (749963562) stage 1105295898 (New Ticket), country=Australia"
+    "refreshedAt": "2026-07-15T09:50:58+00:00",
+    "generatedAt": "2026-07-15T09:50:58+00:00",
+    "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
     {
@@ -10,27 +10,27 @@
       "ticketId": "46698494720",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46698494720",
       "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/46698494720",
-      "customer": "Shiels (Furniture - Thebarton HQ) | 25 Compton St Adelaide, SA 5000",
+      "customer": " | Shiels (Furniture - Thebarton HQ) | (25 Compton St Adelaide , SA, 5000)",
       "stage": "New Ticket",
       "opd": "2026-09-14",
       "age": "9 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-15",
       "bucket": "standard",
-      "classifierNote": "any_additional_notes_for_logistics_team is empty - no bespoke spec, standard SO creation path",
-      "decisionRef": "Playbook v5 §6.4 + §6.6.1 + §11.1.1 + Apr 8/20 meetings",
+      "classifierNote": "no customisation notes — standard SO creation path",
       "logisticsNote": "",
-      "nextStepNote": "Standard new ticket - no customisation notes present. Create the sales order in Inflow from the ticket line items, then move the ticket to the next stage. OPD is 2026-09-14 (well outside the 30-day window), so no pre-delivery chase needed yet.",
       "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
     }
   ],
   "buckets": {
-    "standard": ["46698494720"],
+    "standard": [
+      "46698494720"
+    ],
     "customisation": []
   },
   "summary": {
     "newTickets": 1,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-15T16:49:59+08:00"
+    "lastUpdated": "2026-07-15T09:50:58+00:00"
   }
 }

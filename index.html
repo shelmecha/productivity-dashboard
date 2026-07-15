@@ -4743,11 +4743,11 @@ function tabBadgeCount(tabKey) {
         .reduce((a,k) => a + getItems(k).length, 0);
     }
     if (tabKey === 'gs-ca') {
-      const d = window.TASK_DATA__global_service_ca;
+      const d = taskCache['global-service-ca'] || window.TASK_DATA__global_service_ca;
       return d && Array.isArray(d.rows) ? d.rows.length : null;
     }
     if (tabKey === 'slack') {
-      const d = window.TASK_DATA__slack;
+      const d = taskCache['slack'] || window.TASK_DATA__slack;
       return d && Array.isArray(d.rows) ? d.rows.length : null;
     }
   } catch(e) { /* noop */ }
@@ -5172,7 +5172,7 @@ function renderHomeSectionBoxes() {
   const radaroFlagged = radaroAllRows.filter(r => r.status === 'flagged');
   const radaroDone    = radaroFlagged.filter(r => !!ticks['tick:radaro-post-install:'+r.id]).length;
 
-  const gscaData       = window.TASK_DATA__global_service_ca;
+  const gscaData       = taskCache['global-service-ca'] || window.TASK_DATA__global_service_ca;
   const gscaRows       = gscaData && Array.isArray(gscaData.rows) ? gscaData.rows : [];
   const gscaByStage    = gscaRows.reduce((m,r)=>{m[r.stage]=(m[r.stage]||0)+1;return m;},{});
   const gscaReachedByStage = {};
@@ -5267,7 +5267,7 @@ function computeProgress() {
   sections.push({ label:'AU Ops', done:ausOpsDone, total:ausOpsRows.length, color:'var(--accent2)' });
 
   // GS-CA — reached out today
-  const gscaData = window.TASK_DATA__global_service_ca;
+  const gscaData = taskCache['global-service-ca'] || window.TASK_DATA__global_service_ca;
   const gscaRows = (gscaData && Array.isArray(gscaData.rows)) ? gscaData.rows : [];
   const gscaDone = gscaRows.filter(r => isGscaReached(r.ticketId)).length;
   sections.push({ label:'Global Service CA', done:gscaDone, total:gscaRows.length, color:'#a78bfa' });

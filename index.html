@@ -3728,10 +3728,6 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 011 1v2H8V3a1 1 0 011-1z"/><rect x="4" y="4" width="16" height="18" rx="2"/><path d="M9 12l2 2 4-4"/><path d="M9 18h6"/></svg>
         <span style="font-size:10px;font-weight:700;letter-spacing:0.02em;">Routine</span>
       </button>
-      <button class="btn-icon rebecca-btn" id="rebecca-btn" title="1:1 Meetings — Rebecca &amp; Courtney" data-task-action="rebecca-open">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 21v-1a6 6 0 016-6h0a6 6 0 016 6v1"/><path d="M16 3h5v5"/><path d="M21 3l-6 6"/></svg>
-        <span style="font-size:10px;font-weight:700;letter-spacing:0.02em;">1:1 Meetings</span>
-      </button>
       <div class="sep"></div>
       <button class="btn-icon" id="tmpl-mail-btn" title="Email Templates — search by topic" data-task-action="open-templates" aria-label="Open email templates">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
@@ -3998,8 +3994,6 @@
      SCRIPT
 ============================================================ -->
 <script src="data.js"></script>
-<script src="tasks/rebecca-prep.js"></script>
-<script src="tasks/courtney-prep.js"></script>
 <script>
 /* ============================================================
    CONFIG
@@ -4016,10 +4010,7 @@ const REFRESH_COMMANDS = {
   'aus-ops':             '/productivity-dashboard:refresh-aus-ops',
   'opd-checklist':       '/productivity-dashboard:refresh-opd-checklist',
   'opd-umbrella':        '/productivity-dashboard:refresh-opd-umbrella',
-  'radaro-post-install': '/productivity-dashboard:refresh-radaro',
-  'rebecca-prep':        '/productivity-dashboard:prep-rebecca-1-1',
-  'courtney-prep':       '/productivity-dashboard:prep-courtney-1-1',
-  '1-1-umbrella':        '/productivity-dashboard:prep-1-1-umbrella'
+  'radaro-post-install': '/productivity-dashboard:refresh-radaro'
 };
 
 const REFRESH_SCOPE_LABELS = {
@@ -4028,10 +4019,7 @@ const REFRESH_SCOPE_LABELS = {
   'aus-ops':             'AU Ops page',
   'opd-checklist':       'Pre-Delivery Checklist page',
   'opd-umbrella':        'OPD Review page (3 feeds)',
-  'radaro-post-install': 'Radaro Post Install page',
-  'rebecca-prep':        '1:1 Meeting — Rebecca',
-  'courtney-prep':       '1:1 Meeting — Courtney',
-  '1-1-umbrella':        '1:1 Meetings (both)'
+  'radaro-post-install': 'Radaro Post Install page'
 };
 
 /* Expose on window for the jsdom harness — runtime path uses the const above. */
@@ -7853,16 +7841,14 @@ function handleRoute() {
   const m = h.match(/^#\/task\/([a-z0-9-]+)/i);
   const isHome    = /^#\/home/i.test(h);
   const isRoutine = /^#\/routine/i.test(h);
-  // 1:1 umbrella — supports #/1-1, #/1-1/rebecca, #/1-1/courtney, plus
-  // legacy #/rebecca (treated as #/1-1/rebecca). Capture attendee if
-  // present so we can pass it to the renderer.
-  const prepMatch = h.match(/^#\/1-1(?:\/([a-z0-9-]+))?/i);
-  const legacyRebeccaMatch = /^#\/rebecca/i.test(h);
-  const isRebecca = !!prepMatch || legacyRebeccaMatch;
-  let prepAttendee = 'rebecca';
-  if (prepMatch && prepMatch[1] && PREP_ATTENDEES[prepMatch[1].toLowerCase()]) {
-    prepAttendee = prepMatch[1].toLowerCase();
+  // 1:1 pages removed (2026-07-15) — any legacy #/1-1 or #/rebecca hash
+  // redirects to home instead of rendering a prep page.
+  if (/^#\/1-1/i.test(h) || /^#\/rebecca/i.test(h)) {
+    location.hash = '#/home';
+    return;
   }
+  const isRebecca = false;
+  let prepAttendee = 'rebecca';
   const isGsCa    = /^#\/gs-ca/i.test(h);
   const isSlack   = /^#\/slack/i.test(h);
   const isGmail   = /^#\/gmail\//i.test(h) || h === '' || h === '#' || h === '#/';
@@ -9310,7 +9296,6 @@ function handleTaskAction(el) {
   }
   if (action === 'routine-reset-day')  { resetRoutineTicks('daily');  return; }
   if (action === 'routine-reset-week') { resetRoutineTicks('weekly'); return; }
-  if (action === 'rebecca-open') { location.hash = '#/1-1/rebecca'; return; }
   if (action === 'prep-tab') {
     const who = (el.dataset.attendee || '').toLowerCase();
     if (!PREP_ATTENDEES[who]) return;

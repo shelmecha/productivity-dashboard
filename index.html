@@ -4079,7 +4079,6 @@ const TABS = [
   { key:'gmail',  label:'Gmail',              route:'#/gmail/urgent' },
   { key:'ops',    label:'AUS Operations',     route:'#/task/aus-ops' },
   { key:'gs-ca',  label:'Global Service CA',  route:'#/gs-ca' },
-  { key:'slack',  label:'Slack',              route:'#/slack' },
 ];
 
 /* Gmail sub-pills map a sub key → SECTIONS key to render on home. */
@@ -4097,7 +4096,6 @@ const OPS_SUBS = [
   { key:'new-tickets',   label:'New Tickets',          route:'#/task/aus-ops' },
   { key:'opd-review',    label:'OPD Review',           route:'#/task/opd-review' },
   { key:'pre-delivery',  label:'Pre-Delivery Checklist', route:'#/task/opd-checklist' },
-  { key:'radaro',        label:'Radaro Post Install',  route:'#/task/radaro-post-install' },
 ];
 
 /* Map a #/task/<key> hash to the ops sub that owns it (for active-state highlight). */
@@ -4107,7 +4105,6 @@ const TASK_TO_OPS_SUB = {
   'opd-weekly-review':   'opd-review',
   'at-risk-opd':         'opd-review',
   'opd-checklist':       'pre-delivery',
-  'radaro-post-install': 'radaro',
   'manual-flag':         null,   // manual flag is not on the ops ribbon
 };
 
@@ -4115,7 +4112,6 @@ const SKILLS = [
   { label:'HubSpot — AU Ops',        cmd:'/aus-operations:new-ticket-processor',      route:'aus-ops'               },
   { label:'OPD Review',              cmd:'/aus-operations:opd-weekly',                route:'opd-review'            },
   { label:'Pre-Delivery Checklist',  cmd:'/aus-operations:opd-checklist',             route:'opd-checklist'         },
-  { label:'Radaro Post Install',     cmd:'/aus-operations:install-complete-processor', route:'radaro-post-install'  },
   { label:'Manual Flag',             route:'manual-flag', isManualFlag: true },
 ];
 
@@ -4319,18 +4315,7 @@ function toggle(secKey, itemId) {
     const now = Date.now();
     allKeys.forEach(k => { ticks[k] = now; });
   }
-  // Gmail cross-action — ticking a Gmail row done queues the thread to be
-  // marked read in Gmail (the mark-gmail-read-queue cron does the API call);
-  // un-ticking pulls it back out of the queue if not yet processed.
-  const GMAIL_TICK_SECS = { gmail:1, gmailFollowUp:1, waitingOn:1, forgotten:1, inboxOther:1, allUnread:1 };
-  if (GMAIL_TICK_SECS[secKey]) {
-    const threadId = item.threadId ||
-      (String(item.id).indexOf('gmail-') === 0 ? String(item.id).slice(6) : null);
-    if (threadId) {
-      if (wasDone) unqueueGmailMarkRead(threadId);
-      else queueGmailMarkRead(threadId, item.title || item.subject || '');
-    }
-  }
+  // Mark-read-on-tick removed (2026-07-15) — ticks are local-only now.
   saveTicks();
   renderAll();
   // Re-render the sub-pill ribbon so badge counts decrement / increment
@@ -4607,20 +4592,9 @@ function renderItem(item, sec, delay) {
   }
   const bodyHtml = body ? `<div class="item-body">${body}</div>` : '';
 
-  // Inline drafted reply — visible as <details>, no modal.
-  const draftHtml = item.draftReply ? `
-    <details class="item-draft">
-      <summary class="item-draft-toggle">
-        <span class="item-draft-icon">✎</span>
-        <span class="item-draft-label">Drafted reply</span>
-        <span class="item-draft-hint">click to expand</span>
-      </summary>
-      <pre class="item-draft-body">${esc(item.draftReply)}</pre>
-      <div class="item-draft-actions">
-        <button class="action-btn item-draft-copy" data-action="draft-copy" data-sec="${esc(sec.key)}" data-id="${esc(item.id)}">Copy draft</button>
-        <button class="action-btn item-draft-edit" data-action="draft" data-sec="${esc(sec.key)}" data-id="${esc(item.id)}">Edit in modal</button>
-      </div>
-    </details>` : '';
+  // Drafted-reply UI removed (2026-07-15) — the dashboard is view-only now;
+  // no AI drafts are generated in the Claude-free refresh.
+  const draftHtml = '';
 
   let actions = '';
   if (item.url)
@@ -5262,7 +5236,6 @@ function renderHomeSectionBoxes() {
       { color:'#f5a623',        label:'Pre-Delivery',  ct:checklistRows.length,         done:checklistDone,  route:'#/task/opd-checklist'                  },
       { color:'var(--warn)',    label:'Manual link',   ct:checklistManualRows.length,   done:0,              route:'#/task/opd-checklist?tab=manual'       },
       { color:'var(--danger)',  label:'Manual f/up',   ct:checklistFollowupRows.length, done:0,              route:'#/task/opd-checklist?tab=followup'     },
-      { color:'var(--success)', label:'Radaro',        ct:radaroFlagged.length,         done:radaroDone,     route:'#/task/radaro-post-install'            },
     ])}
     ${sectionBox(caIcon, 'Global Service CA', '#/gs-ca', [
       { color:'var(--danger)', label:'Rectification',  ct:gscaByStage['Rectification Open']||0,    done:gscaReachedByStage['Rectification Open']||0,    route:'#/gs-ca' },
@@ -5271,10 +5244,6 @@ function renderHomeSectionBoxes() {
       { color:'var(--warn)',   label:'Wait Parts',     ct:gscaByStage['Waiting for Parts']||0,     done:gscaReachedByStage['Waiting for Parts']||0,     route:'#/gs-ca' },
       { color:'var(--text3)',  label:'Wait Customer',  ct:gscaByStage['Waiting for Customer']||0,  done:gscaReachedByStage['Waiting for Customer']||0,  route:'#/gs-ca' },
       { color:'var(--text3)',  label:'Wait Warehouse', ct:gscaByStage['Waiting for Warehouse']||0, done:gscaReachedByStage['Waiting for Warehouse']||0, route:'#/gs-ca' },
-    ])}
-    ${sectionBox(slackIcon, 'Slack', '#/slack', [
-      { color:'var(--danger)', label:'DMs',       ct:slackDMs.length,      done:slackDMs.filter(r=>!!ticks['tick:slack:'+r.id]).length,      route:'#/slack' },
-      { color:'var(--warn)',   label:'@Mentions', ct:slackMentions.length, done:slackMentions.filter(r=>!!ticks['tick:slack:'+r.id]).length,  route:'#/slack' },
     ])}
   </div>`;
 }
@@ -5308,12 +5277,6 @@ function computeProgress() {
   const gscaRows = (gscaData && Array.isArray(gscaData.rows)) ? gscaData.rows : [];
   const gscaDone = gscaRows.filter(r => isGscaReached(r.ticketId)).length;
   sections.push({ label:'Global Service CA', done:gscaDone, total:gscaRows.length, color:'#a78bfa' });
-
-  // Slack — replied rows
-  const slackData = window.TASK_DATA__slack || taskCache['slack'];
-  const slackRows = (slackData && Array.isArray(slackData.rows)) ? slackData.rows : [];
-  const slackDone = slackRows.filter(r => !!ticks['tick:slack:' + r.id]).length;
-  sections.push({ label:'Slack', done:slackDone, total:slackRows.length, color:'#34d399' });
 
   const totalDone  = sections.reduce((a, s) => a + s.done, 0);
   const totalTotal = sections.reduce((a, s) => a + s.total, 0);
@@ -5576,7 +5539,7 @@ function renderHomePage() {
   renderHomeSectionBoxes();
 
   // Background-preload all feeds — update all dynamic widgets when each arrives
-  ['global-service-ca','slack','aus-ops','opd-review','opd-checklist','radaro-post-install'].forEach(key => {
+  ['global-service-ca','aus-ops','opd-review','opd-checklist'].forEach(key => {
     loadSingleFeed(key).then(() => {
       renderHomeProgress();
       renderHomeSectionBoxes();
@@ -6464,80 +6427,8 @@ async function syncApprovalsToFile() {
   }
 }
 
-/* ============================================================
-   GMAIL MARK-AS-READ QUEUE
-   Ticking a Gmail row done queues its thread here; the
-   mark-gmail-read-queue cron reads tasks/gmail-read.queue.json,
-   removes the UNREAD label in Gmail, and logs to
-   tasks/gmail-read.sent.json (which we reconcile against on boot).
-============================================================ */
-function getGmailReadQueue() {
-  try { return JSON.parse(localStorage.getItem('gmail-read-queue') || '{}') || {}; }
-  catch(e) { return {}; }
-}
-function saveGmailReadQueue(q) {
-  try { localStorage.setItem('gmail-read-queue', JSON.stringify(q)); } catch(e) {}
-}
-
-function queueGmailMarkRead(threadId, title) {
-  const q = getGmailReadQueue();
-  q[threadId] = { threadId, title: title || '', queuedAt: new Date().toISOString() };
-  saveGmailReadQueue(q);
-  syncGmailReadQueueToFile(true);
-}
-
-function unqueueGmailMarkRead(threadId) {
-  const q = getGmailReadQueue();
-  if (q[threadId]) { delete q[threadId]; saveGmailReadQueue(q); syncGmailReadQueueToFile(false); }
-}
-
-/* Write the queue to tasks/gmail-read.queue.json. interactive=true runs in a
-   click gesture and may open the one-time folder picker (unless previously
-   declined); false only reuses an existing grant. */
-async function syncGmailReadQueueToFile(interactive) {
-  const q = getGmailReadQueue();
-  const rows = Object.values(q);
-  const declined = localStorage.getItem('gmail-read-fs-declined') === '1';
-  let handle = await ensureFsHandle({ silent: true });
-  if (!handle && interactive && !declined && typeof window.showDirectoryPicker === 'function') {
-    showToast('Pick your productivity-dashboard/tasks folder once to enable Gmail mark-as-read');
-    handle = await ensureFsHandle();
-    if (!handle) {
-      localStorage.setItem('gmail-read-fs-declined', '1');
-      showToast('No folder access — ticks stay local, Gmail threads stay unread');
-      return;
-    }
-    localStorage.removeItem('gmail-read-fs-declined');
-  }
-  if (!handle) return;   // no grant on this device — queue stays in localStorage
-  try {
-    const fh = await handle.getFileHandle('gmail-read.queue.json', { create: true });
-    const w  = await fh.createWritable();
-    await w.write(JSON.stringify({ updatedAt: new Date().toISOString(), queue: rows }, null, 2));
-    await w.close();
-    if (interactive && rows.length) showToast('Queued — will be marked read in Gmail within the hour');
-  } catch(e) {
-    console.warn('[Dashboard] gmail-read queue write failed:', e);
-  }
-}
-
-/* Boot reconcile — drop queue entries the cron already marked read. */
-async function reconcileGmailReadSent() {
-  try {
-    const resp = await fetch('./tasks/gmail-read.sent.json', { cache: 'no-store' });
-    if (!resp.ok) return;
-    const data = await resp.json();
-    const arr  = Array.isArray(data) ? data : (data && Array.isArray(data.sent)) ? data.sent : [];
-    if (!arr.length) return;
-    const q = getGmailReadQueue();
-    let changed = false;
-    arr.forEach(en => {
-      const tid = en && (en.threadId || en.thread_id);
-      if (tid && q[tid]) { delete q[tid]; changed = true; }
-    });
-    if (changed) { saveGmailReadQueue(q); syncGmailReadQueueToFile(false); }
-  } catch(e) { /* offline or file:// — ignore */ }
-}
+/* Mark-read-on-tick queue removed (2026-07-15) — the dashboard is view-only;
+   ticks persist locally and no longer write back to Gmail. */
 
 /* Pull sent.json (plugin-owned log) and remove any already-sent entries from
    local approvals + draftEdits. Called on boot.
@@ -7849,8 +7740,13 @@ function handleRoute() {
   }
   const isRebecca = false;
   let prepAttendee = 'rebecca';
+  // Slack + Radaro pages removed (2026-07-15) — legacy hashes redirect home.
+  if (/^#\/slack/i.test(h) || /^#\/task\/radaro-post-install/i.test(h)) {
+    location.hash = '#/home';
+    return;
+  }
   const isGsCa    = /^#\/gs-ca/i.test(h);
-  const isSlack   = /^#\/slack/i.test(h);
+  const isSlack   = false;
   const isGmail   = /^#\/gmail\//i.test(h) || h === '' || h === '#' || h === '#/';
   const sc = document.getElementById('sections-container');
   const hp = document.getElementById('home-page');
@@ -9944,7 +9840,6 @@ function renderRadaroCleanRow(r) {
   try { applyHide && applyHide(); } catch(e) {}
   try { renderAll(); } catch(e) {}
   try { handleRoute(); } catch(e) {}
-  try { reconcileGmailReadSent(); } catch(e) {}
   window.addEventListener('hashchange', () => {
     try { handleRoute(); } catch(e) {}
   });

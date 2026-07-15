@@ -2730,6 +2730,23 @@
       margin-bottom: 5px;
       letter-spacing: -0.005em;
     }
+    .item-intro {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.45;
+      margin-bottom: 4px;
+      padding: 5px 10px;
+      background: color-mix(in srgb, var(--accent) 9%, transparent);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+    }
+    .item-row.item-completed .item-intro {
+      color: var(--text3);
+      background: transparent;
+      border-left-color: var(--border);
+      text-decoration: line-through;
+    }
     .item-body {
       font-size: 12.5px;
       color: var(--text2);
@@ -4093,7 +4110,6 @@ const OPS_SUBS = [
   { key:'opd-review',    label:'OPD Review',           route:'#/task/opd-review' },
   { key:'pre-delivery',  label:'Pre-Delivery Checklist', route:'#/task/opd-checklist' },
   { key:'radaro',        label:'Radaro Post Install',  route:'#/task/radaro-post-install' },
-  { key:'playbook-sync', label:'Playbook Sync',        route:'#/task/playbook-sync' },
 ];
 
 /* Map a #/task/<key> hash to the ops sub that owns it (for active-state highlight). */
@@ -4104,7 +4120,6 @@ const TASK_TO_OPS_SUB = {
   'at-risk-opd':         'opd-review',
   'opd-checklist':       'pre-delivery',
   'radaro-post-install': 'radaro',
-  'playbook-sync':       'playbook-sync',
   'manual-flag':         null,   // manual flag is not on the ops ribbon
 };
 
@@ -4113,13 +4128,12 @@ const SKILLS = [
   { label:'OPD Review',              cmd:'/aus-operations:opd-weekly',                route:'opd-review'            },
   { label:'Pre-Delivery Checklist',  cmd:'/aus-operations:opd-checklist',             route:'opd-checklist'         },
   { label:'Radaro Post Install',     cmd:'/aus-operations:install-complete-processor', route:'radaro-post-install'  },
-  { label:'Playbook Sync',           cmd:'/aus-operations:playbook-sync',             route:'playbook-sync'         },
   { label:'Manual Flag',             route:'manual-flag', isManualFlag: true },
 ];
 
 const MANUAL_FLAG_PLATFORMS = ['Gmail', 'HubSpot', 'Slack', 'Notion', 'InFlow', 'Google Sheets', 'Canva', 'Other'];
 const MANUAL_FLAG_SKILLS = [
-  'OPD Weekly Review', 'OPD Checklist', 'At-Risk OPD', 'New Tickets', 'Playbook Sync',
+  'OPD Weekly Review', 'OPD Checklist', 'At-Risk OPD', 'New Tickets',
   'Inbox Triage', 'Pipeline Cleanup', 'Deal Inspect', 'Account Research', 'Other'
 ];
 
@@ -4316,6 +4330,18 @@ function toggle(secKey, itemId) {
     // identity dimension still matches via the others.
     const now = Date.now();
     allKeys.forEach(k => { ticks[k] = now; });
+  }
+  // Gmail cross-action — ticking a Gmail row done queues the thread to be
+  // marked read in Gmail (the mark-gmail-read-queue cron does the API call);
+  // un-ticking pulls it back out of the queue if not yet processed.
+  const GMAIL_TICK_SECS = { gmail:1, gmailFollowUp:1, waitingOn:1, forgotten:1, inboxOther:1, allUnread:1 };
+  if (GMAIL_TICK_SECS[secKey]) {
+    const threadId = item.threadId ||
+      (String(item.id).indexOf('gmail-') === 0 ? String(item.id).slice(6) : null);
+    if (threadId) {
+      if (wasDone) unqueueGmailMarkRead(threadId);
+      else queueGmailMarkRead(threadId, item.title || item.subject || '');
+    }
   }
   saveTicks();
   renderAll();
@@ -4558,13 +4584,35 @@ function renderItem(item, sec, delay) {
     return sentences;
   }
 
+  // Gmail intro header — a one-line "what this email is about" gist rendered
+  // prominently at the top of every Gmail card (AuDHD-friendly quick-orient).
+  // Prefers a feed-provided item.intro; falls back to the snippet's first
+  // sentence, which is then removed from the body to avoid duplication.
+  const GMAIL_SECS = { gmail:1, gmailFollowUp:1, waitingOn:1, forgotten:1, inboxOther:1, allUnread:1 };
+  let introHtml = '';
+  let bodySource = snippetClean;
+  if (GMAIL_SECS[sec.key]) {
+    let introText = (item.intro || '').trim();
+    if (!introText && snippetClean) {
+      const sentences = String(snippetClean).replace(/\s+/g, ' ').trim()
+        .split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(Boolean);
+      introText = sentences[0] || '';
+      bodySource = sentences.slice(1).join(' ');
+    }
+    if (!introText && item.waitingFor) introText = item.waitingFor;
+    if (introText) {
+      if (introText.length > 140) introText = introText.slice(0, 137).trimEnd() + '…';
+      introHtml = `<div class="item-intro">${esc(introText)}</div>`;
+    }
+  }
+
   let body = '';
-  if (snippetClean) {
-    const parts = splitToBullets(snippetClean);
+  if (bodySource) {
+    const parts = splitToBullets(bodySource);
     body = parts
       ? `<ul class="body-bullets">${parts.map(p => `<li>${esc(p)}</li>`).join('')}</ul>`
-      : esc(snippetClean);
-  } else if (item.waitingFor) {
+      : esc(bodySource);
+  } else if (item.waitingFor && !introHtml) {
     body = `<span class="body-label">Waiting for:</span> ${esc(item.waitingFor)}`;
   } else if (item.note) {
     body = `<span class="body-label">Note:</span> ${esc(item.note)}`;
@@ -4601,7 +4649,8 @@ function renderItem(item, sec, delay) {
       <div class="item-meta-row">
         ${dateChip}${priorityBadge(item.priority)}${bucketChip}${verdict}${meta}${tidBadge}
       </div>
-      <div class="item-title">${esc(item.title)}</div>
+      ${introHtml}
+      <div class="item-title">${esc(item.title || item.subject || '(no subject)')}</div>
       ${bodyHtml}
       ${item.nextStep?`<div class="next-step"><span class="next-step-label">Next step</span> ${esc(item.nextStep)}</div>`:''}
       ${draftHtml}
@@ -6334,20 +6383,52 @@ function pendingApprovalCount() {
   return n;
 }
 
-/* Ask the user for read-write access to the tasks/ folder once; persist handle in memory. */
-async function ensureFsHandle() {
+/* IndexedDB persistence for the tasks/ directory handle — FileSystemHandle
+   objects are structured-cloneable, so the grant survives page reloads.
+   (Browsers may still re-ask for permission on the stored handle; that
+   re-grant is a single click instead of a full folder re-pick.) */
+function idbHandleStore(mode, value) {
+  return new Promise(resolve => {
+    try {
+      const open = indexedDB.open('dash-fs', 1);
+      open.onupgradeneeded = () => open.result.createObjectStore('handles');
+      open.onerror = () => resolve(null);
+      open.onsuccess = () => {
+        try {
+          const tx = open.result.transaction('handles', mode === 'get' ? 'readonly' : 'readwrite');
+          const st = tx.objectStore('handles');
+          const rq = mode === 'get' ? st.get('tasksDir') : st.put(value, 'tasksDir');
+          rq.onsuccess = () => resolve(mode === 'get' ? rq.result : true);
+          rq.onerror = () => resolve(null);
+        } catch (e) { resolve(null); }
+      };
+    } catch (e) { resolve(null); }
+  });
+}
+
+/* Ask the user for read-write access to the tasks/ folder once; persist the
+   handle in memory + IndexedDB. Pass {silent:true} to never open the picker
+   (used by non-gesture callers — they only reuse an existing grant). */
+async function ensureFsHandle(opts) {
+  const silent = !!(opts && opts.silent);
+  if (!fsDirHandle) fsDirHandle = await idbHandleStore('get') || null;
   if (fsDirHandle) {
     try {
       const ok = await fsDirHandle.queryPermission({ mode: 'readwrite' });
       if (ok === 'granted') return fsDirHandle;
-      const req = await fsDirHandle.requestPermission({ mode: 'readwrite' });
-      if (req === 'granted') return fsDirHandle;
+      if (!silent) {
+        const req = await fsDirHandle.requestPermission({ mode: 'readwrite' });
+        if (req === 'granted') return fsDirHandle;
+      }
     } catch(e) { /* fall through and re-pick */ }
+    if (silent) return null;
   }
+  if (silent) return null;
   if (typeof window.showDirectoryPicker !== 'function') return null;
   try {
     const handle = await window.showDirectoryPicker({ mode: 'readwrite', startIn: 'documents' });
     fsDirHandle = handle;
+    idbHandleStore('put', handle);
     return handle;
   } catch(e) {
     return null;  // user cancelled the picker
@@ -6393,6 +6474,81 @@ async function syncApprovalsToFile() {
     showToast('Sync failed: ' + (e.message || e));
     return { ok: false, error: String(e) };
   }
+}
+
+/* ============================================================
+   GMAIL MARK-AS-READ QUEUE
+   Ticking a Gmail row done queues its thread here; the
+   mark-gmail-read-queue cron reads tasks/gmail-read.queue.json,
+   removes the UNREAD label in Gmail, and logs to
+   tasks/gmail-read.sent.json (which we reconcile against on boot).
+============================================================ */
+function getGmailReadQueue() {
+  try { return JSON.parse(localStorage.getItem('gmail-read-queue') || '{}') || {}; }
+  catch(e) { return {}; }
+}
+function saveGmailReadQueue(q) {
+  try { localStorage.setItem('gmail-read-queue', JSON.stringify(q)); } catch(e) {}
+}
+
+function queueGmailMarkRead(threadId, title) {
+  const q = getGmailReadQueue();
+  q[threadId] = { threadId, title: title || '', queuedAt: new Date().toISOString() };
+  saveGmailReadQueue(q);
+  syncGmailReadQueueToFile(true);
+}
+
+function unqueueGmailMarkRead(threadId) {
+  const q = getGmailReadQueue();
+  if (q[threadId]) { delete q[threadId]; saveGmailReadQueue(q); syncGmailReadQueueToFile(false); }
+}
+
+/* Write the queue to tasks/gmail-read.queue.json. interactive=true runs in a
+   click gesture and may open the one-time folder picker (unless previously
+   declined); false only reuses an existing grant. */
+async function syncGmailReadQueueToFile(interactive) {
+  const q = getGmailReadQueue();
+  const rows = Object.values(q);
+  const declined = localStorage.getItem('gmail-read-fs-declined') === '1';
+  let handle = await ensureFsHandle({ silent: true });
+  if (!handle && interactive && !declined && typeof window.showDirectoryPicker === 'function') {
+    showToast('Pick your productivity-dashboard/tasks folder once to enable Gmail mark-as-read');
+    handle = await ensureFsHandle();
+    if (!handle) {
+      localStorage.setItem('gmail-read-fs-declined', '1');
+      showToast('No folder access — ticks stay local, Gmail threads stay unread');
+      return;
+    }
+    localStorage.removeItem('gmail-read-fs-declined');
+  }
+  if (!handle) return;   // no grant on this device — queue stays in localStorage
+  try {
+    const fh = await handle.getFileHandle('gmail-read.queue.json', { create: true });
+    const w  = await fh.createWritable();
+    await w.write(JSON.stringify({ updatedAt: new Date().toISOString(), queue: rows }, null, 2));
+    await w.close();
+    if (interactive && rows.length) showToast('Queued — will be marked read in Gmail within the hour');
+  } catch(e) {
+    console.warn('[Dashboard] gmail-read queue write failed:', e);
+  }
+}
+
+/* Boot reconcile — drop queue entries the cron already marked read. */
+async function reconcileGmailReadSent() {
+  try {
+    const resp = await fetch('./tasks/gmail-read.sent.json', { cache: 'no-store' });
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const arr  = Array.isArray(data) ? data : (data && Array.isArray(data.sent)) ? data.sent : [];
+    if (!arr.length) return;
+    const q = getGmailReadQueue();
+    let changed = false;
+    arr.forEach(en => {
+      const tid = en && (en.threadId || en.thread_id);
+      if (tid && q[tid]) { delete q[tid]; changed = true; }
+    });
+    if (changed) { saveGmailReadQueue(q); syncGmailReadQueueToFile(false); }
+  } catch(e) { /* offline or file:// — ignore */ }
 }
 
 /* Pull sent.json (plugin-owned log) and remove any already-sent entries from
@@ -6562,7 +6718,6 @@ const TASK_REGISTRY = {
                             ] },
   'aus-ops':              { file: 'aus-ops',              cmd: '/aus-operations:new-ticket-processor', title: 'HubSpot — AU Ops' },
   'radaro-post-install':  { file: 'radaro-post-install',  cmd: '/aus-operations:install-complete-processor', title: 'Radaro Post Install' },
-  'playbook-sync':        { file: 'playbook-sync',        cmd: '/aus-operations:playbook-sync', title: 'Playbook Sync' },
   'manual-flag':          { file: 'manual-flag',          cmd: null,                             title: 'Manual Flag', isUserManaged: true },
 };
 
@@ -9804,6 +9959,7 @@ function renderRadaroCleanRow(r) {
   try { applyHide && applyHide(); } catch(e) {}
   try { renderAll(); } catch(e) {}
   try { handleRoute(); } catch(e) {}
+  try { reconcileGmailReadSent(); } catch(e) {}
   window.addEventListener('hashchange', () => {
     try { handleRoute(); } catch(e) {}
   });

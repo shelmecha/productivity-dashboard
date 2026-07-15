@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-15T17:35:59+00:00",
-    "generatedAt": "2026-07-15T17:35:59+00:00",
+    "refreshedAt": "2026-07-15T19:34:11+00:00",
+    "generatedAt": "2026-07-15T19:34:11+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -40,22 +40,6 @@
       "lastActivityAt": "2026-06-18T00:14:54.479Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45856051257",
       "lastActivityDays": 28
-    },
-    {
-      "id": "gsca-43646125656",
-      "ticketId": "43646125656",
-      "subject": "Panthera Dental",
-      "customer": "Panthera Dental",
-      "stageId": "1340006069",
-      "stage": "Waiting for Customer Payment",
-      "nextStep": "Pending invoice / payment from customer — coordinate with finance.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-03-24T16:18:33.028Z",
-      "lastActivityAt": "2026-07-06T17:32:32.791Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
-      "lastActivityDays": 10
     },
     {
       "id": "gsca-44536857363",
@@ -152,6 +136,22 @@
       "lastActivityAt": "2026-07-14T15:07:41.195Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-43646125656",
+      "ticketId": "43646125656",
+      "subject": "Panthera Dental",
+      "customer": "Panthera Dental",
+      "stageId": "1340006069",
+      "stage": "Waiting for Customer Payment",
+      "nextStep": "Pending invoice / payment from customer — coordinate with finance.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-03-24T16:18:33.028Z",
+      "lastActivityAt": "2026-07-15T17:37:18.177Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
+      "lastActivityDays": 1
     }
   ]
 }

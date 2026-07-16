@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-16T03:32:45+00:00",
-    "generatedAt": "2026-07-16T03:32:45+00:00",
+    "refreshedAt": "2026-07-16T06:29:30+00:00",
+    "generatedAt": "2026-07-16T06:29:30+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -23,7 +23,8 @@
       "stage": "New Ticket",
       "opd": "2026-09-14",
       "opdDays": 60,
-      "owner": "Courtney Butler",
+      "dealOwner": "Matt Salier",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46698494720"
     },
     {
@@ -35,7 +36,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-14",
       "opdDays": 29,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45688790380"
     },
     {
@@ -47,7 +49,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-15",
       "opdDays": 30,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37239912289"
     },
     {
@@ -59,7 +62,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46182573471"
     },
     {
@@ -71,7 +75,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46193242963"
     },
     {
@@ -83,7 +88,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46227032173"
     },
     {
@@ -95,7 +101,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46616123705"
     },
     {
@@ -107,7 +114,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46701046161"
     },
     {
@@ -119,7 +127,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46680442728"
     },
     {
@@ -131,7 +140,8 @@
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-09-01",
       "opdDays": 47,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635435078"
     },
     {
@@ -143,7 +153,8 @@
       "stage": "Customer Information Received",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
     },
     {
@@ -155,7 +166,8 @@
       "stage": "Customer Information Received",
       "opd": "2026-08-21",
       "opdDays": 36,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46050830737"
     },
     {
@@ -167,7 +179,8 @@
       "stage": "Customer Information Received",
       "opd": "2026-08-28",
       "opdDays": 43,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43421301132"
     },
     {
@@ -179,7 +192,8 @@
       "stage": "Customer Information Received",
       "opd": "2026-08-28",
       "opdDays": 43,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
     },
     {
@@ -191,7 +205,8 @@
       "stage": "Customer Information Received",
       "opd": "2026-09-27",
       "opdDays": 73,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46700337957"
     },
     {
@@ -203,7 +218,8 @@
       "stage": "Approved for Scheduling",
       "opd": "2026-08-14",
       "opdDays": 29,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
     },
     {
@@ -215,7 +231,8 @@
       "stage": "Holding Status",
       "opd": "2026-07-15",
       "opdDays": -1,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved to Schedule;Yes Approved For Delivery",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
     },
     {
@@ -227,7 +244,8 @@
       "stage": "Holding Status",
       "opd": "2026-07-22",
       "opdDays": 6,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
     },
     {
@@ -239,7 +257,8 @@
       "stage": "Holding Status",
       "opd": "2026-07-29",
       "opdDays": 13,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
     },
     {
@@ -251,7 +270,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-01",
       "opdDays": 16,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45692986750"
     },
     {
@@ -263,7 +283,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-03",
       "opdDays": 18,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/39010599485"
     },
     {
@@ -275,7 +296,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-03",
       "opdDays": 18,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45046467644"
     },
     {
@@ -287,7 +309,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-10",
       "opdDays": 25,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37817243955"
     },
     {
@@ -299,7 +322,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-10",
       "opdDays": 25,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/40481430574"
     },
     {
@@ -311,7 +335,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-10",
       "opdDays": 25,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45141106493"
     },
     {
@@ -323,7 +348,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-14",
       "opdDays": 29,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45705406382"
     },
     {
@@ -335,7 +361,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-28",
       "opdDays": 43,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46669100164"
     },
     {
@@ -347,7 +374,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-28",
       "opdDays": 43,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46725439412"
     },
     {
@@ -359,7 +387,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-30",
       "opdDays": 45,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46044021792"
     },
     {
@@ -371,7 +400,8 @@
       "stage": "Holding Status",
       "opd": "2026-08-31",
       "opdDays": 46,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45709111322"
     },
     {
@@ -383,7 +413,8 @@
       "stage": "Holding Status",
       "opd": "2026-09-05",
       "opdDays": 51,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45170569062"
     },
     {
@@ -395,7 +426,8 @@
       "stage": "Holding Status",
       "opd": "2026-09-14",
       "opdDays": 60,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43689769857"
     },
     {
@@ -407,7 +439,8 @@
       "stage": "Holding Status",
       "opd": "2026-09-18",
       "opdDays": 64,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45067443986"
     },
     {
@@ -419,7 +452,8 @@
       "stage": "Holding Status",
       "opd": "2026-10-03",
       "opdDays": 79,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37220970901"
     },
     {
@@ -431,7 +465,8 @@
       "stage": "Holding Status",
       "opd": "2026-10-04",
       "opdDays": 80,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45672905521"
     },
     {
@@ -443,7 +478,8 @@
       "stage": "Holding Status",
       "opd": "2026-10-16",
       "opdDays": 92,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44420475481"
     },
     {
@@ -455,7 +491,8 @@
       "stage": "Holding Status",
       "opd": "2026-11-03",
       "opdDays": 110,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37849388433"
     },
     {
@@ -467,7 +504,8 @@
       "stage": "Holding Status",
       "opd": "2026-11-06",
       "opdDays": 113,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
     },
     {
@@ -479,7 +517,8 @@
       "stage": "Install Prep",
       "opd": "2026-07-10",
       "opdDays": -6,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635199926"
     },
     {
@@ -491,7 +530,8 @@
       "stage": "Install Prep",
       "opd": "2026-08-07",
       "opdDays": 22,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46096398638"
     },
     {
@@ -503,7 +543,8 @@
       "stage": "Install Prep",
       "opd": "2026-08-14",
       "opdDays": 29,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45560453488"
     },
     {
@@ -515,7 +556,8 @@
       "stage": "Install Prep",
       "opd": "2026-08-18",
       "opdDays": 33,
-      "owner": "Courtney Butler",
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
     },
     {
@@ -527,7 +569,8 @@
       "stage": "Installation Scheduled",
       "opd": "2026-07-08",
       "opdDays": -8,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
     },
     {
@@ -539,7 +582,8 @@
       "stage": "Installation Scheduled",
       "opd": "2026-07-10",
       "opdDays": -6,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45826629670"
     },
     {
@@ -551,7 +595,8 @@
       "stage": "Installation Scheduled",
       "opd": "2026-07-17",
       "opdDays": 1,
-      "owner": "Courtney Butler",
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45686887728"
     },
     {
@@ -563,7 +608,8 @@
       "stage": "Installation Scheduled",
       "opd": "2026-07-24",
       "opdDays": 8,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45753085230"
     },
     {
@@ -575,7 +621,8 @@
       "stage": "Installation Scheduled",
       "opd": "2026-07-31",
       "opdDays": 15,
-      "owner": "Courtney Butler",
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"
     }
   ]

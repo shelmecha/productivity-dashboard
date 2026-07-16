@@ -5429,7 +5429,8 @@ function paintAusBoardPage(data) {
         ? `${esc(r.opd)}${typeof r.opdDays==='number' ? ` <span class="text-dim">(${r.opdDays<0?Math.abs(r.opdDays)+'d overdue':r.opdDays+'d'})</span>` : ''}`
         : '<span class="text-dim">—</span>';
       const col = ausStageColor(r.stage);
-      return `<tr>
+      const selected = String(r.ticketId) === String(selectedTicketId);
+      return `<tr class="aus-board-ticket-row${selected ? ' is-selected' : ''}" data-aus-ticket="${esc(r.ticketId)}" data-aus-opd="${esc(r.opd || '')}" tabindex="0" role="button" aria-label="Show ${esc(r.subject||'Ticket #'+r.ticketId)} on the calendar">
         <td class="gsca-subject-cell"><div class="gsca-subject-line">
           <a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.subject||'Ticket #'+r.ticketId)}</a>
           <span class="ticket-badge">#${esc(r.ticketId)}</span></div></td>

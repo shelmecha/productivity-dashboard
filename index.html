@@ -8,56 +8,70 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b7cff'/><stop offset='1' stop-color='%236366f1'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='url(%23g)'/><path d='M9 16.5l5 5 9-11' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     /* ============================================================
        THEME TOKENS
     ============================================================ */
+    /* ============================================================
+       EDITORIAL "SERIF" DESIGN SYSTEM — warm ivory + burnished gold.
+       Variable names are preserved so the whole app inherits the retheme.
+       Default (:root) = warm "library at night" dark. .light = the ivory
+       editorial palette (the signature look).
+       Fonts: Playfair Display (headlines) / Source Sans 3 (body/UI) /
+       IBM Plex Mono (small-caps labels).
+    ============================================================ */
     :root {
-      --bg:              #060b14;
-      --bg2:             #0a1220;
-      --glass:           rgba(14,22,40,0.75);
-      --glass-border:    rgba(255,255,255,0.06);
-      --glass-hover:     rgba(255,255,255,0.04);
-      --surface:         rgba(18,28,50,0.9);
-      --surface2:        rgba(24,36,62,0.8);
-      --accent:          #3b7cff;
-      --accent2:         #6366f1;
-      --accent-glow:     rgba(59,124,255,0.25);
-      --text:            #e8eeff;
-      --text2:           #8fa3c8;
-      --text3:           #4a6080;
-      --danger:          #ff5a6e;
-      --danger-bg:       rgba(255,90,110,0.12);
-      --warn:            #f5a623;
-      --warn-bg:         rgba(245,166,35,0.12);
-      --success:         #30d98a;
-      --success-bg:      rgba(48,217,138,0.12);
-      --border:          rgba(255,255,255,0.07);
-      --border2:         rgba(255,255,255,0.12);
+      --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --font-sans:  "Source Sans 3", system-ui, -apple-system, sans-serif;
+      --font-mono:  "IBM Plex Mono", ui-monospace, monospace;
+
+      /* Warm editorial dark — aged paper, candlelight, gilt */
+      --bg:              #17140e;
+      --bg2:             #1d1a12;
+      --glass:           rgba(30,26,18,0.78);
+      --glass-border:    rgba(212,168,75,0.10);
+      --glass-hover:     rgba(212,168,75,0.05);
+      --surface:         #201c14;
+      --surface2:        #26221a;
+      --accent:          #D4A84B;
+      --accent2:         #E5C173;
+      --accent-glow:     rgba(212,168,75,0.20);
+      --text:            #F3EEE3;
+      --text2:           #B7AE9C;
+      --text3:           #7C7566;
+      --danger:          #E27D6B;
+      --danger-bg:       rgba(226,125,107,0.13);
+      --warn:            #D4A84B;
+      --warn-bg:         rgba(212,168,75,0.14);
+      --success:         #9CB380;
+      --success-bg:      rgba(156,179,128,0.14);
+      --border:          rgba(212,168,75,0.16);
+      --border2:         rgba(212,168,75,0.28);
     }
     html.light {
-      --bg:              #f0f4fb;
-      --bg2:             #e6edf8;
-      --glass:           rgba(255,255,255,0.8);
-      --glass-border:    rgba(0,0,0,0.07);
-      --glass-hover:     rgba(0,0,0,0.03);
-      --surface:         rgba(255,255,255,0.95);
-      --surface2:        rgba(245,248,255,0.9);
-      --accent:          #2563eb;
-      --accent2:         #4f46e5;
-      --accent-glow:     rgba(37,99,235,0.15);
-      --text:            #0f1c2e;
-      --text2:           #4a6080;
-      --text3:           #9aaec8;
-      --danger:          #e53935;
-      --danger-bg:       rgba(229,57,53,0.09);
-      --warn:            #d97706;
-      --warn-bg:         rgba(217,119,6,0.09);
-      --success:         #059669;
-      --success-bg:      rgba(5,150,105,0.09);
-      --border:          rgba(0,0,0,0.08);
-      --border2:         rgba(0,0,0,0.14);
+      /* Ivory editorial — the signature light palette */
+      --bg:              #FAFAF8;
+      --bg2:             #F5F3F0;
+      --glass:           rgba(255,255,255,0.82);
+      --glass-border:    rgba(26,26,26,0.07);
+      --glass-hover:     rgba(184,134,11,0.04);
+      --surface:         #FFFFFF;
+      --surface2:        #F5F3F0;
+      --accent:          #B8860B;
+      --accent2:         #D4A84B;
+      --accent-glow:     rgba(184,134,11,0.14);
+      --text:            #1A1A1A;
+      --text2:           #6B6B6B;
+      --text3:           #9C978E;
+      --danger:          #B4432E;
+      --danger-bg:       rgba(180,67,46,0.08);
+      --warn:            #9A6A0B;
+      --warn-bg:         rgba(154,106,11,0.10);
+      --success:         #5C7346;
+      --success-bg:      rgba(92,115,70,0.10);
+      --border:          #E8E4DF;
+      --border2:         #D8D2C8;
     }
 
     /* ============================================================
@@ -3693,6 +3707,113 @@
       padding: 1px 6px;
     }
     html.light .ticket-badge { background: rgba(0,0,0,0.05); }
+
+    /* ============================================================
+       EDITORIAL LAYER — appended last so it wins the cascade.
+       Serif headlines · small-caps mono labels · rule lines ·
+       burnished-gold accents · paper grain + ambient glow.
+    ============================================================ */
+    body {
+      font-family: var(--font-sans);
+      letter-spacing: 0.01em;
+      line-height: 1.65;
+      background:
+        radial-gradient(1100px 560px at 82% -12%, var(--accent-glow), transparent 62%),
+        var(--bg);
+      background-attachment: fixed;
+    }
+
+    /* Paper-grain overlay — tactile, print-like; never intercepts clicks. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+    html:not(.light) body::before { mix-blend-mode: screen; opacity: 0.05; }
+    #main-header, #main-shell, #quick-nav, #top-tabs { position: relative; z-index: 1; }
+
+    /* ── Serif headlines ── */
+    h1, h2, h3,
+    .dash-greeting-title, .home-title, .task-page-header h1,
+    .dash-greeting-title, .rebecca-head h1, .modal-title {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .dash-greeting-title {
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+    .home-title, .task-page-header h1 { font-weight: 700; letter-spacing: -0.015em; }
+    .item-title { font-family: var(--font-serif); font-weight: 600; letter-spacing: 0; }
+
+    /* ── Large display numbers → serif (pricing/stat treatment) ── */
+    .dash-sec-total, .dash-stat-value, .dash-stat .dash-stat-num {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Small-caps mono labels (the editorial signature) ── */
+    .home-section-head, .small-caps, .section-label, .dash-sec-name,
+    .home-date, .dash-greeting-date, .header-ts {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-weight: 500;
+    }
+    .dash-sec-name { font-size: 10.5px; color: var(--text2); }
+    .home-date, .dash-greeting-date { font-size: 10.5px; color: var(--text2); }
+    .top-tab { font-family: var(--font-sans); letter-spacing: 0.05em; }
+
+    /* ── Rule-line accents: thin gold top edge on cards ── */
+    .dash-sec-box, .section-card {
+      border-top: 2px solid var(--accent);
+    }
+    .dash-sec-box { border-radius: 8px; }
+
+    /* ── Buttons: gold primary, refined transitions ── */
+    .task-btn, .action-btn, button.btn, .btn-primary {
+      font-family: var(--font-sans);
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+      transition: all 200ms ease-out;
+    }
+    .btn-primary, .refresh-data-btn {
+      background: var(--accent);
+      color: var(--accent-foreground, #fff);
+      border: none;
+    }
+    .btn-primary:hover, .refresh-data-btn:hover {
+      background: var(--accent2);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md, 0 4px 12px rgba(26,26,26,0.10));
+    }
+
+    /* ── Inputs: gold focus ring ── */
+    input, textarea, select {
+      font-family: var(--font-sans);
+      transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    /* ── Soften the logo glow to editorial restraint ── */
+    #main-header .header-logo { box-shadow: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -4125,7 +4246,7 @@ const MANUAL_FLAG_SKILLS = [
    STATE
 ============================================================ */
 let view          = localStorage.getItem('db-view')      || 'list';
-let theme         = localStorage.getItem('db-theme')     || 'dark';
+let theme         = localStorage.getItem('db-theme')     || 'light';
 // Default Hide-completed to ON so once you tick something it disappears from
 // the list. Press H or click the eye icon (header) to toggle back on. We treat
 // localStorage 'false' as the explicit opt-out signal; null / 'true' → hide on.
@@ -9835,6 +9956,9 @@ function renderRadaroCleanRow(r) {
   try { preloadRadaroItems && preloadRadaroItems(); } catch(e) {}
   try { preloadPredeliveryItems && preloadPredeliveryItems(); } catch(e) {}
   try { renderSkillsBar(); } catch(e) {}
+  // Apply the saved (or default) theme on boot so the light/dark class is set
+  // before first paint — required now that 'light' is the default.
+  try { applyTheme(); } catch(e) {}
   // Sync the Hide-completed eye icon to the persisted state so its active
   // styling matches `hideDone` from localStorage on first paint.
   try { applyHide && applyHide(); } catch(e) {}

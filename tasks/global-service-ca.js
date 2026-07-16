@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-16T20:09:58+00:00",
-    "generatedAt": "2026-07-16T20:09:58+00:00",
+    "refreshedAt": "2026-07-16T21:14:09+00:00",
+    "generatedAt": "2026-07-16T21:14:09+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -106,22 +106,6 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityDays": 8
     },
     {
-      "id": "gsca-44333725525",
-      "ticketId": "44333725525",
-      "subject": "Don Patten Superior Office Interiors",
-      "customer": "Don Patten Superior Office Interiors",
-      "stageId": "1123458864",
-      "stage": "Waiting for Parts",
-      "nextStep": "Chase supplier ETA on the part required to close out.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-04-09T16:12:33.291Z",
-      "lastActivityAt": "2026-07-11T04:26:52.473Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
-      "lastActivityDays": 6
-    },
-    {
       "id": "gsca-43646125656",
       "ticketId": "43646125656",
       "subject": "Panthera Dental",
@@ -136,6 +120,22 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityAt": "2026-07-15T17:37:18.177Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-44333725525",
+      "ticketId": "44333725525",
+      "subject": "Don Patten Superior Office Interiors",
+      "customer": "Don Patten Superior Office Interiors",
+      "stageId": "1123458864",
+      "stage": "Waiting for Parts",
+      "nextStep": "Chase supplier ETA on the part required to close out.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-04-09T16:12:33.291Z",
+      "lastActivityAt": "2026-07-16T20:42:14.768Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
+      "lastActivityDays": 1
     },
     {
       "id": "gsca-45552950066",

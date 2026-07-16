@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-16T09:25:59+00:00",
-    "generatedAt": "2026-07-16T09:25:59+00:00",
+    "refreshedAt": "2026-07-16T14:18:13+00:00",
+    "generatedAt": "2026-07-16T14:18:13+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -22,7 +22,7 @@
       "stageId": "1105295898",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "opdDays": 60,
+      "opdDays": 59,
       "dealOwner": "Matt Salier",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46698494720"
@@ -35,7 +35,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-14",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45688790380"
@@ -48,7 +48,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-15",
-      "opdDays": 30,
+      "opdDays": 29,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37239912289"
@@ -61,7 +61,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46182573471"
@@ -74,7 +74,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46193242963"
@@ -87,7 +87,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46227032173"
@@ -100,7 +100,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46616123705"
@@ -113,7 +113,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46701046161"
@@ -126,7 +126,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46680442728"
@@ -139,7 +139,7 @@
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-09-01",
-      "opdDays": 47,
+      "opdDays": 46,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635435078"
@@ -152,7 +152,7 @@
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
@@ -165,7 +165,7 @@
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-21",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46050830737"
@@ -178,7 +178,7 @@
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-28",
-      "opdDays": 43,
+      "opdDays": 42,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43421301132"
@@ -191,7 +191,7 @@
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-28",
-      "opdDays": 43,
+      "opdDays": 42,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
@@ -204,7 +204,7 @@
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-09-27",
-      "opdDays": 73,
+      "opdDays": 72,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46700337957"
@@ -217,7 +217,7 @@
       "stageId": "1091283320",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-14",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
@@ -230,7 +230,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-07-15",
-      "opdDays": -1,
+      "opdDays": -2,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule;Yes Approved For Delivery",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
@@ -243,7 +243,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-07-22",
-      "opdDays": 6,
+      "opdDays": 5,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
@@ -256,7 +256,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-07-29",
-      "opdDays": 13,
+      "opdDays": 12,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
@@ -269,7 +269,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-01",
-      "opdDays": 16,
+      "opdDays": 15,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45692986750"
@@ -282,7 +282,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-03",
-      "opdDays": 18,
+      "opdDays": 17,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/39010599485"
@@ -295,7 +295,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-03",
-      "opdDays": 18,
+      "opdDays": 17,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45046467644"
@@ -308,7 +308,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-10",
-      "opdDays": 25,
+      "opdDays": 24,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37817243955"
@@ -321,7 +321,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-10",
-      "opdDays": 25,
+      "opdDays": 24,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/40481430574"
@@ -334,7 +334,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-10",
-      "opdDays": 25,
+      "opdDays": 24,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45141106493"
@@ -347,7 +347,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-14",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45705406382"
@@ -360,7 +360,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-28",
-      "opdDays": 43,
+      "opdDays": 42,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46669100164"
@@ -373,7 +373,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-28",
-      "opdDays": 43,
+      "opdDays": 42,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46725439412"
@@ -386,7 +386,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-30",
-      "opdDays": 45,
+      "opdDays": 44,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46044021792"
@@ -399,7 +399,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-31",
-      "opdDays": 46,
+      "opdDays": 45,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45709111322"
@@ -412,7 +412,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-05",
-      "opdDays": 51,
+      "opdDays": 50,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45170569062"
@@ -425,7 +425,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-14",
-      "opdDays": 60,
+      "opdDays": 59,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43689769857"
@@ -438,7 +438,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-18",
-      "opdDays": 64,
+      "opdDays": 63,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45067443986"
@@ -451,7 +451,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-03",
-      "opdDays": 79,
+      "opdDays": 78,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37220970901"
@@ -464,7 +464,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-04",
-      "opdDays": 80,
+      "opdDays": 79,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45672905521"
@@ -477,7 +477,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-16",
-      "opdDays": 92,
+      "opdDays": 91,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44420475481"
@@ -490,7 +490,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-11-03",
-      "opdDays": 110,
+      "opdDays": 109,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37849388433"
@@ -503,7 +503,7 @@
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-11-06",
-      "opdDays": 113,
+      "opdDays": 112,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
@@ -516,7 +516,7 @@
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-07-10",
-      "opdDays": -6,
+      "opdDays": -7,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635199926"
@@ -529,7 +529,7 @@
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-07",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46096398638"
@@ -542,7 +542,7 @@
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-14",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45560453488"
@@ -555,7 +555,7 @@
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-18",
-      "opdDays": 33,
+      "opdDays": 32,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
@@ -568,7 +568,7 @@
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-08",
-      "opdDays": -8,
+      "opdDays": -9,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
@@ -581,7 +581,7 @@
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-10",
-      "opdDays": -6,
+      "opdDays": -7,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45826629670"
@@ -594,7 +594,7 @@
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-17",
-      "opdDays": 1,
+      "opdDays": 0,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45686887728"
@@ -607,7 +607,7 @@
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-24",
-      "opdDays": 8,
+      "opdDays": 7,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45753085230"
@@ -620,7 +620,7 @@
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-31",
-      "opdDays": 15,
+      "opdDays": 14,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"

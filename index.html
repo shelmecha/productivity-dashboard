@@ -402,7 +402,10 @@
     .dash-sections-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
     }
-    .home-primary-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 12px; align-items: start; }
+    .home-primary-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr); gap: 12px; align-items: start; }
+    .home-primary-col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    .home-primary-col .dash-prog-cal-calendar { flex: none; width: 100%; }
+    .home-todo-widget .dash-widget-head { font-size: 14px; }
     .home-primary-row .dash-sections-grid { grid-template-columns: 1fr; }
     @media (max-width: 720px) { .dash-sections-grid, .home-primary-row { grid-template-columns: 1fr; } }
     .dash-sec-box {
@@ -502,8 +505,8 @@
     .user-todo-input {
       flex: 1; min-width: 0;
       background: var(--bg); color: var(--text);
-      border: 1px solid var(--border); border-radius: 7px;
-      padding: 7px 10px; font-size: 12px;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; font-size: 13px;
       outline: none; transition: border-color 0.12s;
     }
     .user-todo-input:focus { border-color: var(--accent); }
@@ -511,15 +514,15 @@
       flex-shrink: 0;
       background: var(--accent); color: white;
       border: none; border-radius: 7px;
-      padding: 0 12px; font-size: 12px; font-weight: 600;
+      padding: 0 14px; font-size: 13px; font-weight: 600;
       cursor: pointer; transition: filter 0.12s;
     }
     .user-todo-add-btn:hover { filter: brightness(1.1); }
     .user-todo-add-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     .user-todo-list { display: flex; flex-direction: column; gap: 5px; }
     .user-todo-row {
-      display: flex; align-items: center; gap: 9px;
-      padding: 7px 10px; border-radius: 7px;
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 13px; border-radius: 8px;
       border: 1px solid var(--border); background: var(--bg);
       cursor: pointer; transition: background 0.12s, border-color 0.12s;
     }
@@ -527,7 +530,7 @@
     .user-todo-row.done { opacity: 0.45; }
     .user-todo-row.done .user-todo-text { text-decoration: line-through; color: var(--text3); }
     .user-todo-check {
-      flex-shrink: 0; width: 15px; height: 15px;
+      flex-shrink: 0; width: 18px; height: 18px;
       border: 2px solid var(--text3); border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
       transition: background 0.12s, border-color 0.12s;
@@ -535,7 +538,7 @@
     .user-todo-row.done .user-todo-check { background: var(--accent); border-color: var(--accent); }
     .user-todo-text {
       flex: 1; min-width: 0;
-      font-size: 12px; font-weight: 500; color: var(--text);
+      font-size: 13.5px; font-weight: 500; color: var(--text);
       line-height: 1.4; word-break: break-word;
     }
     .user-todo-meta {
@@ -3215,6 +3218,13 @@
       width: 6px; height: 6px; border-radius: 50%;
     }
 
+    /* Smooth fade-in when switching stage filters (AU Ops board, GS-CA tabs) */
+    @keyframes stage-fade-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .stage-fade { animation: stage-fade-in 0.3s cubic-bezier(.22,1,.36,1) both; }
+
     /* ============================================================
        TOP TABS (row 1) — 4 primary sections
     ============================================================ */
@@ -3247,13 +3257,9 @@
     }
     .top-tab.active {
       color: var(--text);
-      background: rgba(59,124,255,0.12);
-      border-color: rgba(59,124,255,0.3);
+      background: var(--accent-glow);
+      border-color: var(--accent);
       box-shadow: none;
-    }
-    html.light .top-tab.active {
-      background: rgba(37,99,235,0.09);
-      border-color: rgba(37,99,235,0.25);
     }
     .top-tab .tab-count {
       display: inline-flex;
@@ -3266,7 +3272,7 @@
       color: var(--text3);
     }
     .top-tab.active .tab-count {
-      background: rgba(59,124,255,0.18);
+      background: var(--accent-glow);
       color: var(--accent);
     }
 
@@ -5308,7 +5314,21 @@ function paintGsCaPage(data) {
     `;
 
     host.querySelectorAll('[data-gsca-tab]').forEach(btn => {
-      btn.addEventListener('click', () => renderPage(btn.dataset.gscaTab));
+      btn.addEventListener('click', () => {
+        activeTab = btn.dataset.gscaTab;
+        // Update pills + swap rows in place (with a fade) instead of
+        // rebuilding the whole page — keeps the transition smooth.
+        host.querySelectorAll('[data-gsca-tab]').forEach(b => {
+          const on = b.dataset.gscaTab === activeTab;
+          b.classList.toggle('active', on);
+          const t = tabs.find(x => x.key === b.dataset.gscaTab);
+          b.style.color = (on && b.dataset.gscaTab !== 'all' && t) ? t.color : '';
+        });
+        const tbody = host.querySelector('#gsca-tbody');
+        const wrap = host.querySelector('.task-page-table-wrap');
+        if (tbody) { tbody.innerHTML = renderRows(activeTab); wireReached(); }
+        if (wrap) { wrap.classList.remove('stage-fade'); void wrap.offsetWidth; wrap.classList.add('stage-fade'); }
+      });
     });
     wireReached();
   }
@@ -5461,8 +5481,8 @@ function paintAusBoardPage(data) {
         </div>` : ''}
       </div>
       ${ausBoardStage === 'all'
-        ? (ausBoardView === 'calendar' ? buildCalendar() : `<div class="aus-stage-board" aria-label="AU Operations pipeline board">${buildBoard()}</div>`)
-        : `<div class="aus-board-ticket-list"><div class="task-page-table-wrap">
+        ? (ausBoardView === 'calendar' ? `<div class="stage-fade">${buildCalendar()}</div>` : `<div class="aus-stage-board stage-fade" aria-label="AU Operations pipeline board">${buildBoard()}</div>`)
+        : `<div class="aus-board-ticket-list stage-fade"><div class="task-page-table-wrap">
             <div class="aus-board-ticket-hint">Showing ${esc(ausStageShort(ausBoardStage))} tickets. Select All above to return to the board.</div>
             <table class="task-page-table"><thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Deal owner</th><th>Approved status</th></tr></thead><tbody>${buildList()}</tbody></table>
           </div></div>`}
@@ -5887,29 +5907,26 @@ function renderHomePage() {
       ${refreshedAt?`<div class="dash-refreshed-badge">Data refreshed ${refreshedAt}</div>`:''}
     </div>
 
-    <!-- Gmail + personal to-dos -->
+    <!-- Gmail + personal to-dos + calendar -->
     <div class="home-primary-row">
       <div id="home-sections"></div>
-      <div class="dash-widget">
-        <div class="dash-widget-head">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          My To-Dos
-          <span id="user-todo-count" style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text3);"></span>
+      <div class="home-primary-col">
+        <div class="dash-widget home-todo-widget">
+          <div class="dash-widget-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            My To-Dos
+            <span id="user-todo-count" style="margin-left:auto;font-size:11px;font-weight:600;color:var(--text3);"></span>
+          </div>
+          <div class="user-todo-input-row"><input type="text" id="user-todo-input" class="user-todo-input" placeholder="Add a to-do — press Enter or click +" maxlength="240"><button id="user-todo-add" class="user-todo-add-btn" type="button">+ Add</button></div>
+          <div id="user-todo-list" class="user-todo-list"></div>
         </div>
-        <div class="user-todo-input-row"><input type="text" id="user-todo-input" class="user-todo-input" placeholder="Add a to-do — press Enter or click +" maxlength="240"><button id="user-todo-add" class="user-todo-add-btn" type="button">+ Add</button></div>
-        <div id="user-todo-list" class="user-todo-list"></div>
-      </div>
-    </div>
-
-    <!-- Progress + Calendar row -->
-    <div class="dash-prog-cal-row">
-      <div id="home-progress" class="dash-prog-cal-progress"></div>
-      <div class="dash-widget dash-prog-cal-calendar">
-        <div class="dash-widget-head">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Calendar
+        <div class="dash-widget dash-prog-cal-calendar">
+          <div class="dash-widget-head">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Calendar
+          </div>
+          <div class="dash-calendar-inner">${miniCalendar()}</div>
         </div>
-        <div class="dash-calendar-inner">${miniCalendar()}</div>
       </div>
     </div>
 

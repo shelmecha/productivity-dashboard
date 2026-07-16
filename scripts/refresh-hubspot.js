@@ -334,9 +334,10 @@ const TICKET_PROPS = [
       ],
       TICKET_PROPS
     );
-    const rows = raw.filter(t => isAU(t.properties)).map(t => {
+    const rows = await Promise.all(raw.filter(t => isAU(t.properties)).map(async t => {
       const p = t.properties;
       const opd = (p.estimated_delivery_date || '').slice(0, 10) || null;
+      const dealOwnerIds = await ticketDealOwners(t.id);
       return {
         id: String(t.id), ticketId: String(t.id),
         subject: p.subject || '(no subject)',
@@ -345,10 +346,11 @@ const TICKET_PROPS = [
         stage: OPS_STAGE_LABELS[p.hs_pipeline_stage] || p.hs_pipeline_stage,
         opd,
         opdDays: daysFromToday(opd, today),
-        owner: ownerName(p.hubspot_owner_id),
+        dealOwner: dealOwnerIds.map(ownerName).filter(Boolean).join(', ') || null,
+        approvedTicketStatus: p.approved_ticket_status || null,
         url: ticketUrl(t.id),
       };
-    });
+    }));
     // Stable order: by pipeline stage, then soonest OPD first.
     const stageRank = id => BOARD_STAGE_IDS.indexOf(id);
     rows.sort((a, b) => stageRank(a.stageId) - stageRank(b.stageId)

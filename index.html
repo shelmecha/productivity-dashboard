@@ -402,7 +402,9 @@
     .dash-sections-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
     }
-    @media (max-width: 720px) { .dash-sections-grid { grid-template-columns: 1fr; } }
+    .home-primary-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 12px; align-items: start; }
+    .home-primary-row .dash-sections-grid { grid-template-columns: 1fr; }
+    @media (max-width: 720px) { .dash-sections-grid, .home-primary-row { grid-template-columns: 1fr; } }
     .dash-sec-box {
       border: 1px solid var(--border); border-radius: 12px;
       background: var(--glass); overflow: hidden;
@@ -4355,6 +4357,7 @@ const OPS_SUBS = [];
 
 /* Selected ticket-status filter for the AU Ops board (driven by the sub-nav). */
 let ausBoardStage = 'all';
+let ausBoardView = 'board';
 let _ausBoardRepaint = null;
 
 /* Task keys still reachable directly, but no longer on the Ops ribbon. */
@@ -5368,6 +5371,9 @@ function paintAusBoardPage(data) {
   // Active stage comes from the module-level filter driven by the sub-nav pills.
   // Reset to 'all' if the stored filter is no longer a valid stage.
   if (ausBoardStage !== 'all' && !stageCounts[ausBoardStage]) ausBoardStage = 'all';
+  const t0 = new Date();
+  let calYear = t0.getFullYear();
+  let calMonth = t0.getMonth();
   function filtered() {
     return ausBoardStage === 'all' ? allRows : allRows.filter(r => r.stage === ausBoardStage);
   }
@@ -5391,6 +5397,28 @@ function paintAusBoardPage(data) {
         <div class="aus-stage-column-head"><span>${esc(ausStageShort(stage.label))}</span><span class="aus-stage-column-count">${rows.length}</span></div>${cards}
       </section>`;
     }).join('');
+  }
+
+  function buildCalendar() {
+    const rows = allRows.filter(r => r.opd);
+    const byDay = {};
+    rows.forEach(r => { (byDay[r.opd] = byDay[r.opd] || []).push(r); });
+    const monthName = new Date(calYear, calMonth, 1).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+    const first = new Date(calYear, calMonth, 1);
+    const startOffset = (first.getDay() + 6) % 7;
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const pad = n => String(n).padStart(2, '0');
+    let cells = '';
+    for (let i = 0; i < startOffset; i++) cells += `<div class="aus-cal-cell empty"></div>`;
+    for (let d = 1; d <= daysInMonth; d++) {
+      const ds = `${calYear}-${pad(calMonth + 1)}-${pad(d)}`;
+      const dayRows = byDay[ds] || [];
+      const chips = dayRows.slice(0, 3).map(r => `<a class="aus-cal-chip" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" style="border-left:3px solid ${ausStageColor(r.stage)};">${esc((r.customer || r.subject || '').slice(0, 20))}</a>`).join('');
+      cells += `<div class="aus-cal-cell${ds === todayStr ? ' today' : ''}${dayRows.length ? ' has' : ''}"><div class="aus-cal-daynum">${d}</div>${chips}${dayRows.length > 3 ? `<div class="aus-cal-more">+${dayRows.length - 3} more</div>` : ''}</div>`;
+    }
+    const dow = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d => `<div class="aus-cal-dow">${d}</div>`).join('');
+    return `<div class="aus-cal-wrap"><div class="aus-cal-head"><span class="aus-cal-title">${esc(monthName)}</span><span class="aus-cal-sub">${rows.length} tickets with an OPD</span><div class="aus-cal-nav"><button data-aus-cal="prev" title="Previous month">‹</button><button data-aus-cal="today" title="This month">•</button><button data-aus-cal="next" title="Next month">›</button></div></div><div class="aus-cal-grid">${dow}${cells}</div></div>`;
   }
 
   function buildList() {
@@ -5425,14 +5453,26 @@ function paintAusBoardPage(data) {
             <span>Refreshed ${esc(refreshed)}</span>
           </div>
         </div>
+        <div class="task-actions">
+          <button class="task-btn${ausBoardView === 'board' ? ' active' : ''}" data-aus-view="board">Board</button>
+          <button class="task-btn${ausBoardView === 'calendar' ? ' active' : ''}" data-aus-view="calendar">Calendar</button>
+        </div>
       </div>
       ${ausBoardStage === 'all'
-        ? `<div class="aus-stage-board" aria-label="AU Operations pipeline board">${buildBoard()}</div>`
+        ? (ausBoardView === 'calendar' ? buildCalendar() : `<div class="aus-stage-board" aria-label="AU Operations pipeline board">${buildBoard()}</div>`)
         : `<div class="aus-board-ticket-list"><div class="task-page-table-wrap">
             <div class="aus-board-ticket-hint">Showing ${esc(ausStageShort(ausBoardStage))} tickets. Select All above to return to the board.</div>
             <table class="task-page-table"><thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Deal owner</th><th>Approved status</th></tr></thead><tbody>${buildList()}</tbody></table>
           </div></div>`}
     `;
+    host.querySelectorAll('[data-aus-view]').forEach(button => button.addEventListener('click', () => { ausBoardView = button.dataset.ausView; render(); }));
+    host.querySelectorAll('[data-aus-cal]').forEach(button => button.addEventListener('click', () => {
+      const action = button.dataset.ausCal;
+      if (action === 'prev') { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } }
+      else if (action === 'next') { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } }
+      else { calYear = t0.getFullYear(); calMonth = t0.getMonth(); }
+      render();
+    }));
   }
 
   // Expose repaint so the sub-nav status pills can re-render the board in place.
@@ -5596,17 +5636,6 @@ function renderHomeSectionBoxes() {
       { color:'#f5a623', label:'Follow Up', ct:followUpItems.length,  done:followUpItems.filter(isDone).length,  route:'#/gmail/follow-up'  },
       { color:'#f5a623', label:'Waiting On',ct:waitingItems.length,   done:waitingItems.filter(isDone).length,   route:'#/gmail/waiting-on' },
       { color:'#ff5a6e', label:'Forgotten', ct:forgottenItems.length, done:forgottenItems.filter(isDone).length, route:'#/gmail/forgotten'  },
-    ])}
-    ${sectionBox(opsIcon, 'AU Operations', '#/aus-board', [
-      { color:'var(--accent)', label:'Pipeline board', ct:ausBoardRows.length, done:0, route:'#/aus-board' },
-    ], 'View board →')}
-    ${sectionBox(caIcon, 'Global Service CA', '#/gs-ca', [
-      { color:'var(--danger)', label:'Rectification',  ct:gscaByStage['Rectification Open']||0,    done:gscaReachedByStage['Rectification Open']||0,    route:'#/gs-ca' },
-      { color:'var(--accent)', label:'In Progress',    ct:gscaByStage['In Progress']||0,           done:gscaReachedByStage['In Progress']||0,           route:'#/gs-ca' },
-      { color:'var(--warn)',   label:'Wait Installer', ct:gscaByStage['Waiting for Installer']||0, done:gscaReachedByStage['Waiting for Installer']||0, route:'#/gs-ca' },
-      { color:'var(--warn)',   label:'Wait Parts',     ct:gscaByStage['Waiting for Parts']||0,     done:gscaReachedByStage['Waiting for Parts']||0,     route:'#/gs-ca' },
-      { color:'var(--text3)',  label:'Wait Customer',  ct:gscaByStage['Waiting for Customer']||0,  done:gscaReachedByStage['Waiting for Customer']||0,  route:'#/gs-ca' },
-      { color:'var(--text3)',  label:'Wait Warehouse', ct:gscaByStage['Waiting for Warehouse']||0, done:gscaReachedByStage['Waiting for Warehouse']||0, route:'#/gs-ca' },
     ])}
   </div>`;
 }
@@ -5857,8 +5886,19 @@ function renderHomePage() {
       ${refreshedAt?`<div class="dash-refreshed-badge">Data refreshed ${refreshedAt}</div>`:''}
     </div>
 
-    <!-- Section boxes -->
-    <div id="home-sections"></div>
+    <!-- Gmail + personal to-dos -->
+    <div class="home-primary-row">
+      <div id="home-sections"></div>
+      <div class="dash-widget">
+        <div class="dash-widget-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          My To-Dos
+          <span id="user-todo-count" style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text3);"></span>
+        </div>
+        <div class="user-todo-input-row"><input type="text" id="user-todo-input" class="user-todo-input" placeholder="Add a to-do — press Enter or click +" maxlength="240"><button id="user-todo-add" class="user-todo-add-btn" type="button">+ Add</button></div>
+        <div id="user-todo-list" class="user-todo-list"></div>
+      </div>
+    </div>
 
     <!-- Progress + Calendar row -->
     <div class="dash-prog-cal-row">
@@ -5872,19 +5912,6 @@ function renderHomePage() {
       </div>
     </div>
 
-    <!-- My To-Dos (user-created, localStorage-backed) -->
-    <div class="dash-widget">
-      <div class="dash-widget-head">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        My To-Dos
-        <span id="user-todo-count" style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text3);"></span>
-      </div>
-      <div class="user-todo-input-row">
-        <input type="text" id="user-todo-input" class="user-todo-input" placeholder="Add a to-do — press Enter or click +" maxlength="240">
-        <button id="user-todo-add" class="user-todo-add-btn" type="button">+ Add</button>
-      </div>
-      <div id="user-todo-list" class="user-todo-list"></div>
-    </div>
     <!-- Notes moved to the header (📝 button → popup). -->
 
   `;

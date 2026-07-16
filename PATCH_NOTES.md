@@ -8,3 +8,9 @@
 - Kept the stage pills at the top: selecting a stage now switches to a focused table for that stage; selecting **All** returns to the board.
 - Replaced the repeated ticket owner column with **Deal owner** and added **Approved status**.
 - Updated the HubSpot refresh feed to collect deal-owner and approved-ticket-status data for board rows. These fields populate after the next data refresh.
+
+## 2026-07-16 — Board interaction and home layout follow-up
+
+- Restored a Calendar toggle alongside the default Board view in AU Operations.
+- Fixed stage-pill filtering so each selected stage reliably displays its focused table.
+- Simplified Home to show Gmail on the left and My To-Dos on the right; AU Operations and Global Service CA summaries are no longer shown there.

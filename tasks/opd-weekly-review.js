@@ -1,8 +1,8 @@
 window.TASK_DATA__opd_weekly_review = {
   "meta": {
-    "refreshedAt": "2026-07-16T11:52:17+00:00",
-    "generatedAt": "2026-07-16T11:52:17+00:00",
-    "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-16",
+    "refreshedAt": "2026-07-16T14:18:11+00:00",
+    "generatedAt": "2026-07-16T14:18:11+00:00",
+    "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-17",
     "rule": "RED opd_days in [0,14] + OVERDUE opd_days < 0. repeat_push/delayed_pay need note scans — always 0 here.",
     "scope": "4 stages: New Ticket, Delivery Details/Pending SO, Customer Information Received, Approved for Scheduling"
   },

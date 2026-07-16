@@ -4293,21 +4293,18 @@ const GMAIL_SUBS = [
   { key:'other',      label:'Other / Archive',section:'inboxOther',    pip:'#a78bfa' },
 ];
 
-/* Ops sub-pills jump directly to existing TASK_REGISTRY pages. */
-const OPS_SUBS = [
-  { key:'board',         label:'Operations Board',     route:'#/aus-board' },
-  { key:'opd-review',    label:'OPD Review',           route:'#/task/opd-review' },
-  { key:'pre-delivery',  label:'Pre-Delivery Checklist', route:'#/task/opd-checklist' },
-];
+/* The AUS Operations sub-nav is now the ticket-status filter for the board —
+   populated dynamically in renderQuickNav from the aus-ops-board feed.
+   OPD Review + Pre-Delivery removed from the ribbon per Shelvi (2026-07-16). */
+const OPS_SUBS = [];
 
-/* Map a #/task/<key> hash to the ops sub that owns it (for active-state highlight). */
+/* Selected ticket-status filter for the AU Ops board (driven by the sub-nav). */
+let ausBoardStage = 'all';
+let _ausBoardRepaint = null;
+
+/* Task keys still reachable directly, but no longer on the Ops ribbon. */
 const TASK_TO_OPS_SUB = {
-  'aus-ops':             'new-tickets',
-  'opd-review':          'opd-review',
-  'opd-weekly-review':   'opd-review',
-  'at-risk-opd':         'opd-review',
-  'opd-checklist':       'pre-delivery',
-  'manual-flag':         null,   // manual flag is not on the ops ribbon
+  'manual-flag':         null,
 };
 
 const SKILLS = [
@@ -4999,12 +4996,18 @@ function renderQuickNav() {
 
   if (tab === 'ops') {
     header && header.classList.remove('no-sub-nav');
-    const activeSub = getActiveOpsSub();
-    host.innerHTML = OPS_SUBS.map(s => {
-      const activeCls = s.key === activeSub ? ' active' : '';
-      return `<button class="nav-pill${activeCls}" data-ops-sub="${esc(s.key)}">
-        ${esc(s.label)}
-      </button>`;
+    // Ticket-status filter for the AU Ops board (New Ticket → Installation Scheduled).
+    const data = taskCache['aus-ops-board'] || window.TASK_DATA__aus_ops_board;
+    const rows = (data && Array.isArray(data.rows)) ? data.rows : [];
+    const counts = {};
+    rows.forEach(r => { counts[r.stage] = (counts[r.stage] || 0) + 1; });
+    const pills = [{ key:'all', label:'All', ct: rows.length, color:'var(--text2)' }]
+      .concat(AUS_BOARD_STAGES.map(s => ({ key:s.label, label:s.short||s.label, ct:counts[s.label]||0, color:s.color })));
+    host.innerHTML = pills.map(p => {
+      const active = ausBoardStage === p.key;
+      return `<button class="nav-pill${active ? ' active' : ''}" data-aus-stage-nav="${esc(p.key)}"
+        style="${active && p.key !== 'all' ? `color:${p.color};` : ''}">${esc(p.label)}
+        <span class="badge-count">${p.ct}</span></button>`;
     }).join('');
     return;
   }
@@ -5309,23 +5312,16 @@ function paintAusBoardPage(data) {
   const stageCounts = {};
   allRows.forEach(r => { stageCounts[r.stage] = (stageCounts[r.stage] || 0) + 1; });
 
-  let activeStage = 'all';
+  // Active stage comes from the module-level filter driven by the sub-nav pills.
+  // Reset to 'all' if the stored filter is no longer a valid stage.
+  if (ausBoardStage !== 'all' && !stageCounts[ausBoardStage]) ausBoardStage = 'all';
   // Calendar month anchored to the first day of the current month.
   const t0 = new Date();
   let calYear = t0.getFullYear();
   let calMonth = t0.getMonth();
 
   function filtered() {
-    return activeStage === 'all' ? allRows : allRows.filter(r => r.stage === activeStage);
-  }
-
-  function buildPills() {
-    const pills = [`<button class="nav-pill${activeStage==='all'?' active':''}" data-aus-stage="all">All <span class="badge-count">${allRows.length}</span></button>`];
-    AUS_BOARD_STAGES.forEach(s => {
-      const ct = stageCounts[s.label] || 0;
-      pills.push(`<button class="nav-pill${activeStage===s.label?' active':''}" data-aus-stage="${esc(s.label)}" style="${activeStage===s.label?`color:${s.color};`:''}">${esc(s.short||s.label)} <span class="badge-count">${ct}</span></button>`);
-    });
-    return pills.join('');
+    return ausBoardStage === 'all' ? allRows : allRows.filter(r => r.stage === ausBoardStage);
   }
 
   function buildCalendar() {
@@ -5358,7 +5354,7 @@ function paintAusBoardPage(data) {
     return `
       <div class="aus-cal-head">
         <span class="aus-cal-title">${esc(monthName)}</span>
-        <span class="aus-cal-sub">${rows.length} ticket${rows.length===1?'':'s'} with an OPD ${activeStage==='all'?'':'· '+esc(ausStageShort(activeStage))}</span>
+        <span class="aus-cal-sub">${rows.length} ticket${rows.length===1?'':'s'} with an OPD ${ausBoardStage==='all'?'':'· '+esc(ausStageShort(ausBoardStage))}</span>
         <div class="aus-cal-nav">
           <button data-aus-cal="prev" title="Previous month">‹</button>
           <button data-aus-cal="today" title="This month">•</button>
@@ -5399,7 +5395,6 @@ function paintAusBoardPage(data) {
           </div>
         </div>
       </div>
-      <div class="gsca-tab-bar">${buildPills()}</div>
       <div class="aus-cal-wrap">${buildCalendar()}</div>
       <div class="task-page-table-wrap" style="margin-top:16px;">
         <table class="task-page-table">
@@ -5408,8 +5403,6 @@ function paintAusBoardPage(data) {
         </table>
       </div>
     `;
-    host.querySelectorAll('[data-aus-stage]').forEach(b =>
-      b.addEventListener('click', () => { activeStage = b.dataset.ausStage; render(); }));
     host.querySelectorAll('[data-aus-cal]').forEach(b =>
       b.addEventListener('click', () => {
         const act = b.dataset.ausCal;
@@ -5420,7 +5413,11 @@ function paintAusBoardPage(data) {
       }));
   }
 
+  // Expose repaint so the sub-nav status pills can re-render the board in place.
+  _ausBoardRepaint = render;
   render();
+  // Data is now loaded — refresh the sub-nav so the status pills show counts.
+  renderQuickNav();
 }
 
 /* ============================================================
@@ -6181,11 +6178,20 @@ document.addEventListener('click', e => {
   // Gmail sub-pill — filter home to one gmail section
   const gs = e.target.closest('[data-gmail-sub]');
   if (gs) { location.hash = '#/gmail/' + gs.dataset.gmailSub; return; }
-  // Ops sub-pill — jump to matching task page
+  // Ops sub-pill — jump to matching task page (legacy; OPS_SUBS now empty)
   const os = e.target.closest('[data-ops-sub]');
   if (os) {
     const def = OPS_SUBS.find(s => s.key === os.dataset.opsSub);
     if (def) location.hash = def.route;
+    return;
+  }
+  // AU Ops board status filter — the sub-nav pills drive the board in place
+  const asn = e.target.closest('[data-aus-stage-nav]');
+  if (asn) {
+    ausBoardStage = asn.dataset.ausStageNav;
+    if (!/^#\/aus-board/i.test(location.hash || '')) { location.hash = '#/aus-board'; return; }
+    if (typeof _ausBoardRepaint === 'function') _ausBoardRepaint();
+    renderQuickNav();
     return;
   }
   // tick

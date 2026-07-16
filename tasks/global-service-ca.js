@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-16T16:39:28+00:00",
-    "generatedAt": "2026-07-16T16:39:28+00:00",
+    "refreshedAt": "2026-07-16T18:17:56+00:00",
+    "generatedAt": "2026-07-16T18:17:56+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -122,22 +122,6 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityDays": 6
     },
     {
-      "id": "gsca-45552950066",
-      "ticketId": "45552950066",
-      "subject": "shoppers drug mart inc",
-      "customer": "shoppers drug mart inc",
-      "stageId": "1123458862",
-      "stage": "Rectification Open",
-      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-05-27T14:39:46.463Z",
-      "lastActivityAt": "2026-07-14T15:07:41.195Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
-      "lastActivityDays": 3
-    },
-    {
       "id": "gsca-43646125656",
       "ticketId": "43646125656",
       "subject": "Panthera Dental",
@@ -152,6 +136,22 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityAt": "2026-07-15T17:37:18.177Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-45552950066",
+      "ticketId": "45552950066",
+      "subject": "shoppers drug mart inc",
+      "customer": "shoppers drug mart inc",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-05-27T14:39:46.463Z",
+      "lastActivityAt": "2026-07-16T18:09:14.366Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
+      "lastActivityDays": 1
     }
   ]
 };

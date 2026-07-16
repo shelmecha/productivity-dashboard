@@ -4753,6 +4753,54 @@ function renderAgeBlock(item) {
 }
 
 /* ============================================================
+   EMAIL SUMMARY
+   The refresh pipeline is LLM-free (GitHub Action, see
+   scripts/refresh-gmail.js) so cards fall back to Gmail's raw
+   preview snippet. For real emails that reads fine, but HubSpot
+   notification emails dump boilerplate token-soup
+   ("<Company> COMPANY <Company> ... DEAL ... SO-1234 | 987… ")
+   after one meaningful line. deriveEmailSummary() decodes HTML
+   entities, strips invisible padding chars, and cuts the snippet
+   at the boilerplate marker so only the human-readable gist shows.
+   Prefers a feed-provided item.summary if one ever appears.
+============================================================ */
+function deriveEmailSummary(item) {
+  if (item && item.summary && String(item.summary).trim()) return String(item.summary).trim();
+  let s = String((item && item.snippet) || '');
+  if (!s) return '';
+
+  // 1. Decode the common HTML entities Gmail leaves in the snippet.
+  s = s.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')
+       .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ');
+  // 2. Strip zero-width / invisible padding (newsletter preheader noise).
+  s = s.replace(/[​-‏‪-‮⁠﻿­]/g, '');
+  s = s.replace(/\s+/g, ' ').trim();
+  if (!s || s === '(no preview available)') return '';
+
+  // 3. Cut HubSpot notification boilerplate. The junk reliably begins at the
+  //    first of: "<Word…> COMPANY/DEAL <repeat>", a bare phone number, or an
+  //    "SO-#### | <long digits>" record stamp. Keep everything before it.
+  const markers = [
+    /\s+[A-Z][\w.'&/-]*(?:\s+[A-Z][\w.'&/-]*){0,2}\s+(?:COMPANY|DEAL|TICKET|CONTACT)\b/,
+    /\s+SO-\d+\s*\|\s*\d{5,}/,
+    /\s+\+?\d[\d ()+-]{8,}\d/,
+  ];
+  let cut = s.length;
+  markers.forEach(re => { const m = s.match(re); if (m && m.index < cut) cut = m.index; });
+  if (cut < s.length) s = s.slice(0, cut).trim();
+
+  // 4. Drop a leading verbatim repeat of the subject (HubSpot snippets often
+  //    open by echoing the subject, which already sits in the title).
+  const subj = String((item && item.subject) || '').replace(/[…"]+$/, '').trim();
+  if (subj.length > 12 && s.toLowerCase().startsWith(subj.toLowerCase().slice(0, Math.min(subj.length, 40)))) {
+    const rest = s.slice(subj.length).replace(/^["'\s…|—–-]+/, '').trim();
+    if (rest.length > 8) s = rest;
+  }
+
+  return s.replace(/[\s|—–-]+$/, '').trim();
+}
+
+/* ============================================================
    RENDER ITEM
 ============================================================ */
 function renderItem(item, sec, delay) {
@@ -4787,7 +4835,7 @@ function renderItem(item, sec, delay) {
   // item.date / item.receivedAt if the refresh skill ever starts emitting a
   // structured date field (post-refresh-home v0.3.0).
   let dateChipText = '';
-  let snippetClean = item.snippet || '';
+  let snippetClean = deriveEmailSummary(item);
   const explicitDate = item.date || item.receivedAt || item.timestamp;
   if (explicitDate) {
     try {
@@ -5836,7 +5884,7 @@ function renderHomePage() {
     // item.receivedAt if the refresh skill ever starts emitting a structured
     // date field. Date pattern: "Mon DD" or "Mon DD, YYYY" + optional "—" / "-".
     let dateChip = '';
-    let snippetClean = item.snippet || '';
+    let snippetClean = deriveEmailSummary(item);
     const explicitDate = item.date || item.receivedAt || item.timestamp;
     if (explicitDate) {
       try {

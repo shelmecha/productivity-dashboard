@@ -3896,6 +3896,32 @@
       padding: 10px 14px; border-bottom: 1px solid var(--border);
       font-size: 11px; color: var(--text3); background: var(--surface2);
     }
+    .aus-stage-board {
+      display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px;
+      scroll-snap-type: x proximity;
+    }
+    .aus-stage-column {
+      flex: 0 0 270px; min-height: 310px; background: var(--surface);
+      border: 1px solid var(--border); border-top: 3px solid var(--stage-color);
+      border-radius: 8px; overflow: hidden; scroll-snap-align: start;
+    }
+    .aus-stage-column-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 11px 12px; border-bottom: 1px solid var(--border); background: var(--surface2);
+      font-size: 12px; font-weight: 700;
+    }
+    .aus-stage-column-count {
+      min-width: 22px; padding: 1px 6px; border-radius: 999px; text-align: center;
+      font-family: var(--font-mono, monospace); font-size: 10px; color: var(--text2); background: var(--bg2);
+    }
+    .aus-stage-card { display: block; padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text); text-decoration: none; }
+    .aus-stage-card:hover { background: var(--glass-hover); }
+    .aus-stage-card:last-child { border-bottom: none; }
+    .aus-stage-card-title { font-size: 12px; font-weight: 600; line-height: 1.35; }
+    .aus-stage-card-meta { margin-top: 6px; font-size: 10px; color: var(--text3); display: flex; gap: 6px; flex-wrap: wrap; }
+    .aus-status-badge { display: inline-block; padding: 1px 5px; border-radius: 999px; background: var(--warn-bg); color: var(--warn); }
+    .dash-sec-board-link { font-size: 11px; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; }
+    .dash-sec-board-link:hover { text-decoration: underline; }
     @media (max-width: 720px) {
       .aus-board-layout { grid-template-columns: 1fr; }
       .aus-cal-cell { min-height: 56px; }
@@ -4338,8 +4364,6 @@ const TASK_TO_OPS_SUB = {
 
 const SKILLS = [
   { label:'HubSpot — AU Ops',        cmd:'/aus-operations:new-ticket-processor',      route:'aus-ops'               },
-  { label:'OPD Review',              cmd:'/aus-operations:opd-weekly',                route:'opd-review'            },
-  { label:'Pre-Delivery Checklist',  cmd:'/aus-operations:opd-checklist',             route:'opd-checklist'         },
   { label:'Manual Flag',             route:'manual-flag', isManualFlag: true },
 ];
 
@@ -5344,60 +5368,34 @@ function paintAusBoardPage(data) {
   // Active stage comes from the module-level filter driven by the sub-nav pills.
   // Reset to 'all' if the stored filter is no longer a valid stage.
   if (ausBoardStage !== 'all' && !stageCounts[ausBoardStage]) ausBoardStage = 'all';
-  // Calendar month anchored to the first day of the current month.
-  const t0 = new Date();
-  let calYear = t0.getFullYear();
-  let calMonth = t0.getMonth();
-  let selectedTicketId = null;
-
   function filtered() {
     return ausBoardStage === 'all' ? allRows : allRows.filter(r => r.stage === ausBoardStage);
   }
 
-  function buildCalendar() {
-    const rows = filtered().filter(r => r.opd);
-    const byDay = {};
-    rows.forEach(r => { (byDay[r.opd] = byDay[r.opd] || []).push(r); });
-    const monthName = new Date(calYear, calMonth, 1).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
-    const first = new Date(calYear, calMonth, 1);
-    // Monday-first offset
-    const startOffset = (first.getDay() + 6) % 7;
-    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
-    const todayStr = new Date().toISOString().slice(0, 10);
-    const pad = n => String(n).padStart(2, '0');
+  function approvedStatus(r) { return r.approvedTicketStatus || r.approvedStatus || '—'; }
+  function dealOwner(r) { return r.dealOwner || r.dealOwnerName || '—'; }
 
-    let cells = '';
-    for (let i = 0; i < startOffset; i++) cells += `<div class="aus-cal-cell empty"></div>`;
-    for (let d = 1; d <= daysInMonth; d++) {
-      const ds = `${calYear}-${pad(calMonth+1)}-${pad(d)}`;
-      const dayRows = byDay[ds] || [];
-      const isToday = ds === todayStr;
-      const chips = dayRows.slice(0, 3).map(r =>
-        `<a class="aus-cal-chip${String(r.ticketId) === String(selectedTicketId) ? ' is-selected' : ''}" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(r.subject)} — ${esc(r.stage)}" style="border-left:3px solid ${ausStageColor(r.stage)};" data-aus-calendar-ticket="${esc(r.ticketId)}">${esc((r.customer||r.subject||'').slice(0,20))}</a>`
-      ).join('');
-      const more = dayRows.length > 3 ? `<div class="aus-cal-more">+${dayRows.length-3} more</div>` : '';
-      const isSelectedDate = dayRows.some(r => String(r.ticketId) === String(selectedTicketId));
-      cells += `<div class="aus-cal-cell${isToday?' today':''}${dayRows.length?' has':''}${isSelectedDate?' is-selected-date':''}" data-aus-calendar-date="${ds}">
-        <div class="aus-cal-daynum">${d}</div>${chips}${more}</div>`;
-    }
-    const dow = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-      .map(d => `<div class="aus-cal-dow">${d}</div>`).join('');
-    return `
-      <div class="aus-cal-head">
-        <span class="aus-cal-title">${esc(monthName)}</span>
-        <span class="aus-cal-sub">${rows.length} ticket${rows.length===1?'':'s'} with an OPD ${ausBoardStage==='all'?'':'· '+esc(ausStageShort(ausBoardStage))}</span>
-        <div class="aus-cal-nav">
-          <button data-aus-cal="prev" title="Previous month">‹</button>
-          <button data-aus-cal="today" title="This month">•</button>
-          <button data-aus-cal="next" title="Next month">›</button>
-        </div>
-      </div>
-      <div class="aus-cal-grid">${dow}${cells}</div>`;
+  function buildBoard() {
+    return AUS_BOARD_STAGES.map(stage => {
+      const rows = allRows.filter(r => r.stage === stage.label);
+      const cards = rows.length ? rows.map(r => `
+        <a class="aus-stage-card" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">
+          <div class="aus-stage-card-title">${esc(r.subject || 'Ticket #' + r.ticketId)}</div>
+          <div class="aus-stage-card-meta">
+            <span>${r.opd ? `OPD ${esc(r.opd)}` : 'No OPD'}</span>
+            <span>${esc(dealOwner(r))}</span>
+            ${approvedStatus(r) !== '—' ? `<span class="aus-status-badge">${esc(approvedStatus(r))}</span>` : ''}
+          </div>
+        </a>`).join('') : `<div class="aus-stage-card" style="color:var(--text3);">No tickets</div>`;
+      return `<section class="aus-stage-column" style="--stage-color:${ausStageColor(stage.label)};">
+        <div class="aus-stage-column-head"><span>${esc(ausStageShort(stage.label))}</span><span class="aus-stage-column-count">${rows.length}</span></div>${cards}
+      </section>`;
+    }).join('');
   }
 
   function buildList() {
     const rows = filtered();
-    if (!rows.length) return `<tr><td colspan="4" class="empty-state">No tickets in this stage.</td></tr>`;
+    if (!rows.length) return `<tr><td colspan="5" class="empty-state">No tickets in this stage.</td></tr>`;
     return rows.map(r => {
       const opdTxt = r.opd
         ? `${esc(r.opd)}${typeof r.opdDays==='number' ? ` <span class="text-dim">(${r.opdDays<0?Math.abs(r.opdDays)+'d overdue':r.opdDays+'d'})</span>` : ''}`
@@ -5410,7 +5408,8 @@ function paintAusBoardPage(data) {
           <span class="ticket-badge">#${esc(r.ticketId)}</span></div></td>
         <td><span class="gsca-stage-pill" style="color:${col};border-color:${col}33;">${esc(ausStageShort(r.stage))}</span></td>
         <td style="white-space:nowrap;">${opdTxt}</td>
-        <td class="text-muted">${esc(r.owner||'—')}</td>
+        <td class="text-muted">${esc(dealOwner(r))}</td>
+        <td><span class="aus-status-badge">${esc(approvedStatus(r))}</span></td>
       </tr>`;
     }).join('');
   }
@@ -5427,49 +5426,13 @@ function paintAusBoardPage(data) {
           </div>
         </div>
       </div>
-      <div class="aus-board-layout">
-        <div class="aus-cal-wrap">${buildCalendar()}</div>
-        <div class="aus-board-ticket-list">
-          <div class="task-page-table-wrap">
-            <div class="aus-board-ticket-hint">Select a ticket to jump the calendar to its OPD.</div>
-            <table class="task-page-table">
-              <thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Owner</th></tr></thead>
-              <tbody>${buildList()}</tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+      ${ausBoardStage === 'all'
+        ? `<div class="aus-stage-board" aria-label="AU Operations pipeline board">${buildBoard()}</div>`
+        : `<div class="aus-board-ticket-list"><div class="task-page-table-wrap">
+            <div class="aus-board-ticket-hint">Showing ${esc(ausStageShort(ausBoardStage))} tickets. Select All above to return to the board.</div>
+            <table class="task-page-table"><thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Deal owner</th><th>Approved status</th></tr></thead><tbody>${buildList()}</tbody></table>
+          </div></div>`}
     `;
-    host.querySelectorAll('[data-aus-cal]').forEach(b =>
-      b.addEventListener('click', () => {
-        const act = b.dataset.ausCal;
-        if (act === 'prev') { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } }
-        else if (act === 'next') { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } }
-        else { calYear = t0.getFullYear(); calMonth = t0.getMonth(); }
-        render();
-      }));
-    host.querySelectorAll('[data-aus-ticket]').forEach(row => {
-      const selectTicket = () => {
-        selectedTicketId = row.dataset.ausTicket;
-        const opd = row.dataset.ausOpd;
-        if (opd && /^\d{4}-\d{2}-\d{2}$/.test(opd)) {
-          const [year, month] = opd.split('-').map(Number);
-          calYear = year;
-          calMonth = month - 1;
-        }
-        render();
-      };
-      row.addEventListener('click', event => {
-        if (event.target.closest('a')) return;
-        selectTicket();
-      });
-      row.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          selectTicket();
-        }
-      });
-    });
   }
 
   // Expose repaint so the sub-nav status pills can re-render the board in place.
@@ -5581,30 +5544,8 @@ function renderHomeSectionBoxes() {
   const waitingItems   = getItems('waitingOn');
   const forgottenItems = getItems('forgotten');
 
-  const ausOpsData     = taskCache['aus-ops'] || window.TASK_DATA__aus_ops;
-  const ausOpsRows     = ausOpsData && Array.isArray(ausOpsData.rows) ? ausOpsData.rows : [];
-  const ausOpsDone     = ausOpsRows.filter(r => !!ticks['tick:aus-ops:'+r.id]).length;
-
-  const opdBundle  = taskCache['opd-review'];
-  const redRows    = opdBundle && opdBundle.tabs && Array.isArray(opdBundle.tabs.red   && opdBundle.tabs.red.rows)   ? opdBundle.tabs.red.rows   : [];
-  const amberRows  = opdBundle && opdBundle.tabs && Array.isArray(opdBundle.tabs.amber && opdBundle.tabs.amber.rows) ? opdBundle.tabs.amber.rows : [];
-  const amberDone  = amberRows.filter(r => !!ticks['tick:at-risk-opd:'+r.id]).length;
-  // Repeat-push subset comes from the same opd-weekly-review feed as `red`,
-  // filtered by row.bucket === 'repeat_push'. Empty until refresh skill tags it.
-  const repeatRows  = redRows.filter(r => r && r.bucket === 'repeat_push');
-  // Delayed-pay subset same source, bucket='delayed_pay'. Customer Info Received
-  // stage tickets ≤14d OPD where customer confirms delayed payment.
-  const delayedRows = redRows.filter(r => r && r.bucket === 'delayed_pay');
-
-  // opd-checklist is now an umbrella (All pending / Manual link) — pull rows
-  // from either the bundled tabs.pending feed or the legacy raw feed shape so
-  // the home counter survives both states.
-  const checklistData = taskCache['opd-checklist'] || window.TASK_DATA__opd_checklist;
-  const checklistBundleRows = checklistData && checklistData.tabs && checklistData.tabs.pending && Array.isArray(checklistData.tabs.pending.rows) ? checklistData.tabs.pending.rows : null;
-  const checklistRows = checklistBundleRows || (checklistData && Array.isArray(checklistData.rows) ? checklistData.rows : []);
-  const checklistDone = checklistRows.filter(r => !!ticks['tick:opd-checklist:'+r.id]).length;
-  const checklistManualRows   = checklistRows.filter(r => r && r.bucket === 'manual_link');
-  const checklistFollowupRows = checklistRows.filter(r => r && r.bucket === 'manual_followup');
+  const ausBoardData = taskCache['aus-ops-board'] || window.TASK_DATA__aus_ops_board;
+  const ausBoardRows = ausBoardData && Array.isArray(ausBoardData.rows) ? ausBoardData.rows : [];
 
   const radaroData    = taskCache['radaro-post-install'] || window.TASK_DATA__radaro_post_install;
   const radaroAllRows = radaroData && Array.isArray(radaroData.rows) ? radaroData.rows : [];
@@ -5622,7 +5563,7 @@ function renderHomeSectionBoxes() {
   const slackDMs      = slackRows.filter(r => r.kind === 'dm');
   const slackMentions = slackRows.filter(r => r.kind === 'mention');
 
-  function sectionBox(iconSvg, name, headRoute, items) {
+  function sectionBox(iconSvg, name, headRoute, items, actionLabel = '') {
     const totalCt = items.reduce((s,i) => s + (i.ct||0), 0);
     const itemsHtml = items.filter(i => i.ct > 0).map(item => {
       const pct = Math.min(100, Math.round((item.done||0) / item.ct * 100));
@@ -5638,6 +5579,7 @@ function renderHomeSectionBoxes() {
         <div class="dash-sec-icon">${iconSvg}</div>
         <div class="dash-sec-name">${esc(name)}</div>
         <div class="dash-sec-total">${totalCt || '—'}</div>
+        ${actionLabel ? `<span class="dash-sec-board-link">${esc(actionLabel)}</span>` : ''}
       </a>
       <div class="dash-sec-items">${itemsHtml || '<div style="padding:10px 14px;font-size:11px;color:var(--text3);">Loading…</div>'}</div>
     </div>`;
@@ -5655,16 +5597,9 @@ function renderHomeSectionBoxes() {
       { color:'#f5a623', label:'Waiting On',ct:waitingItems.length,   done:waitingItems.filter(isDone).length,   route:'#/gmail/waiting-on' },
       { color:'#ff5a6e', label:'Forgotten', ct:forgottenItems.length, done:forgottenItems.filter(isDone).length, route:'#/gmail/forgotten'  },
     ])}
-    ${sectionBox(opsIcon, 'AU Operations', '#/task/aus-ops', [
-      { color:'var(--accent)',  label:'New Tickets',   ct:ausOpsRows.length,            done:ausOpsDone,     route:'#/task/aus-ops'                        },
-      { color:'var(--danger)',  label:'0–14d Review',  ct:redRows.length,               done:0,              route:'#/task/opd-review'                     },
-      { color:'var(--warn)',    label:'15–21d Risk',   ct:amberRows.length,             done:amberDone,      route:'#/task/opd-review?tab=amber'           },
-      { color:'var(--danger)',  label:'Repeat push',   ct:repeatRows.length,            done:0,              route:'#/task/opd-review?tab=repeat'          },
-      { color:'var(--warn)',    label:'Delayed pay',   ct:delayedRows.length,           done:0,              route:'#/task/opd-review?tab=delayed'         },
-      { color:'#f5a623',        label:'Pre-Delivery',  ct:checklistRows.length,         done:checklistDone,  route:'#/task/opd-checklist'                  },
-      { color:'var(--warn)',    label:'Manual link',   ct:checklistManualRows.length,   done:0,              route:'#/task/opd-checklist?tab=manual'       },
-      { color:'var(--danger)',  label:'Manual f/up',   ct:checklistFollowupRows.length, done:0,              route:'#/task/opd-checklist?tab=followup'     },
-    ])}
+    ${sectionBox(opsIcon, 'AU Operations', '#/aus-board', [
+      { color:'var(--accent)', label:'Pipeline board', ct:ausBoardRows.length, done:0, route:'#/aus-board' },
+    ], 'View board →')}
     ${sectionBox(caIcon, 'Global Service CA', '#/gs-ca', [
       { color:'var(--danger)', label:'Rectification',  ct:gscaByStage['Rectification Open']||0,    done:gscaReachedByStage['Rectification Open']||0,    route:'#/gs-ca' },
       { color:'var(--accent)', label:'In Progress',    ct:gscaByStage['In Progress']||0,           done:gscaReachedByStage['In Progress']||0,           route:'#/gs-ca' },
@@ -8351,7 +8286,7 @@ function handleRoute() {
   if (isAusBoard && ab) {
     hideAll();
     ab.style.display = '';
-    // Keep the Ops sub-pill ribbon (Board / OPD Review / Pre-Delivery) visible.
+    // Keep the stage-filter ribbon visible while viewing the AU Ops board.
     if (qn) qn.style.display = '';
     document.documentElement.style.setProperty('--skills-bar-top', '90px');
     document.body.classList.remove('is-task-page');

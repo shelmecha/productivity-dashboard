@@ -14,3 +14,7 @@
 - Restored a Calendar toggle alongside the default Board view in AU Operations.
 - Fixed stage-pill filtering so each selected stage reliably displays its focused table.
 - Simplified Home to show Gmail on the left and My To-Dos on the right; AU Operations and Global Service CA summaries are no longer shown there.
+
+## 2026-07-16 — GitHub Pages feed loading fix
+
+- Added a GitHub Pages fallback feed path so the AU Operations board data loads when the dashboard is opened from either the project URL or the account-root URL.

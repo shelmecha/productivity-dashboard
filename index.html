@@ -5454,8 +5454,8 @@ function paintAusBoardPage(data) {
           </div>
         </div>
         <div class="task-actions">
-          <button class="task-btn${ausBoardView === 'board' ? ' active' : ''}" data-aus-view="board">Board</button>
-          <button class="task-btn${ausBoardView === 'calendar' ? ' active' : ''}" data-aus-view="calendar">Calendar</button>
+          <button type="button" class="task-btn${ausBoardView === 'board' ? ' active' : ''}" data-aus-view="board">Board</button>
+          <button type="button" class="task-btn${ausBoardView === 'calendar' ? ' active' : ''}" data-aus-view="calendar">Calendar</button>
         </div>
       </div>
       ${ausBoardStage === 'all'
@@ -5465,7 +5465,6 @@ function paintAusBoardPage(data) {
             <table class="task-page-table"><thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Deal owner</th><th>Approved status</th></tr></thead><tbody>${buildList()}</tbody></table>
           </div></div>`}
     `;
-    host.querySelectorAll('[data-aus-view]').forEach(button => button.addEventListener('click', () => { ausBoardView = button.dataset.ausView; render(); }));
     host.querySelectorAll('[data-aus-cal]').forEach(button => button.addEventListener('click', () => {
       const action = button.dataset.ausCal;
       if (action === 'prev') { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } }
@@ -6204,6 +6203,15 @@ document.addEventListener('click', e => {
   if (os) {
     const def = OPS_SUBS.find(s => s.key === os.dataset.opsSub);
     if (def) location.hash = def.route;
+    return;
+  }
+  // AU Ops board/calendar toggle. Delegation keeps this reliable after the
+  // board re-renders itself when data or a filter changes.
+  const av = e.target.closest('[data-aus-view]');
+  if (av) {
+    ausBoardView = av.dataset.ausView === 'calendar' ? 'calendar' : 'board';
+    if (!/^#\/aus-board/i.test(location.hash || '')) { location.hash = '#/aus-board'; return; }
+    if (typeof _ausBoardRepaint === 'function') _ausBoardRepaint();
     return;
   }
   // AU Ops board status filter — the sub-nav pills drive the board in place
@@ -8412,25 +8420,32 @@ function loadTaskData(key) {
 function loadSingleFeed(key) {
   const globalKey = 'TASK_DATA__' + key.replace(/-/g, '_');
   if (window[globalKey]) { taskCache[key] = window[globalKey]; return Promise.resolve(window[globalKey]); }
-  // Fetch path-relative JSON. file:// fetch is unreliable, so we also try injecting a script as fallback.
-  return fetch('./tasks/' + key + '.json', { cache: 'no-store' })
+  // Project Pages normally resolves ./tasks correctly. The explicit project
+  // path is a fallback for links opened from the GitHub Pages account root.
+  const paths = ['./tasks/', '/productivity-dashboard/tasks/'];
+  const fetchFeed = i => fetch(paths[i] + key + '.json', { cache: 'no-store' })
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(j => { taskCache[key] = j; return j; })
-    .catch(() => loadTaskDataViaScript(key));
+    .then(j => { taskCache[key] = j; return j; });
+  return fetchFeed(0).catch(() => fetchFeed(1)).catch(() => loadTaskDataViaScript(key));
 }
 
 function loadTaskDataViaScript(key) {
   return new Promise((resolve, reject) => {
     const globalKey = 'TASK_DATA__' + key.replace(/-/g, '_');
     if (window[globalKey]) { taskCache[key] = window[globalKey]; return resolve(window[globalKey]); }
-    const s = document.createElement('script');
-    s.src = './tasks/' + key + '.js?ts=' + Date.now();
-    s.onload = () => {
-      if (window[globalKey]) { taskCache[key] = window[globalKey]; resolve(window[globalKey]); }
-      else reject(new Error('script loaded but no ' + globalKey));
+    const paths = ['./tasks/', '/productivity-dashboard/tasks/'];
+    const loadAt = i => {
+      if (i >= paths.length) { reject(new Error('failed to load task feed ' + key)); return; }
+      const s = document.createElement('script');
+      s.src = paths[i] + key + '.js?ts=' + Date.now();
+      s.onload = () => {
+        if (window[globalKey]) { taskCache[key] = window[globalKey]; resolve(window[globalKey]); }
+        else loadAt(i + 1);
+      };
+      s.onerror = () => loadAt(i + 1);
+      document.head.appendChild(s);
     };
-    s.onerror = () => reject(new Error('failed to load ' + s.src));
-    document.head.appendChild(s);
+    loadAt(0);
   });
 }
 

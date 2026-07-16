@@ -3774,7 +3774,9 @@
       line-height: 1.12;
     }
     .home-title, .task-page-header h1 { font-weight: 700; letter-spacing: -0.015em; }
-    .item-title { font-family: var(--font-serif); font-weight: 600; letter-spacing: 0; }
+    /* Email subjects read better in the sans face — Playfair's high contrast
+       is tiring at subject-line size, especially for dense Gmail lists. */
+    .item-title { font-family: var(--font-sans); font-weight: 650; letter-spacing: -0.006em; }
 
     /* ── Large display numbers → serif (pricing/stat treatment) ── */
     .dash-sec-total, .dash-stat-value, .dash-stat .dash-stat-num {

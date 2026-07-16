@@ -3830,6 +3830,12 @@
     }
 
     /* ── AU Operations board: OPD calendar ── */
+    .aus-board-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+      align-items: start;
+      gap: 16px;
+    }
     .aus-cal-wrap {
       background: var(--surface); border: 1px solid var(--border);
       border-top: 2px solid var(--accent); border-radius: 8px;
@@ -3867,8 +3873,31 @@
       text-decoration: none; transition: background 150ms ease-out;
     }
     .aus-cal-chip:hover { background: color-mix(in srgb, var(--accent) 14%, var(--bg2)); }
+    .aus-cal-chip.is-selected {
+      background: var(--accent); color: var(--accent-foreground, #fff);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+    .aus-cal-cell.is-selected-date {
+      border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent);
+    }
     .aus-cal-more { font-size: 9px; color: var(--text3); padding: 0 2px; }
+    .aus-board-ticket-list { min-width: 0; }
+    .aus-board-ticket-list .task-page-table-wrap { margin-top: 0 !important; }
+    .aus-board-ticket-list .task-page-table { table-layout: fixed; }
+    .aus-board-ticket-list .task-page-table th:first-child { width: 45%; }
+    .aus-board-ticket-row { cursor: pointer; }
+    .aus-board-ticket-row:focus-visible td {
+      outline: 2px solid var(--accent); outline-offset: -2px;
+      background: var(--glass-hover);
+    }
+    .aus-board-ticket-row.is-selected td { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+    .aus-board-ticket-row.is-selected td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+    .aus-board-ticket-hint {
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+      font-size: 11px; color: var(--text3); background: var(--surface2);
+    }
     @media (max-width: 720px) {
+      .aus-board-layout { grid-template-columns: 1fr; }
       .aus-cal-cell { min-height: 56px; }
       .aus-cal-chip { font-size: 9px; }
     }
@@ -5319,6 +5348,7 @@ function paintAusBoardPage(data) {
   const t0 = new Date();
   let calYear = t0.getFullYear();
   let calMonth = t0.getMonth();
+  let selectedTicketId = null;
 
   function filtered() {
     return ausBoardStage === 'all' ? allRows : allRows.filter(r => r.stage === ausBoardStage);
@@ -5343,10 +5373,11 @@ function paintAusBoardPage(data) {
       const dayRows = byDay[ds] || [];
       const isToday = ds === todayStr;
       const chips = dayRows.slice(0, 3).map(r =>
-        `<a class="aus-cal-chip" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(r.subject)} — ${esc(r.stage)}" style="border-left:3px solid ${ausStageColor(r.stage)};">${esc((r.customer||r.subject||'').slice(0,20))}</a>`
+        `<a class="aus-cal-chip${String(r.ticketId) === String(selectedTicketId) ? ' is-selected' : ''}" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(r.subject)} — ${esc(r.stage)}" style="border-left:3px solid ${ausStageColor(r.stage)};" data-aus-calendar-ticket="${esc(r.ticketId)}">${esc((r.customer||r.subject||'').slice(0,20))}</a>`
       ).join('');
       const more = dayRows.length > 3 ? `<div class="aus-cal-more">+${dayRows.length-3} more</div>` : '';
-      cells += `<div class="aus-cal-cell${isToday?' today':''}${dayRows.length?' has':''}">
+      const isSelectedDate = dayRows.some(r => String(r.ticketId) === String(selectedTicketId));
+      cells += `<div class="aus-cal-cell${isToday?' today':''}${dayRows.length?' has':''}${isSelectedDate?' is-selected-date':''}" data-aus-calendar-date="${ds}">
         <div class="aus-cal-daynum">${d}</div>${chips}${more}</div>`;
     }
     const dow = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
@@ -5372,7 +5403,8 @@ function paintAusBoardPage(data) {
         ? `${esc(r.opd)}${typeof r.opdDays==='number' ? ` <span class="text-dim">(${r.opdDays<0?Math.abs(r.opdDays)+'d overdue':r.opdDays+'d'})</span>` : ''}`
         : '<span class="text-dim">—</span>';
       const col = ausStageColor(r.stage);
-      return `<tr>
+      const selected = String(r.ticketId) === String(selectedTicketId);
+      return `<tr class="aus-board-ticket-row${selected ? ' is-selected' : ''}" data-aus-ticket="${esc(r.ticketId)}" data-aus-opd="${esc(r.opd || '')}" tabindex="0" role="button" aria-label="Show ${esc(r.subject||'Ticket #'+r.ticketId)} on the calendar">
         <td class="gsca-subject-cell"><div class="gsca-subject-line">
           <a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.subject||'Ticket #'+r.ticketId)}</a>
           <span class="ticket-badge">#${esc(r.ticketId)}</span></div></td>
@@ -5395,12 +5427,17 @@ function paintAusBoardPage(data) {
           </div>
         </div>
       </div>
-      <div class="aus-cal-wrap">${buildCalendar()}</div>
-      <div class="task-page-table-wrap" style="margin-top:16px;">
-        <table class="task-page-table">
-          <thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Owner</th></tr></thead>
-          <tbody>${buildList()}</tbody>
-        </table>
+      <div class="aus-board-layout">
+        <div class="aus-cal-wrap">${buildCalendar()}</div>
+        <div class="aus-board-ticket-list">
+          <div class="task-page-table-wrap">
+            <div class="aus-board-ticket-hint">Select a ticket to jump the calendar to its OPD.</div>
+            <table class="task-page-table">
+              <thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Owner</th></tr></thead>
+              <tbody>${buildList()}</tbody>
+            </table>
+          </div>
+        </div>
       </div>
     `;
     host.querySelectorAll('[data-aus-cal]').forEach(b =>
@@ -5411,6 +5448,28 @@ function paintAusBoardPage(data) {
         else { calYear = t0.getFullYear(); calMonth = t0.getMonth(); }
         render();
       }));
+    host.querySelectorAll('[data-aus-ticket]').forEach(row => {
+      const selectTicket = () => {
+        selectedTicketId = row.dataset.ausTicket;
+        const opd = row.dataset.ausOpd;
+        if (opd && /^\d{4}-\d{2}-\d{2}$/.test(opd)) {
+          const [year, month] = opd.split('-').map(Number);
+          calYear = year;
+          calMonth = month - 1;
+        }
+        render();
+      };
+      row.addEventListener('click', event => {
+        if (event.target.closest('a')) return;
+        selectTicket();
+      });
+      row.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectTicket();
+        }
+      });
+    });
   }
 
   // Expose repaint so the sub-nav status pills can re-render the board in place.
@@ -10295,4 +10354,3 @@ function renderRadaroCleanRow(r) {
 </script>
 </body>
 </html>
-    

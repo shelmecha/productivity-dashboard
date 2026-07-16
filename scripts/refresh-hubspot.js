@@ -51,7 +51,14 @@ const GS_STAGE_LABELS = {
 const OPS_STAGE_LABELS = {
   '1105295898': 'New Ticket', '1105295899': 'Delivery Details/Pending Sales Order',
   '1091283321': 'Customer Information Received', '1091283320': 'Approved for Scheduling',
+  '1091283322': 'Holding Status', '1091257712': 'Install Prep',
+  '1091257713': 'Installation Scheduled',
 };
+// Ordered board stages: New Ticket → Installation Scheduled (the AU Ops board).
+const BOARD_STAGE_IDS = [
+  '1105295898', '1105295899', '1091283321', '1091283320',
+  '1091283322', '1091257712', '1091257713',
+];
 const GS_NEXT_STEP = {
   'Rectification Open': 'Assess issue and assign to appropriate technician or supplier.',
   'In Progress': 'Check on the assigned technician/supplier for progress.',
@@ -313,6 +320,44 @@ const TICKET_PROPS = [
         passACount: rows.length, passBCount: 0,
       }),
       taskKey: 'opd-checklist', taskTitle: 'Pre-Delivery Checklist',
+      rows,
+    });
+  }
+
+  /* aus-ops-board: all AU tickets New Ticket → Installation Scheduled, for the
+     status-filter board + OPD month calendar on the AU Operations page. */
+  {
+    const raw = await searchTickets(
+      [
+        { propertyName: 'hs_pipeline', operator: 'EQ', value: P_GLOBAL_OPS },
+        { propertyName: 'hs_pipeline_stage', operator: 'IN', values: BOARD_STAGE_IDS },
+      ],
+      TICKET_PROPS
+    );
+    const rows = raw.filter(t => isAU(t.properties)).map(t => {
+      const p = t.properties;
+      const opd = (p.estimated_delivery_date || '').slice(0, 10) || null;
+      return {
+        id: String(t.id), ticketId: String(t.id),
+        subject: p.subject || '(no subject)',
+        customer: p.subject || '(no subject)',
+        stageId: String(p.hs_pipeline_stage),
+        stage: OPS_STAGE_LABELS[p.hs_pipeline_stage] || p.hs_pipeline_stage,
+        opd,
+        opdDays: daysFromToday(opd, today),
+        owner: ownerName(p.hubspot_owner_id),
+        url: ticketUrl(t.id),
+      };
+    });
+    // Stable order: by pipeline stage, then soonest OPD first.
+    const stageRank = id => BOARD_STAGE_IDS.indexOf(id);
+    rows.sort((a, b) => stageRank(a.stageId) - stageRank(b.stageId)
+      || (a.opd || '9999').localeCompare(b.opd || '9999'));
+    writeFeed('aus-ops-board', 'TASK_DATA__aus_ops_board', {
+      meta: meta({
+        source: `GitHub Actions HubSpot pull — AU Global Operations (${P_GLOBAL_OPS}), stages New Ticket → Installation Scheduled`,
+        stageOrder: BOARD_STAGE_IDS.map(id => OPS_STAGE_LABELS[id]),
+      }),
       rows,
     });
   }

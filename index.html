@@ -555,6 +555,20 @@
       font-size: 11px; color: var(--text3); font-style: italic;
       padding: 8px 4px; text-align: center;
     }
+    .user-todo-archive-toggle {
+      display: flex; align-items: center; gap: 7px;
+      width: 100%; margin-top: 10px; padding: 7px 4px;
+      background: none; border: none; border-top: 1px solid var(--border);
+      color: var(--text2); cursor: pointer; font-family: var(--font-mono, monospace);
+      font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em;
+      transition: color 150ms ease-out;
+    }
+    .user-todo-archive-toggle:hover { color: var(--accent); }
+    .user-todo-archive-count {
+      margin-left: auto; font-family: var(--font-sans, sans-serif);
+      background: var(--muted, var(--surface2)); color: var(--text3);
+      border-radius: 10px; padding: 1px 8px; font-size: 10px; letter-spacing: 0;
+    }
 
     /* ── Progress + Calendar row ── */
     .dash-prog-cal-row { display: flex; gap: 10px; align-items: stretch; }
@@ -3814,6 +3828,50 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
     }
+
+    /* ── AU Operations board: OPD calendar ── */
+    .aus-cal-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-top: 2px solid var(--accent); border-radius: 8px;
+      padding: 16px; box-shadow: var(--shadow-sm, 0 1px 2px rgba(26,26,26,0.04));
+    }
+    .aus-cal-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .aus-cal-title { font-family: var(--font-serif, serif); font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+    .aus-cal-sub { font-family: var(--font-mono, monospace); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text2); }
+    .aus-cal-nav { margin-left: auto; display: flex; gap: 4px; }
+    .aus-cal-nav button {
+      width: 30px; height: 30px; border: 1px solid var(--border); background: var(--bg2);
+      color: var(--text2); border-radius: 6px; cursor: pointer; font-size: 15px; line-height: 1;
+      transition: all 150ms ease-out;
+    }
+    .aus-cal-nav button:hover { border-color: var(--accent); color: var(--accent); }
+    .aus-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+    .aus-cal-dow {
+      font-family: var(--font-mono, monospace); font-size: 9px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3);
+      text-align: center; padding-bottom: 4px;
+    }
+    .aus-cal-cell {
+      min-height: 78px; border: 1px solid var(--border); border-radius: 6px;
+      padding: 4px; background: var(--card, var(--surface2)); display: flex; flex-direction: column; gap: 3px;
+    }
+    .aus-cal-cell.empty { background: transparent; border-color: transparent; }
+    .aus-cal-cell.has { background: color-mix(in srgb, var(--accent) 4%, var(--surface)); }
+    .aus-cal-cell.today { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .aus-cal-daynum { font-size: 11px; font-weight: 600; color: var(--text2); padding: 1px 2px; }
+    .aus-cal-cell.today .aus-cal-daynum { color: var(--accent); }
+    .aus-cal-chip {
+      display: block; font-size: 10px; line-height: 1.3; color: var(--text);
+      background: var(--bg2); padding: 2px 5px; border-radius: 3px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      text-decoration: none; transition: background 150ms ease-out;
+    }
+    .aus-cal-chip:hover { background: color-mix(in srgb, var(--accent) 14%, var(--bg2)); }
+    .aus-cal-more { font-size: 9px; color: var(--text3); padding: 0 2px; }
+    @media (max-width: 720px) {
+      .aus-cal-cell { min-height: 56px; }
+      .aus-cal-chip { font-size: 9px; }
+    }
   </style>
 </head>
 <body>
@@ -3852,6 +3910,9 @@
       <div class="sep"></div>
       <button class="btn-icon" id="tmpl-mail-btn" title="Email Templates — search by topic" data-task-action="open-templates" aria-label="Open email templates">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+      </button>
+      <button class="btn-icon" id="notes-btn" title="Notes" aria-label="Open notes">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </button>
       <button class="btn-icon" id="search-btn" title="Search (⌘K)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -3894,6 +3955,7 @@
   <div id="routine-page" style="display:none;"><!-- rendered by JS when route is #/routine --></div>
   <div id="rebecca-page" style="display:none;"><!-- rendered by JS when route is #/rebecca --></div>
   <div id="gs-ca-page" style="display:none;"><!-- rendered by JS when route is #/gs-ca --></div>
+  <div id="aus-board-page" style="display:none;"><!-- rendered by JS when route is #/aus-board --></div>
   <div id="slack-page" style="display:none;"><!-- rendered by JS when route is #/slack --></div>
 </main>
 
@@ -3940,6 +4002,25 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
         Capture
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NOTES MODAL — running scratchpad, opened from the header 📝 button
+============================================================ -->
+<div id="notes-modal" class="modal-backdrop" role="dialog" aria-label="Notes">
+  <div class="modal-box" style="max-width:560px;">
+    <div class="modal-header">
+      <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <span class="modal-title" style="font-size:15px;color:var(--text);">Notes</span>
+      <span id="notes-saved-hint" style="margin-left:auto;margin-right:8px;font-size:10px;font-family:var(--font-mono,monospace);text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);"></span>
+      <button class="modal-close" id="notes-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <textarea class="dash-notes-area" id="notes-modal-area" placeholder="Jot anything down — saved automatically." style="min-height:320px;width:100%;"></textarea>
     </div>
   </div>
 </div>
@@ -4198,7 +4279,7 @@ const SECTIONS = [
 const TABS = [
   { key:'home',   label:'Home',               route:'#/home' },
   { key:'gmail',  label:'Gmail',              route:'#/gmail/urgent' },
-  { key:'ops',    label:'AUS Operations',     route:'#/task/aus-ops' },
+  { key:'ops',    label:'AUS Operations',     route:'#/aus-board' },
   { key:'gs-ca',  label:'Global Service CA',  route:'#/gs-ca' },
 ];
 
@@ -4214,7 +4295,7 @@ const GMAIL_SUBS = [
 
 /* Ops sub-pills jump directly to existing TASK_REGISTRY pages. */
 const OPS_SUBS = [
-  { key:'new-tickets',   label:'New Tickets',          route:'#/task/aus-ops' },
+  { key:'board',         label:'Operations Board',     route:'#/aus-board' },
   { key:'opd-review',    label:'OPD Review',           route:'#/task/opd-review' },
   { key:'pre-delivery',  label:'Pre-Delivery Checklist', route:'#/task/opd-checklist' },
 ];
@@ -4830,6 +4911,7 @@ function getActiveTab() {
   const h = location.hash || '';
   if (/^#\/home/i.test(h)) return 'home';
   if (/^#\/gmail\//i.test(h)) return 'gmail';
+  if (/^#\/aus-board/i.test(h)) return 'ops';
   const tm = h.match(/^#\/task\/([a-z0-9-]+)/i);
   if (tm && TASK_TO_OPS_SUB[tm[1]] !== undefined) return 'ops';
   if (/^#\/gs-ca/i.test(h)) return 'gs-ca';
@@ -4845,6 +4927,7 @@ function getActiveGmailSub() {
 }
 
 function getActiveOpsSub() {
+  if (/^#\/aus-board/i.test(location.hash || '')) return 'board';
   const m = (location.hash || '').match(/^#\/task\/([a-z0-9-]+)/i);
   if (!m) return null;
   return TASK_TO_OPS_SUB[m[1]] || null;
@@ -5170,6 +5253,174 @@ function paintGsCaPage(data) {
   }
 
   renderPage('all');
+}
+
+/* ============================================================
+   AU OPERATIONS BOARD — dedicated page (#/aus-board)
+   Source: tasks/aus-ops-board.json (AU pipeline, New Ticket →
+   Installation Scheduled). Stage-status filter pills + an OPD
+   month calendar + a filtered ticket list.
+============================================================ */
+const AUS_BOARD_STAGES = [
+  { label: 'New Ticket',                       color: 'var(--accent)'  },
+  { label: 'Delivery Details/Pending Sales Order', short: 'Delivery Details', color: 'var(--warn)' },
+  { label: 'Customer Information Received',     short: 'Customer Info',   color: 'var(--warn)' },
+  { label: 'Approved for Scheduling',          short: 'Approved',        color: 'var(--accent)' },
+  { label: 'Holding Status',                   short: 'Holding',         color: 'var(--text3)' },
+  { label: 'Install Prep',                     color: 'var(--accent2)' },
+  { label: 'Installation Scheduled',           short: 'Install Scheduled', color: 'var(--success)' },
+];
+function ausStageColor(label) {
+  const s = AUS_BOARD_STAGES.find(x => x.label === label);
+  return s ? s.color : 'var(--text3)';
+}
+function ausStageShort(label) {
+  const s = AUS_BOARD_STAGES.find(x => x.label === label);
+  return s ? (s.short || s.label) : label;
+}
+
+function renderAusBoardPage() {
+  const host = document.getElementById('aus-board-page');
+  if (!host) return;
+  host.innerHTML = `
+    <button class="task-back" data-action="go-home">← Back to Gmail</button>
+    <div class="task-page-header"><div><h1>AU Operations — Board</h1>
+      <div class="task-meta"><span>Loading tickets…</span></div></div></div>
+  `;
+  loadSingleFeed('aus-ops-board').then(data => {
+    if (!/^#\/aus-board/i.test(location.hash || '')) return;
+    paintAusBoardPage(data);
+  }).catch(() => {
+    if (!/^#\/aus-board/i.test(location.hash || '')) return;
+    host.innerHTML = `
+      <button class="task-back" data-action="go-home">← Back to Gmail</button>
+      <div class="task-page-header"><div><h1>AU Operations — Board</h1></div></div>
+      <div class="task-context"><p>Board feed not found yet. It populates on the next hourly GitHub refresh (<code>tasks/aus-ops-board.json</code>).</p></div>
+    `;
+  });
+}
+
+function paintAusBoardPage(data) {
+  const host = document.getElementById('aus-board-page');
+  if (!host) return;
+  const allRows = (data && Array.isArray(data.rows)) ? [...data.rows] : [];
+  const refreshed = data && data.meta && data.meta.refreshedAt ? fmtDate(data.meta.refreshedAt) : '—';
+
+  const stageCounts = {};
+  allRows.forEach(r => { stageCounts[r.stage] = (stageCounts[r.stage] || 0) + 1; });
+
+  let activeStage = 'all';
+  // Calendar month anchored to the first day of the current month.
+  const t0 = new Date();
+  let calYear = t0.getFullYear();
+  let calMonth = t0.getMonth();
+
+  function filtered() {
+    return activeStage === 'all' ? allRows : allRows.filter(r => r.stage === activeStage);
+  }
+
+  function buildPills() {
+    const pills = [`<button class="nav-pill${activeStage==='all'?' active':''}" data-aus-stage="all">All <span class="badge-count">${allRows.length}</span></button>`];
+    AUS_BOARD_STAGES.forEach(s => {
+      const ct = stageCounts[s.label] || 0;
+      pills.push(`<button class="nav-pill${activeStage===s.label?' active':''}" data-aus-stage="${esc(s.label)}" style="${activeStage===s.label?`color:${s.color};`:''}">${esc(s.short||s.label)} <span class="badge-count">${ct}</span></button>`);
+    });
+    return pills.join('');
+  }
+
+  function buildCalendar() {
+    const rows = filtered().filter(r => r.opd);
+    const byDay = {};
+    rows.forEach(r => { (byDay[r.opd] = byDay[r.opd] || []).push(r); });
+    const monthName = new Date(calYear, calMonth, 1).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+    const first = new Date(calYear, calMonth, 1);
+    // Monday-first offset
+    const startOffset = (first.getDay() + 6) % 7;
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const pad = n => String(n).padStart(2, '0');
+
+    let cells = '';
+    for (let i = 0; i < startOffset; i++) cells += `<div class="aus-cal-cell empty"></div>`;
+    for (let d = 1; d <= daysInMonth; d++) {
+      const ds = `${calYear}-${pad(calMonth+1)}-${pad(d)}`;
+      const dayRows = byDay[ds] || [];
+      const isToday = ds === todayStr;
+      const chips = dayRows.slice(0, 3).map(r =>
+        `<a class="aus-cal-chip" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(r.subject)} — ${esc(r.stage)}" style="border-left:3px solid ${ausStageColor(r.stage)};">${esc((r.customer||r.subject||'').slice(0,20))}</a>`
+      ).join('');
+      const more = dayRows.length > 3 ? `<div class="aus-cal-more">+${dayRows.length-3} more</div>` : '';
+      cells += `<div class="aus-cal-cell${isToday?' today':''}${dayRows.length?' has':''}">
+        <div class="aus-cal-daynum">${d}</div>${chips}${more}</div>`;
+    }
+    const dow = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+      .map(d => `<div class="aus-cal-dow">${d}</div>`).join('');
+    return `
+      <div class="aus-cal-head">
+        <span class="aus-cal-title">${esc(monthName)}</span>
+        <span class="aus-cal-sub">${rows.length} ticket${rows.length===1?'':'s'} with an OPD ${activeStage==='all'?'':'· '+esc(ausStageShort(activeStage))}</span>
+        <div class="aus-cal-nav">
+          <button data-aus-cal="prev" title="Previous month">‹</button>
+          <button data-aus-cal="today" title="This month">•</button>
+          <button data-aus-cal="next" title="Next month">›</button>
+        </div>
+      </div>
+      <div class="aus-cal-grid">${dow}${cells}</div>`;
+  }
+
+  function buildList() {
+    const rows = filtered();
+    if (!rows.length) return `<tr><td colspan="4" class="empty-state">No tickets in this stage.</td></tr>`;
+    return rows.map(r => {
+      const opdTxt = r.opd
+        ? `${esc(r.opd)}${typeof r.opdDays==='number' ? ` <span class="text-dim">(${r.opdDays<0?Math.abs(r.opdDays)+'d overdue':r.opdDays+'d'})</span>` : ''}`
+        : '<span class="text-dim">—</span>';
+      const col = ausStageColor(r.stage);
+      return `<tr>
+        <td class="gsca-subject-cell"><div class="gsca-subject-line">
+          <a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.subject||'Ticket #'+r.ticketId)}</a>
+          <span class="ticket-badge">#${esc(r.ticketId)}</span></div></td>
+        <td><span class="gsca-stage-pill" style="color:${col};border-color:${col}33;">${esc(ausStageShort(r.stage))}</span></td>
+        <td style="white-space:nowrap;">${opdTxt}</td>
+        <td class="text-muted">${esc(r.owner||'—')}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  function render() {
+    host.innerHTML = `
+      <button class="task-back" data-action="go-home">← Back to Gmail</button>
+      <div class="task-page-header">
+        <div>
+          <h1>AU Operations — Board</h1>
+          <div class="task-meta">
+            <span><strong>${allRows.length}</strong> tickets · New Ticket → Installation Scheduled</span>
+            <span>Refreshed ${esc(refreshed)}</span>
+          </div>
+        </div>
+      </div>
+      <div class="gsca-tab-bar">${buildPills()}</div>
+      <div class="aus-cal-wrap">${buildCalendar()}</div>
+      <div class="task-page-table-wrap" style="margin-top:16px;">
+        <table class="task-page-table">
+          <thead><tr><th>Subject</th><th>Stage</th><th>OPD (delivery)</th><th>Owner</th></tr></thead>
+          <tbody>${buildList()}</tbody>
+        </table>
+      </div>
+    `;
+    host.querySelectorAll('[data-aus-stage]').forEach(b =>
+      b.addEventListener('click', () => { activeStage = b.dataset.ausStage; render(); }));
+    host.querySelectorAll('[data-aus-cal]').forEach(b =>
+      b.addEventListener('click', () => {
+        const act = b.dataset.ausCal;
+        if (act === 'prev') { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } }
+        else if (act === 'next') { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } }
+        else { calYear = t0.getFullYear(); calMonth = t0.getMonth(); }
+        render();
+      }));
+  }
+
+  render();
 }
 
 /* ============================================================
@@ -5643,15 +5894,7 @@ function renderHomePage() {
       </div>
       <div id="user-todo-list" class="user-todo-list"></div>
     </div>
-
-    <!-- Notes -->
-    <div class="dash-widget">
-      <div class="dash-widget-head">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        Notes
-      </div>
-      <textarea class="dash-notes-area" id="home-notes-area" placeholder="Jot something down…">${esc(savedNotes)}</textarea>
-    </div>
+    <!-- Notes moved to the header (📝 button → popup). -->
 
   `;
 
@@ -5667,9 +5910,7 @@ function renderHomePage() {
     }).catch(() => {});
   });
 
-  // Notes persistence
-  const notesEl = hp.querySelector('#home-notes-area');
-  if (notesEl) notesEl.addEventListener('input', () => localStorage.setItem('dash-home-notes', notesEl.value));
+  // Notes now live in the header popup (see wireNotesModal) — no home binding.
 
   // User-created To-Dos (localStorage-backed) — seed meeting to-dos once
   seedMeetingTodosOnce();
@@ -5794,12 +6035,14 @@ function seedMeetingTodosOnce() {
   try { localStorage.setItem(SEED_FLAG, '1'); } catch (e) {}
 }
 
+let todoArchiveOpen = false;
 function renderUserTodos() {
   const list = document.getElementById('user-todo-list');
   const ct = document.getElementById('user-todo-count');
   if (!list) return;
   const todos = loadUserTodos();
-  // Pending first (newest at top), then done at bottom
+  // Completed to-dos are archived out of the main list — they live behind an
+  // expandable "Archive" section so the front page stays focused on open work.
   const pending = todos.filter(t => !t.done);
   const done = todos.filter(t => t.done);
   if (ct) ct.textContent = pending.length ? (pending.length + ' open') : (done.length ? 'all done' : '');
@@ -5807,13 +6050,30 @@ function renderUserTodos() {
     list.innerHTML = '<div class="user-todo-empty">No to-dos yet — add one above.</div>';
     return;
   }
-  list.innerHTML = [...pending, ...done].map(t => `
+
+  const rowHtml = t => `
     <div class="user-todo-row${t.done ? ' done' : ''}" data-utd-id="${esc(t.id)}">
       <div class="user-todo-check">${t.done ? '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' : ''}</div>
       <div class="user-todo-text">${esc(t.text)}</div>
       <div class="user-todo-meta">${esc(fmtUserTodoAge(t.createdAt))}</div>
       <button class="user-todo-del" data-utd-del="${esc(t.id)}" title="Delete">×</button>
-    </div>`).join('');
+    </div>`;
+
+  const pendingHtml = pending.length
+    ? pending.map(rowHtml).join('')
+    : '<div class="user-todo-empty">Nothing open — all caught up.</div>';
+
+  const archiveHtml = done.length ? `
+    <button type="button" class="user-todo-archive-toggle" data-utd-archive-toggle aria-expanded="${todoArchiveOpen}">
+      <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(${todoArchiveOpen ? 90 : 0}deg);transition:transform 150ms ease-out;"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Archive</span>
+      <span class="user-todo-archive-count">${done.length}</span>
+    </button>
+    <div class="user-todo-archive-list" style="display:${todoArchiveOpen ? 'flex' : 'none'};flex-direction:column;gap:5px;margin-top:6px;">
+      ${done.map(rowHtml).join('')}
+    </div>` : '';
+
+  list.innerHTML = pendingHtml + archiveHtml;
 
   // Click row toggles done; X button deletes
   list.querySelectorAll('[data-utd-id]').forEach(row => {
@@ -5828,6 +6088,10 @@ function renderUserTodos() {
       removeUserTodo(btn.dataset.utdDel);
     });
   });
+  const archiveToggle = list.querySelector('[data-utd-archive-toggle]');
+  if (archiveToggle) {
+    archiveToggle.addEventListener('click', () => { todoArchiveOpen = !todoArchiveOpen; renderUserTodos(); });
+  }
 }
 
 /* ============================================================
@@ -6647,6 +6911,39 @@ document.getElementById('reset-btn').addEventListener('click',resetTicks);
 document.getElementById('help-btn').addEventListener('click',openHelp);
 
 /* ============================================================
+   NOTES MODAL — running scratchpad in localStorage('dash-home-notes')
+============================================================ */
+function openNotes() {
+  const m = document.getElementById('notes-modal');
+  const area = document.getElementById('notes-modal-area');
+  if (!m || !area) return;
+  area.value = localStorage.getItem('dash-home-notes') || '';
+  m.classList.add('open');
+  setTimeout(() => area.focus(), 50);
+}
+function closeNotes() {
+  const m = document.getElementById('notes-modal');
+  if (m) m.classList.remove('open');
+}
+(function wireNotesModal() {
+  const btn = document.getElementById('notes-btn');
+  const closeBtn = document.getElementById('notes-close');
+  const modal = document.getElementById('notes-modal');
+  const area = document.getElementById('notes-modal-area');
+  const hint = document.getElementById('notes-saved-hint');
+  if (btn) btn.addEventListener('click', openNotes);
+  if (closeBtn) closeBtn.addEventListener('click', closeNotes);
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeNotes(); });
+  if (area) {
+    let t;
+    area.addEventListener('input', () => {
+      localStorage.setItem('dash-home-notes', area.value);
+      if (hint) { hint.textContent = 'Saved'; clearTimeout(t); t = setTimeout(() => { hint.textContent = ''; }, 1200); }
+    });
+  }
+})();
+
+/* ============================================================
    KEYBOARD
 ============================================================ */
 document.addEventListener('keydown', e => {
@@ -6655,7 +6952,7 @@ document.addEventListener('keydown', e => {
   const anyOpen=document.querySelector('.modal-backdrop.open');
 
   if(e.key==='Escape') {
-    ['search-modal','capture-modal','help-modal','draft-modal','radaro-modal','radaro-instructions-modal','client-template-modal','templates-modal'].forEach(id=>{
+    ['search-modal','capture-modal','notes-modal','help-modal','draft-modal','radaro-modal','radaro-instructions-modal','client-template-modal','templates-modal'].forEach(id=>{
       const el = document.getElementById(id); if (el) el.classList.remove('open');
     });
     currentDraft=null;
@@ -7867,6 +8164,7 @@ function handleRoute() {
     return;
   }
   const isGsCa    = /^#\/gs-ca/i.test(h);
+  const isAusBoard = /^#\/aus-board/i.test(h);
   const isSlack   = false;
   const isGmail   = /^#\/gmail\//i.test(h) || h === '' || h === '#' || h === '#/';
   const sc = document.getElementById('sections-container');
@@ -7875,6 +8173,7 @@ function handleRoute() {
   const rp = document.getElementById('routine-page');
   const rb = document.getElementById('rebecca-page');
   const gs = document.getElementById('gs-ca-page');
+  const ab = document.getElementById('aus-board-page');
   const sl = document.getElementById('slack-page');
   const qn = document.getElementById('quick-nav');
 
@@ -7892,6 +8191,7 @@ function handleRoute() {
     if (rp) { rp.style.display = 'none'; rp.innerHTML = ''; }
     if (rb) { rb.style.display = 'none'; rb.innerHTML = ''; }
     if (gs) { gs.style.display = 'none'; }
+    if (ab) { ab.style.display = 'none'; }
     if (sl) { sl.style.display = 'none'; }
   };
 
@@ -7978,6 +8278,22 @@ function handleRoute() {
     document.body.classList.remove('is-rebecca-page');
     currentTask = null;
     renderGsCaPage();
+    renderTopTabs();
+    renderQuickNav();
+    return;
+  }
+
+  if (isAusBoard && ab) {
+    hideAll();
+    ab.style.display = '';
+    // Keep the Ops sub-pill ribbon (Board / OPD Review / Pre-Delivery) visible.
+    if (qn) qn.style.display = '';
+    document.documentElement.style.setProperty('--skills-bar-top', '90px');
+    document.body.classList.remove('is-task-page');
+    document.body.classList.remove('is-routine-page');
+    document.body.classList.remove('is-rebecca-page');
+    currentTask = null;
+    renderAusBoardPage();
     renderTopTabs();
     renderQuickNav();
     return;

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-17T03:33:49+00:00",
-    "generatedAt": "2026-07-17T03:33:49+00:00",
+    "refreshedAt": "2026-07-17T06:25:39+00:00",
+    "generatedAt": "2026-07-17T06:25:39+00:00",
     "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-17",
     "rule": "RED opd_days in [0,14] + OVERDUE opd_days < 0. repeat_push/delayed_pay need note scans — always 0 here.",
     "scope": "4 stages: New Ticket, Delivery Details/Pending SO, Customer Information Received, Approved for Scheduling"

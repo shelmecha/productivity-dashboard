@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-17T21:06:24+00:00",
-    "generatedAt": "2026-07-17T21:06:24+00:00",
+    "refreshedAt": "2026-07-17T22:04:35+00:00",
+    "generatedAt": "2026-07-17T22:04:35+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -58,22 +58,6 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityDays": 11
     },
     {
-      "id": "gsca-44398024518",
-      "ticketId": "44398024518",
-      "subject": "SemiosBIO Technologies Inc",
-      "customer": "SemiosBIO Technologies Inc",
-      "stageId": "1123458864",
-      "stage": "Waiting for Parts",
-      "nextStep": "Chase supplier ETA on the part required to close out.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-04-10T05:21:41.648Z",
-      "lastActivityAt": "2026-07-09T20:09:05.396Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44398024518",
-      "lastActivityDays": 9
-    },
-    {
       "id": "gsca-44333725525",
       "ticketId": "44333725525",
       "subject": "Don Patten Superior Office Interiors",
@@ -119,6 +103,22 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-03-24T16:18:33.028Z",
       "lastActivityAt": "2026-07-17T10:47:16.776Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
+      "lastActivityDays": 1
+    },
+    {
+      "id": "gsca-44398024518",
+      "ticketId": "44398024518",
+      "subject": "SemiosBIO Technologies Inc",
+      "customer": "SemiosBIO Technologies Inc",
+      "stageId": "1123458864",
+      "stage": "Waiting for Parts",
+      "nextStep": "Chase supplier ETA on the part required to close out.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-04-10T05:21:41.648Z",
+      "lastActivityAt": "2026-07-17T21:37:23.927Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44398024518",
       "lastActivityDays": 1
     },
     {

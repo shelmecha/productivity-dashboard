@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-17T19:30:22+00:00",
-    "generatedAt": "2026-07-17T19:30:22+00:00",
+    "refreshedAt": "2026-07-17T21:06:27+00:00",
+    "generatedAt": "2026-07-17T21:06:27+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -145,19 +145,6 @@
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635435078"
     },
     {
-      "id": "46034854238",
-      "ticketId": "46034854238",
-      "subject": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
-      "customer": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
-      "stageId": "1091283321",
-      "stage": "Customer Information Received",
-      "opd": "2026-08-21",
-      "opdDays": 34,
-      "dealOwner": "Ella Horner",
-      "approvedTicketStatus": null,
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
-    },
-    {
       "id": "46050830737",
       "ticketId": "46050830737",
       "subject": " SO-001917 | HTHREE FITOUT ALTERATIONS, LEVEL 5 & 9,330 Collins St (IRM Group)  | (LEVEL 9, 330 COLLINS ST MELBOURNE, VIC, 3000)",
@@ -221,6 +208,19 @@
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
+    },
+    {
+      "id": "46034854238",
+      "ticketId": "46034854238",
+      "subject": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
+      "customer": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
+      "stageId": "1091283320",
+      "stage": "Approved for Scheduling",
+      "opd": "2026-08-21",
+      "opdDays": 34,
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
     },
     {
       "id": "43951432304",

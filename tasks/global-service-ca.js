@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-17T11:38:24+00:00",
-    "generatedAt": "2026-07-17T11:38:24+00:00",
+    "refreshedAt": "2026-07-17T14:00:04+00:00",
+    "generatedAt": "2026-07-17T14:00:04+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -23,7 +23,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-03-04T22:48:09.892Z",
       "lastActivityAt": "2026-06-08T12:57:18.030Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43030077060",
-      "lastActivityDays": 39
+      "lastActivityDays": 40
     },
     {
       "id": "gsca-45856051257",
@@ -39,23 +39,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-06-18T00:10:43.771Z",
       "lastActivityAt": "2026-06-18T00:14:54.479Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45856051257",
-      "lastActivityDays": 29
-    },
-    {
-      "id": "gsca-44536857363",
-      "ticketId": "44536857363",
-      "subject": "Luna Child and Youth Advocacy Centre",
-      "customer": "Luna Child and Youth Advocacy Centre",
-      "stageId": "1344955515",
-      "stage": "Waiting for Installer",
-      "nextStep": "Confirm installer booking / availability.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-04-17T17:12:55.641Z",
-      "lastActivityAt": "2026-07-06T22:50:39.283Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44536857363",
-      "lastActivityDays": 11
+      "lastActivityDays": 30
     },
     {
       "id": "gsca-45321432436",
@@ -71,7 +55,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-05-15T02:05:38.952Z",
       "lastActivityAt": "2026-07-07T05:30:24.021Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45321432436",
-      "lastActivityDays": 10
+      "lastActivityDays": 11
     },
     {
       "id": "gsca-46683972264",
@@ -87,7 +71,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-07T01:42:03.083Z",
       "lastActivityAt": "2026-07-07T05:01:07.946Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46683972264",
-      "lastActivityDays": 10
+      "lastActivityDays": 11
     },
     {
       "id": "gsca-44398024518",
@@ -103,7 +87,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-04-10T05:21:41.648Z",
       "lastActivityAt": "2026-07-09T20:09:05.396Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44398024518",
-      "lastActivityDays": 8
+      "lastActivityDays": 9
     },
     {
       "id": "gsca-44333725525",
@@ -119,23 +103,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-04-09T16:12:33.291Z",
       "lastActivityAt": "2026-07-16T20:42:14.768Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
-      "lastActivityDays": 1
-    },
-    {
-      "id": "gsca-45552950066",
-      "ticketId": "45552950066",
-      "subject": "shoppers drug mart inc",
-      "customer": "shoppers drug mart inc",
-      "stageId": "1123458862",
-      "stage": "Rectification Open",
-      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-05-27T14:39:46.463Z",
-      "lastActivityAt": "2026-07-16T18:09:14.366Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
-      "lastActivityDays": 1
+      "lastActivityDays": 2
     },
     {
       "id": "gsca-43646125656",
@@ -151,7 +119,39 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-03-24T16:18:33.028Z",
       "lastActivityAt": "2026-07-17T10:47:16.776Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
-      "lastActivityDays": 0
+      "lastActivityDays": 1
+    },
+    {
+      "id": "gsca-44536857363",
+      "ticketId": "44536857363",
+      "subject": "Luna Child and Youth Advocacy Centre",
+      "customer": "Luna Child and Youth Advocacy Centre",
+      "stageId": "1344955515",
+      "stage": "Waiting for Installer",
+      "nextStep": "Confirm installer booking / availability.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-04-17T17:12:55.641Z",
+      "lastActivityAt": "2026-07-17T13:41:25.582Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44536857363",
+      "lastActivityDays": 1
+    },
+    {
+      "id": "gsca-45552950066",
+      "ticketId": "45552950066",
+      "subject": "shoppers drug mart inc",
+      "customer": "shoppers drug mart inc",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-05-27T14:39:46.463Z",
+      "lastActivityAt": "2026-07-17T11:56:38.088Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
+      "lastActivityDays": 1
     },
     {
       "id": "gsca-46843546226",
@@ -167,7 +167,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-17T04:02:34.980Z",
       "lastActivityAt": "2026-07-17T04:03:41.397Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46843546226",
-      "lastActivityDays": 0
+      "lastActivityDays": 1
     }
   ]
 };

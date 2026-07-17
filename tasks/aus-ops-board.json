@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-17T00:10:34+00:00",
-    "generatedAt": "2026-07-17T00:10:34+00:00",
+    "refreshedAt": "2026-07-17T03:33:50+00:00",
+    "generatedAt": "2026-07-17T03:33:50+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -585,19 +585,6 @@
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45826629670"
-    },
-    {
-      "id": "45686887728",
-      "ticketId": "45686887728",
-      "subject": " SO-001884 | 45686887728 | Procore Technologies  | Level 12, 185 Clarence St Sydney, NSW, 2000",
-      "customer": " SO-001884 | 45686887728 | Procore Technologies  | Level 12, 185 Clarence St Sydney, NSW, 2000",
-      "stageId": "1091257713",
-      "stage": "Installation Scheduled",
-      "opd": "2026-07-17",
-      "opdDays": 0,
-      "dealOwner": "Harry Steele",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45686887728"
     },
     {
       "id": "45753085230",

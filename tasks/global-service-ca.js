@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-17T17:21:43+00:00",
-    "generatedAt": "2026-07-17T17:21:43+00:00",
+    "refreshedAt": "2026-07-17T19:30:20+00:00",
+    "generatedAt": "2026-07-17T19:30:20+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -149,7 +149,7 @@ window.TASK_DATA__global_service_ca = {
       "booth": null,
       "address": null,
       "createdAt": "2026-05-27T14:39:46.463Z",
-      "lastActivityAt": "2026-07-17T11:56:38.088Z",
+      "lastActivityAt": "2026-07-17T17:27:27.939Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
       "lastActivityDays": 1
     },

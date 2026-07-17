@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-17T15:36:32+00:00",
-    "generatedAt": "2026-07-17T15:36:32+00:00",
+    "refreshedAt": "2026-07-17T17:21:43+00:00",
+    "generatedAt": "2026-07-17T17:21:43+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -9,22 +9,6 @@ window.TASK_DATA__global_service_ca = {
     "note": "Excludes Solved + Cancelled. Sorted stalest-first."
   },
   "rows": [
-    {
-      "id": "gsca-43030077060",
-      "ticketId": "43030077060",
-      "subject": "DD West",
-      "customer": "DD West",
-      "stageId": "1123458864",
-      "stage": "Waiting for Parts",
-      "nextStep": "Chase supplier ETA on the part required to close out.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-03-04T22:48:09.892Z",
-      "lastActivityAt": "2026-06-08T12:57:18.030Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43030077060",
-      "lastActivityDays": 40
-    },
     {
       "id": "gsca-45856051257",
       "ticketId": "45856051257",
@@ -104,6 +88,22 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityAt": "2026-07-16T20:42:14.768Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-43030077060",
+      "ticketId": "43030077060",
+      "subject": "DD West",
+      "customer": "DD West",
+      "stageId": "1123458864",
+      "stage": "Waiting for Parts",
+      "nextStep": "Chase supplier ETA on the part required to close out.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-03-04T22:48:09.892Z",
+      "lastActivityAt": "2026-07-17T17:18:20.043Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43030077060",
+      "lastActivityDays": 1
     },
     {
       "id": "gsca-43646125656",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-18T13:45:04+00:00",
-    "generatedAt": "2026-07-18T13:45:04+00:00",
+    "refreshedAt": "2026-07-18T15:11:30+00:00",
+    "generatedAt": "2026-07-18T15:11:30+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -13,7 +13,7 @@
       "customer": " | Shiels (Furniture - Thebarton HQ) | (25 Compton St Adelaide , SA, 5000)",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "age": "12 days",
+      "age": "13 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-18",
       "bucket": "standard",
@@ -31,6 +31,6 @@
   "summary": {
     "newTickets": 1,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-18T13:45:04+00:00"
+    "lastUpdated": "2026-07-18T15:11:30+00:00"
   }
 }

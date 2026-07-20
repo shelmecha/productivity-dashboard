@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-20T03:59:57+00:00",
-    "generatedAt": "2026-07-20T03:59:57+00:00",
+    "refreshedAt": "2026-07-20T07:25:44+00:00",
+    "generatedAt": "2026-07-20T07:25:44+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -14,6 +14,19 @@ window.TASK_DATA__aus_ops_board = {
     ]
   },
   "rows": [
+    {
+      "id": "46910719890",
+      "ticketId": "46910719890",
+      "subject": "Stool for Phone Booth - Delivery (AUS)",
+      "customer": "Stool for Phone Booth - Delivery (AUS)",
+      "stageId": "1105295898",
+      "stage": "New Ticket",
+      "opd": "2026-07-21",
+      "opdDays": 1,
+      "dealOwner": "Matt Salier",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890"
+    },
     {
       "id": "46698494720",
       "ticketId": "46698494720",

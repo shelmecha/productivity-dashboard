@@ -1,12 +1,25 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-20T03:59:56+00:00",
-    "generatedAt": "2026-07-20T03:59:56+00:00",
+    "refreshedAt": "2026-07-20T07:25:43+00:00",
+    "generatedAt": "2026-07-20T07:25:43+00:00",
     "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-20",
     "rule": "RED opd_days in [0,14] + OVERDUE opd_days < 0. repeat_push/delayed_pay need note scans — always 0 here.",
     "scope": "4 stages: New Ticket, Delivery Details/Pending SO, Customer Information Received, Approved for Scheduling"
   },
   "rows": [
+    {
+      "id": "46910719890",
+      "ticketId": "46910719890",
+      "customer": "Stool for Phone Booth - Delivery (AUS)",
+      "stage": "New Ticket",
+      "opd": "2026-07-21",
+      "opdDays": 1,
+      "owner": "Courtney Butler",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
+      "classification": "NO_CONTEXT",
+      "nextStep": "Review | OPD 1d"
+    },
     {
       "id": "45046467644",
       "ticketId": "45046467644",
@@ -23,6 +36,19 @@
   ],
   "red": [
     {
+      "id": "46910719890",
+      "ticketId": "46910719890",
+      "customer": "Stool for Phone Booth - Delivery (AUS)",
+      "stage": "New Ticket",
+      "opd": "2026-07-21",
+      "opdDays": 1,
+      "owner": "Courtney Butler",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
+      "classification": "NO_CONTEXT",
+      "nextStep": "Review | OPD 1d"
+    },
+    {
       "id": "45046467644",
       "ticketId": "45046467644",
       "customer": " SO-001828 | 45046467644 | Addsum Accountants (Repeat Business) | (level 19, 109 Pitt St Sydney, NSW, 2000)",
@@ -38,7 +64,7 @@
   ],
   "overdue": [],
   "buckets": {
-    "red": 1,
+    "red": 2,
     "overdue": 0,
     "repeat_push": 0,
     "delayed_pay": 0

@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-20T00:08:33+00:00",
-    "generatedAt": "2026-07-20T00:08:33+00:00",
+    "refreshedAt": "2026-07-20T03:59:57+00:00",
+    "generatedAt": "2026-07-20T03:59:57+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -249,19 +249,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
     },
     {
-      "id": "45571506009",
-      "ticketId": "45571506009",
-      "subject": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
-      "customer": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-07-22",
-      "opdDays": 2,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
-    },
-    {
       "id": "44994348395",
       "ticketId": "44994348395",
       "subject": " SO-001824 | 44994348395 - Lutheran Education (Custom LH door openings) | (L1, 137 Archer Street, North Adelaide, SA 5006 North Adelaide, SA, 5006)",
@@ -273,6 +260,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
+    },
+    {
+      "id": "45571506009",
+      "ticketId": "45571506009",
+      "subject": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
+      "customer": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
+      "stageId": "1091283322",
+      "stage": "Holding Status",
+      "opd": "2026-07-29",
+      "opdDays": 9,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
     },
     {
       "id": "45692986750",
@@ -312,19 +312,6 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37817243955"
-    },
-    {
-      "id": "40481430574",
-      "ticketId": "40481430574",
-      "subject": " TO UPDATE: SO-001592 | BubbaDesk Pty Ltd (Repeat Business - University of Wollongong - Innovation Campus, Squires Way, North Wollongong NSW 2500: Level 2, SmartSpace, Enterprise 1) ",
-      "customer": " TO UPDATE: SO-001592 | BubbaDesk Pty Ltd (Repeat Business - University of Wollongong - Innovation Campus, Squires Way, North Wollongong NSW 2500: Level 2, SmartSpace, Enterprise 1) ",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-08-10",
-      "opdDays": 21,
-      "dealOwner": "Harry Steele",
-      "approvedTicketStatus": null,
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/40481430574"
     },
     {
       "id": "45141106493",
@@ -416,6 +403,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45170569062"
+    },
+    {
+      "id": "40481430574",
+      "ticketId": "40481430574",
+      "subject": " TO UPDATE: SO-001592 | BubbaDesk Pty Ltd (Repeat Business - University of Wollongong - Innovation Campus, Squires Way, North Wollongong NSW 2500: Level 2, SmartSpace, Enterprise 1) ",
+      "customer": " TO UPDATE: SO-001592 | BubbaDesk Pty Ltd (Repeat Business - University of Wollongong - Innovation Campus, Squires Way, North Wollongong NSW 2500: Level 2, SmartSpace, Enterprise 1) ",
+      "stageId": "1091283322",
+      "stage": "Holding Status",
+      "opd": "2026-09-07",
+      "opdDays": 49,
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/40481430574"
     },
     {
       "id": "43689769857",
@@ -561,32 +561,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
     },
     {
-      "id": "45329756202",
-      "ticketId": "45329756202",
-      "subject": "SO-001754 (Split) | Department of Industry, Science & Resources (Repeat Business - NSW)   | Level 6, 255 George Street, Sydney 2000.",
-      "customer": "SO-001754 (Split) | Department of Industry, Science & Resources (Repeat Business - NSW)   | Level 6, 255 George Street, Sydney 2000.",
-      "stageId": "1091257713",
-      "stage": "Installation Scheduled",
-      "opd": "2026-07-08",
-      "opdDays": -12,
-      "dealOwner": "Harry Steele",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
-    },
-    {
-      "id": "45826629670",
-      "ticketId": "45826629670",
-      "subject": " SO-001910 | 45826629670 | Referoo (Tuesday V1 Demo - Aust Cyber Collab Centre) | (Level 7, Suite 2, Australia Square Plaza 95 Pitt Street, Sydney NSW 2000 Sydney, NSW, 2000)",
-      "customer": " SO-001910 | 45826629670 | Referoo (Tuesday V1 Demo - Aust Cyber Collab Centre) | (Level 7, Suite 2, Australia Square Plaza 95 Pitt Street, Sydney NSW 2000 Sydney, NSW, 2000)",
-      "stageId": "1091257713",
-      "stage": "Installation Scheduled",
-      "opd": "2026-07-10",
-      "opdDays": -10,
-      "dealOwner": "Harry Steele",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45826629670"
-    },
-    {
       "id": "45753085230",
       "ticketId": "45753085230",
       "subject": " SO-001870-2 | Icon Agency (Icon Agency ) | (Suite 5, Level 6/2/12 Foveaux St, Surry Hills NSW 2010 Sydney, NSW, 2010)",
@@ -611,6 +585,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"
+    },
+    {
+      "id": "45329756202",
+      "ticketId": "45329756202",
+      "subject": "SO-001754 (Split) | Department of Industry, Science & Resources (Repeat Business - NSW)   | Level 6, 255 George Street, Sydney 2000.",
+      "customer": "SO-001754 (Split) | Department of Industry, Science & Resources (Repeat Business - NSW)   | Level 6, 255 George Street, Sydney 2000.",
+      "stageId": "1091257713",
+      "stage": "Installation Scheduled",
+      "opd": "2026-08-03",
+      "opdDays": 14,
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
     }
   ]
 };

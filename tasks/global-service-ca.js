@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-20T00:08:30+00:00",
-    "generatedAt": "2026-07-20T00:08:30+00:00",
+    "refreshedAt": "2026-07-20T03:59:56+00:00",
+    "generatedAt": "2026-07-20T03:59:56+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",

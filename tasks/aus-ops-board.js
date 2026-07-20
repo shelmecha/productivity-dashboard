@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-20T18:16:35+00:00",
-    "generatedAt": "2026-07-20T18:16:35+00:00",
+    "refreshedAt": "2026-07-20T20:38:52+00:00",
+    "generatedAt": "2026-07-20T20:38:52+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -184,19 +184,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43421301132"
     },
     {
-      "id": "46628770729",
-      "ticketId": "46628770729",
-      "subject": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
-      "customer": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
-      "stageId": "1091283321",
-      "stage": "Customer Information Received",
-      "opd": "2026-08-28",
-      "opdDays": 38,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": null,
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
-    },
-    {
       "id": "46700337957",
       "ticketId": "46700337957",
       "subject": " SO-001945 | Akcelo (Sydney) | (74-76 George St, Redfern Sydney, NSW, 2016)",
@@ -247,6 +234,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
+    },
+    {
+      "id": "46628770729",
+      "ticketId": "46628770729",
+      "subject": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
+      "customer": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
+      "stageId": "1091283320",
+      "stage": "Approved for Scheduling",
+      "opd": "2026-08-28",
+      "opdDays": 38,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
     },
     {
       "id": "43951432304",

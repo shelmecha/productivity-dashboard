@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-20T11:11:13+00:00",
-    "generatedAt": "2026-07-20T11:11:13+00:00",
+    "refreshedAt": "2026-07-20T13:15:52+00:00",
+    "generatedAt": "2026-07-20T13:15:52+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -138,22 +138,6 @@
       "lastActivityDays": 3
     },
     {
-      "id": "gsca-45552950066",
-      "ticketId": "45552950066",
-      "subject": "shoppers drug mart inc",
-      "customer": "shoppers drug mart inc",
-      "stageId": "1123458862",
-      "stage": "Rectification Open",
-      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-05-27T14:39:46.463Z",
-      "lastActivityAt": "2026-07-17T20:06:23.889Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
-      "lastActivityDays": 3
-    },
-    {
       "id": "gsca-46843546226",
       "ticketId": "46843546226",
       "subject": "Align.me",
@@ -184,6 +168,22 @@
       "lastActivityAt": "2026-07-17T20:55:17.203Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46851302046",
       "lastActivityDays": 3
+    },
+    {
+      "id": "gsca-45552950066",
+      "ticketId": "45552950066",
+      "subject": "shoppers drug mart inc",
+      "customer": "shoppers drug mart inc",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-05-27T14:39:46.463Z",
+      "lastActivityAt": "2026-07-20T12:58:57.174Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
+      "lastActivityDays": 0
     }
   ]
 }

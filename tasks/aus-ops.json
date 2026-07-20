@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-20T13:15:52+00:00",
-    "generatedAt": "2026-07-20T13:15:52+00:00",
+    "refreshedAt": "2026-07-20T16:00:17+00:00",
+    "generatedAt": "2026-07-20T16:00:17+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -13,7 +13,7 @@
       "customer": " | Shiels (Furniture - Thebarton HQ) | (25 Compton St Adelaide , SA, 5000)",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "age": "14 days",
+      "age": "15 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-18",
       "bucket": "standard",
@@ -29,7 +29,7 @@
       "customer": "Stool for Phone Booth - Delivery (AUS)",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "age": "0 days",
+      "age": "1 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-20",
       "bucket": "standard",
@@ -48,6 +48,6 @@
   "summary": {
     "newTickets": 2,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-20T13:15:52+00:00"
+    "lastUpdated": "2026-07-20T16:00:17+00:00"
   }
 }

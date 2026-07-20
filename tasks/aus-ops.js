@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops = {
   "meta": {
-    "refreshedAt": "2026-07-20T16:00:17+00:00",
-    "generatedAt": "2026-07-20T16:00:17+00:00",
+    "refreshedAt": "2026-07-20T18:16:33+00:00",
+    "generatedAt": "2026-07-20T18:16:33+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -48,6 +48,6 @@ window.TASK_DATA__aus_ops = {
   "summary": {
     "newTickets": 2,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-20T16:00:17+00:00"
+    "lastUpdated": "2026-07-20T18:16:33+00:00"
   }
 };

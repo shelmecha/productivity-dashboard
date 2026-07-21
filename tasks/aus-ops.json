@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-21T00:08:14+00:00",
-    "generatedAt": "2026-07-21T00:08:14+00:00",
+    "refreshedAt": "2026-07-21T03:40:37+00:00",
+    "generatedAt": "2026-07-21T03:40:37+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -52,19 +52,36 @@
       "classifierNote": "no customisation notes — standard SO creation path",
       "logisticsNote": "",
       "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
+    },
+    {
+      "id": "46947451396",
+      "ticketId": "46947451396",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396",
+      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396",
+      "customer": " | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "stage": "New Ticket",
+      "opd": "2026-09-04",
+      "age": "0 days",
+      "owner": "Courtney Butler",
+      "lastContact": "2026-07-21",
+      "bucket": "standard",
+      "classifierNote": "no customisation notes — standard SO creation path",
+      "logisticsNote": "",
+      "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
     }
   ],
   "buckets": {
     "standard": [
       "46698494720",
       "46910719890",
-      "46923161989"
+      "46923161989",
+      "46947451396"
     ],
     "customisation": []
   },
   "summary": {
-    "newTickets": 3,
+    "newTickets": 4,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-21T00:08:14+00:00"
+    "lastUpdated": "2026-07-21T03:40:37+00:00"
   }
 }

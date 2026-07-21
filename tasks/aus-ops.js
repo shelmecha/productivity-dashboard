@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops = {
   "meta": {
-    "refreshedAt": "2026-07-21T11:58:18+00:00",
-    "generatedAt": "2026-07-21T11:58:18+00:00",
+    "refreshedAt": "2026-07-21T14:18:35+00:00",
+    "generatedAt": "2026-07-21T14:18:35+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -13,7 +13,7 @@ window.TASK_DATA__aus_ops = {
       "customer": " | Shiels (Furniture - Thebarton HQ) | (25 Compton St Adelaide , SA, 5000)",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "age": "15 days",
+      "age": "16 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-18",
       "bucket": "standard",
@@ -29,7 +29,7 @@ window.TASK_DATA__aus_ops = {
       "customer": "Stool for Phone Booth - Delivery (AUS)",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "age": "1 days",
+      "age": "2 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-20",
       "bucket": "standard",
@@ -45,7 +45,7 @@ window.TASK_DATA__aus_ops = {
       "customer": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
       "stage": "New Ticket",
       "opd": "2026-08-28",
-      "age": "1 days",
+      "age": "2 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-20",
       "bucket": "standard",
@@ -61,7 +61,7 @@ window.TASK_DATA__aus_ops = {
       "customer": " | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
       "stage": "New Ticket",
       "opd": "2026-09-04",
-      "age": "0 days",
+      "age": "1 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-21",
       "bucket": "standard",
@@ -82,6 +82,6 @@ window.TASK_DATA__aus_ops = {
   "summary": {
     "newTickets": 4,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-21T11:58:18+00:00"
+    "lastUpdated": "2026-07-21T14:18:35+00:00"
   }
 };

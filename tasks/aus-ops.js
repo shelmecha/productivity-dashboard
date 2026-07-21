@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops = {
   "meta": {
-    "refreshedAt": "2026-07-20T23:13:08+00:00",
-    "generatedAt": "2026-07-20T23:13:08+00:00",
+    "refreshedAt": "2026-07-21T00:08:14+00:00",
+    "generatedAt": "2026-07-21T00:08:14+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -36,18 +36,35 @@ window.TASK_DATA__aus_ops = {
       "classifierNote": "no customisation notes — standard SO creation path",
       "logisticsNote": "",
       "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
+    },
+    {
+      "id": "46923161989",
+      "ticketId": "46923161989",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989",
+      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989",
+      "customer": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "stage": "New Ticket",
+      "opd": "2026-08-28",
+      "age": "1 days",
+      "owner": "Courtney Butler",
+      "lastContact": "2026-07-20",
+      "bucket": "standard",
+      "classifierNote": "no customisation notes — standard SO creation path",
+      "logisticsNote": "",
+      "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
     }
   ],
   "buckets": {
     "standard": [
       "46698494720",
-      "46910719890"
+      "46910719890",
+      "46923161989"
     ],
     "customisation": []
   },
   "summary": {
-    "newTickets": 2,
+    "newTickets": 3,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-20T23:13:08+00:00"
+    "lastUpdated": "2026-07-21T00:08:14+00:00"
   }
 };

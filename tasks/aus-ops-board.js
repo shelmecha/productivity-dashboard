@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-20T23:13:10+00:00",
-    "generatedAt": "2026-07-20T23:13:10+00:00",
+    "refreshedAt": "2026-07-21T00:08:17+00:00",
+    "generatedAt": "2026-07-21T00:08:17+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -26,6 +26,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Matt Salier",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890"
+    },
+    {
+      "id": "46923161989",
+      "ticketId": "46923161989",
+      "subject": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "customer": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "stageId": "1105295898",
+      "stage": "New Ticket",
+      "opd": "2026-08-28",
+      "opdDays": 38,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
     },
     {
       "id": "46698494720",

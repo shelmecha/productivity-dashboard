@@ -1,11 +1,11 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-21T18:38:40+00:00",
-    "generatedAt": "2026-07-21T18:38:40+00:00",
+    "refreshedAt": "2026-07-21T20:33:36+00:00",
+    "generatedAt": "2026-07-21T20:33:36+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
-    "totalRows": 12,
+    "totalRows": 13,
     "note": "Excludes Solved + Cancelled. Sorted stalest-first."
   },
   "rows": [
@@ -199,6 +199,22 @@
       "createdAt": "2026-07-21T14:04:23.572Z",
       "lastActivityAt": "2026-07-21T14:05:35.520Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46946532015",
+      "lastActivityDays": 1
+    },
+    {
+      "id": "gsca-47050805564",
+      "ticketId": "47050805564",
+      "subject": "amersports.com",
+      "customer": "amersports.com",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-07-21T20:07:52.677Z",
+      "lastActivityAt": "2026-07-21T20:09:35.703Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47050805564",
       "lastActivityDays": 1
     }
   ]

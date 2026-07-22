@@ -1,8 +1,8 @@
 window.TASK_DATA__at_risk_opd = {
   "meta": {
-    "refreshedAt": "2026-07-22T12:01:42+00:00",
-    "generatedAt": "2026-07-22T12:01:42+00:00",
-    "source": "GitHub Actions HubSpot pull — AMBER 15-21d OPD window vs Sydney 2026-07-22",
+    "refreshedAt": "2026-07-22T14:19:27+00:00",
+    "generatedAt": "2026-07-22T14:19:27+00:00",
+    "source": "GitHub Actions HubSpot pull — AMBER 15-21d OPD window vs Sydney 2026-07-23",
     "rule": "AMBER opd_days in [15,21], pre-scheduled stages, confirmed_scheduled_date blank, flag-only",
     "note": "Deterministic pull — activity-history classification requires the Claude-side skill."
   },

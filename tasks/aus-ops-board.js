@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-22T03:40:50+00:00",
-    "generatedAt": "2026-07-22T03:40:50+00:00",
+    "refreshedAt": "2026-07-22T06:40:43+00:00",
+    "generatedAt": "2026-07-22T06:40:43+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -50,7 +50,7 @@ window.TASK_DATA__aus_ops_board = {
       "opd": "2026-09-04",
       "opdDays": 44,
       "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": null,
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
     },
     {

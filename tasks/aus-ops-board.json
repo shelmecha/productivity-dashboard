@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-22T16:42:19+00:00",
-    "generatedAt": "2026-07-22T16:42:19+00:00",
+    "refreshedAt": "2026-07-22T18:20:20+00:00",
+    "generatedAt": "2026-07-22T18:20:20+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -548,19 +548,6 @@
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
     },
     {
-      "id": "45635199926",
-      "ticketId": "45635199926",
-      "subject": " SO-001876 | Harrison Agents Pty Ltd  | (48 Brisbane Street, Launceston 7250. Launceston, TAS, 7250)",
-      "customer": " SO-001876 | Harrison Agents Pty Ltd  | (48 Brisbane Street, Launceston 7250. Launceston, TAS, 7250)",
-      "stageId": "1091257712",
-      "stage": "Install Prep",
-      "opd": "2026-07-10",
-      "opdDays": -13,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635199926"
-    },
-    {
       "id": "46096398638",
       "ticketId": "46096398638",
       "subject": " SO-001920 | Adenco  | Ground Floor 502 Hay Street, Subiaco, WA 6008",
@@ -598,6 +585,19 @@
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
+    },
+    {
+      "id": "45635199926",
+      "ticketId": "45635199926",
+      "subject": " SO-001876 | Harrison Agents Pty Ltd  | (48 Brisbane Street, Launceston 7250. Launceston, TAS, 7250)",
+      "customer": " SO-001876 | Harrison Agents Pty Ltd  | (48 Brisbane Street, Launceston 7250. Launceston, TAS, 7250)",
+      "stageId": "1091257713",
+      "stage": "Installation Scheduled",
+      "opd": "2026-07-10",
+      "opdDays": -13,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635199926"
     },
     {
       "id": "45753085230",

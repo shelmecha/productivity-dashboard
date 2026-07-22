@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-22T16:42:12+00:00",
-    "generatedAt": "2026-07-22T16:42:12+00:00",
+    "refreshedAt": "2026-07-22T18:20:16+00:00",
+    "generatedAt": "2026-07-22T18:20:16+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -56,22 +56,6 @@
       "lastActivityAt": "2026-07-07T05:01:07.946Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46683972264",
       "lastActivityDays": 16
-    },
-    {
-      "id": "gsca-44333725525",
-      "ticketId": "44333725525",
-      "subject": "Don Patten Superior Office Interiors",
-      "customer": "Don Patten Superior Office Interiors",
-      "stageId": "1123458864",
-      "stage": "Waiting for Parts",
-      "nextStep": "Chase supplier ETA on the part required to close out.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-04-09T16:12:33.291Z",
-      "lastActivityAt": "2026-07-16T20:42:14.768Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
-      "lastActivityDays": 7
     },
     {
       "id": "gsca-43030077060",
@@ -200,6 +184,22 @@
       "lastActivityAt": "2026-07-21T14:05:35.520Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46946532015",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-44333725525",
+      "ticketId": "44333725525",
+      "subject": "Don Patten Superior Office Interiors",
+      "customer": "Don Patten Superior Office Interiors",
+      "stageId": "1123458864",
+      "stage": "Waiting for Parts",
+      "nextStep": "Chase supplier ETA on the part required to close out.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-04-09T16:12:33.291Z",
+      "lastActivityAt": "2026-07-22T17:39:25.470Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
+      "lastActivityDays": 1
     },
     {
       "id": "gsca-47050805564",

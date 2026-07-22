@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-22T00:03:50+00:00",
-    "generatedAt": "2026-07-22T00:03:50+00:00",
+    "refreshedAt": "2026-07-22T03:40:50+00:00",
+    "generatedAt": "2026-07-22T03:40:50+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",

@@ -1,7 +1,7 @@
 window.TASK_DATA__opd_weekly_review = {
   "meta": {
-    "refreshedAt": "2026-07-22T18:20:17+00:00",
-    "generatedAt": "2026-07-22T18:20:17+00:00",
+    "refreshedAt": "2026-07-22T20:19:44+00:00",
+    "generatedAt": "2026-07-22T20:19:44+00:00",
     "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-23",
     "rule": "RED opd_days in [0,14] + OVERDUE opd_days < 0. repeat_push/delayed_pay need note scans — always 0 here.",
     "scope": "4 stages: New Ticket, Delivery Details/Pending SO, Customer Information Received, Approved for Scheduling"
@@ -15,7 +15,7 @@ window.TASK_DATA__opd_weekly_review = {
       "opd": "2026-07-21",
       "opdDays": -2,
       "owner": "Courtney Butler",
-      "approvedTicketStatus": null,
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
       "classification": "NO_CONTEXT",
       "nextStep": "Review | OPD -2d"
@@ -58,7 +58,7 @@ window.TASK_DATA__opd_weekly_review = {
       "opd": "2026-07-21",
       "opdDays": -2,
       "owner": "Courtney Butler",
-      "approvedTicketStatus": null,
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
       "classification": "NO_CONTEXT",
       "nextStep": "Review | OPD -2d"

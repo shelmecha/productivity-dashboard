@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-22T06:40:43+00:00",
-    "generatedAt": "2026-07-22T06:40:43+00:00",
+    "refreshedAt": "2026-07-22T09:36:51+00:00",
+    "generatedAt": "2026-07-22T09:36:51+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -39,19 +39,6 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
-    },
-    {
-      "id": "46947451396",
-      "ticketId": "46947451396",
-      "subject": " | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "customer": " | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "stageId": "1105295898",
-      "stage": "New Ticket",
-      "opd": "2026-09-04",
-      "opdDays": 44,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
     },
     {
       "id": "46698494720",
@@ -273,6 +260,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
+    },
+    {
+      "id": "46947451396",
+      "ticketId": "46947451396",
+      "subject": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "customer": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "stageId": "1091283320",
+      "stage": "Approved for Scheduling",
+      "opd": "2026-09-04",
+      "opdDays": 44,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
     },
     {
       "id": "43951432304",

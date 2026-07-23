@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-23T09:33:30+00:00",
-    "generatedAt": "2026-07-23T09:33:30+00:00",
+    "refreshedAt": "2026-07-23T12:00:48+00:00",
+    "generatedAt": "2026-07-23T12:00:48+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -15,7 +15,7 @@
       "opd": "2026-09-14",
       "age": "17 days",
       "owner": "Courtney Butler",
-      "lastContact": "2026-07-18",
+      "lastContact": "2026-07-23",
       "bucket": "standard",
       "classifierNote": "no customisation notes — standard SO creation path",
       "logisticsNote": "",
@@ -48,6 +48,6 @@
   "summary": {
     "newTickets": 2,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-23T09:33:30+00:00"
+    "lastUpdated": "2026-07-23T12:00:48+00:00"
   }
 }

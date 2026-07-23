@@ -1,11 +1,11 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-23T09:33:30+00:00",
-    "generatedAt": "2026-07-23T09:33:30+00:00",
+    "refreshedAt": "2026-07-23T12:00:48+00:00",
+    "generatedAt": "2026-07-23T12:00:48+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
-    "totalRows": 14,
+    "totalRows": 15,
     "note": "Excludes Solved + Cancelled. Sorted stalest-first."
   },
   "rows": [
@@ -232,6 +232,22 @@
       "lastActivityAt": "2026-07-22T15:22:03.342Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47089343879",
       "lastActivityDays": 1
+    },
+    {
+      "id": "gsca-47120641800",
+      "ticketId": "47120641800",
+      "subject": "Oxford Technical Solutions",
+      "customer": "Oxford Technical Solutions",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-07-23T09:54:30.984Z",
+      "lastActivityAt": "2026-07-23T09:54:39.811Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47120641800",
+      "lastActivityDays": 0
     }
   ]
 }

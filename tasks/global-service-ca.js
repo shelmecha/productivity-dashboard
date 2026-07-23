@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-23T14:27:46+00:00",
-    "generatedAt": "2026-07-23T14:27:46+00:00",
+    "refreshedAt": "2026-07-23T16:43:33+00:00",
+    "generatedAt": "2026-07-23T16:43:33+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -202,22 +202,6 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityDays": 2
     },
     {
-      "id": "gsca-47050805564",
-      "ticketId": "47050805564",
-      "subject": "amersports.com",
-      "customer": "amersports.com",
-      "stageId": "1123458862",
-      "stage": "Rectification Open",
-      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
-      "description": null,
-      "booth": null,
-      "address": null,
-      "createdAt": "2026-07-21T20:07:52.677Z",
-      "lastActivityAt": "2026-07-22T16:14:21.427Z",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47050805564",
-      "lastActivityDays": 2
-    },
-    {
       "id": "gsca-47089343879",
       "ticketId": "47089343879",
       "subject": "Sync Dental",
@@ -232,6 +216,22 @@ window.TASK_DATA__global_service_ca = {
       "lastActivityAt": "2026-07-22T15:22:03.342Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47089343879",
       "lastActivityDays": 2
+    },
+    {
+      "id": "gsca-47050805564",
+      "ticketId": "47050805564",
+      "subject": "amersports.com",
+      "customer": "amersports.com",
+      "stageId": "1123458862",
+      "stage": "Rectification Open",
+      "nextStep": "Assess issue and assign to appropriate technician or supplier.",
+      "description": null,
+      "booth": null,
+      "address": null,
+      "createdAt": "2026-07-21T20:07:52.677Z",
+      "lastActivityAt": "2026-07-23T15:45:35.866Z",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47050805564",
+      "lastActivityDays": 1
     },
     {
       "id": "gsca-47120641800",

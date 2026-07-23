@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-22T23:15:48+00:00",
-    "generatedAt": "2026-07-22T23:15:48+00:00",
+    "refreshedAt": "2026-07-23T03:40:09+00:00",
+    "generatedAt": "2026-07-23T03:40:09+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -26,19 +26,6 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Matt Salier",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890"
-    },
-    {
-      "id": "46923161989",
-      "ticketId": "46923161989",
-      "subject": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
-      "customer": " | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
-      "stageId": "1105295898",
-      "stage": "New Ticket",
-      "opd": "2026-08-28",
-      "opdDays": 36,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": null,
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
     },
     {
       "id": "46698494720",
@@ -158,6 +145,19 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46680442728"
     },
     {
+      "id": "46923161989",
+      "ticketId": "46923161989",
+      "subject": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "customer": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "stageId": "1105295899",
+      "stage": "Delivery Details/Pending Sales Order",
+      "opd": "2026-08-28",
+      "opdDays": 36,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": null,
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
+    },
+    {
       "id": "45635435078",
       "ticketId": "45635435078",
       "subject": " SO-001873 | 45635435078 | Telstra, L9 18 Smith St Parramatta (JLL)  | (L9, 18 Smith St Parramatta, NSW, 2150)",
@@ -236,45 +236,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
     },
     {
-      "id": "46034854238",
-      "ticketId": "46034854238",
-      "subject": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
-      "customer": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
-      "stageId": "1091283320",
-      "stage": "Approved for Scheduling",
-      "opd": "2026-08-21",
-      "opdDays": 29,
-      "dealOwner": "Ella Horner",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
-    },
-    {
-      "id": "46628770729",
-      "ticketId": "46628770729",
-      "subject": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
-      "customer": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
-      "stageId": "1091283320",
-      "stage": "Approved for Scheduling",
-      "opd": "2026-08-28",
-      "opdDays": 36,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
-    },
-    {
-      "id": "46947451396",
-      "ticketId": "46947451396",
-      "subject": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "customer": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "stageId": "1091283320",
-      "stage": "Approved for Scheduling",
-      "opd": "2026-09-04",
-      "opdDays": 43,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
-    },
-    {
       "id": "43951432304",
       "ticketId": "43951432304",
       "subject": " SO-001799 | 43951432304 | L1 Capital Level 45 101 Collins St MELBOURNE (Madefor / Wildflower)  | 101 Collins St Melbourne - Loading Dock Via Flinders Lane",
@@ -301,19 +262,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
     },
     {
-      "id": "45571506009",
-      "ticketId": "45571506009",
-      "subject": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
-      "customer": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-07-29",
-      "opdDays": 6,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
-    },
-    {
       "id": "45692986750",
       "ticketId": "45692986750",
       "subject": " SO-001885 | 45692986750 | Firmus Technologies Pty Ltd - Melbourne office | 9a McDonald Rd Brooklyn",
@@ -325,19 +273,6 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45692986750"
-    },
-    {
-      "id": "39010599485",
-      "ticketId": "39010599485",
-      "subject": "SO-001537 | Cisco: L22-23, 177 Pacific Highway, Sydney - 2nd order (MPA) ",
-      "customer": "SO-001537 | Cisco: L22-23, 177 Pacific Highway, Sydney - 2nd order (MPA) ",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-08-03",
-      "opdDays": 11,
-      "dealOwner": "Ella Horner",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/39010599485"
     },
     {
       "id": "37817243955",
@@ -364,6 +299,32 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45141106493"
+    },
+    {
+      "id": "39010599485",
+      "ticketId": "39010599485",
+      "subject": "SO-001537 | Cisco: L22-23, 177 Pacific Highway, Sydney - 2nd order (MPA) ",
+      "customer": "SO-001537 | Cisco: L22-23, 177 Pacific Highway, Sydney - 2nd order (MPA) ",
+      "stageId": "1091283322",
+      "stage": "Holding Status",
+      "opd": "2026-08-14",
+      "opdDays": 22,
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/39010599485"
+    },
+    {
+      "id": "45995993988",
+      "ticketId": "45995993988",
+      "subject": " SO-001798 | 44468649745 | Mulpha  | (Level 9/117 Macquarie St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "customer": " SO-001798 | 44468649745 | Mulpha  | (Level 9/117 Macquarie St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "stageId": "1091283322",
+      "stage": "Holding Status",
+      "opd": "2026-08-14",
+      "opdDays": 22,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"
     },
     {
       "id": "45705406382",
@@ -548,19 +509,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
     },
     {
-      "id": "46096398638",
-      "ticketId": "46096398638",
-      "subject": " SO-001920 | Adenco  | Ground Floor 502 Hay Street, Subiaco, WA 6008",
-      "customer": " SO-001920 | Adenco  | Ground Floor 502 Hay Street, Subiaco, WA 6008",
-      "stageId": "1091257712",
-      "stage": "Install Prep",
-      "opd": "2026-08-07",
-      "opdDays": 15,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46096398638"
-    },
-    {
       "id": "45560453488",
       "ticketId": "45560453488",
       "subject": " SO-001868 | 45560453488 | Spacecubed Showroom - Perth | (Level 6/191 St Georges Terrace, Perth WA 6000 Perth, WA, 6000)",
@@ -585,6 +533,45 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
+    },
+    {
+      "id": "46034854238",
+      "ticketId": "46034854238",
+      "subject": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
+      "customer": " SO-001918 | Towill Design  | Grace Lutheran College - Caboolture Campus129 Toohey St, Caboolture QLD 4510  ",
+      "stageId": "1091257712",
+      "stage": "Install Prep",
+      "opd": "2026-08-21",
+      "opdDays": 29,
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
+    },
+    {
+      "id": "46628770729",
+      "ticketId": "46628770729",
+      "subject": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
+      "customer": " SO-001930 | 46628770729 | Mondiale VGL - Repeat Order Sydney | (Building 1/1 Coal Pier Rd BANKSMEADOW, NSW 2019 Sydney , NSW, 2019)",
+      "stageId": "1091257712",
+      "stage": "Install Prep",
+      "opd": "2026-08-28",
+      "opdDays": 36,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
+    },
+    {
+      "id": "46947451396",
+      "ticketId": "46947451396",
+      "subject": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "customer": " SO-001958 | Grex Consulting | (Level 9/92 Pitt St, Sydney NSW 2000 Sydney , NSW, 2000)",
+      "stageId": "1091257712",
+      "stage": "Install Prep",
+      "opd": "2026-09-04",
+      "opdDays": 43,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
     },
     {
       "id": "45635199926",
@@ -613,19 +600,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45753085230"
     },
     {
-      "id": "45995993988",
-      "ticketId": "45995993988",
-      "subject": " SO-001798 | 44468649745 | Mulpha  | (Level 9/117 Macquarie St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "customer": " SO-001798 | 44468649745 | Mulpha  | (Level 9/117 Macquarie St, Sydney NSW 2000 Sydney , NSW, 2000)",
-      "stageId": "1091257713",
-      "stage": "Installation Scheduled",
-      "opd": "2026-07-31",
-      "opdDays": 8,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"
-    },
-    {
       "id": "45329756202",
       "ticketId": "45329756202",
       "subject": "SO-001754 (Split) | Department of Industry, Science & Resources (Repeat Business - NSW)   | Level 6, 255 George Street, Sydney 2000.",
@@ -637,6 +611,32 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
+    },
+    {
+      "id": "46096398638",
+      "ticketId": "46096398638",
+      "subject": " SO-001920 | Adenco  | Ground Floor 502 Hay Street, Subiaco, WA 6008",
+      "customer": " SO-001920 | Adenco  | Ground Floor 502 Hay Street, Subiaco, WA 6008",
+      "stageId": "1091257713",
+      "stage": "Installation Scheduled",
+      "opd": "2026-08-07",
+      "opdDays": 15,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46096398638"
+    },
+    {
+      "id": "45571506009",
+      "ticketId": "45571506009",
+      "subject": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
+      "customer": " SO-001867 | Stow International - Sydney Site | Unit 17, Slough Business Park (access from Rachael Close), Silverwater NSW",
+      "stageId": "1091257713",
+      "stage": "Installation Scheduled",
+      "opd": "2026-08-12",
+      "opdDays": 20,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"
     }
   ]
 };

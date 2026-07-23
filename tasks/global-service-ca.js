@@ -1,7 +1,7 @@
 window.TASK_DATA__global_service_ca = {
   "meta": {
-    "refreshedAt": "2026-07-23T12:00:48+00:00",
-    "generatedAt": "2026-07-23T12:00:48+00:00",
+    "refreshedAt": "2026-07-23T14:27:46+00:00",
+    "generatedAt": "2026-07-23T14:27:46+00:00",
     "source": "GitHub Actions HubSpot pull (refresh-hubspot.js)",
     "pipeline": "768255583",
     "ownerFilter": "Shelvi Alferez (1558931538)",
@@ -23,7 +23,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-06-18T00:10:43.771Z",
       "lastActivityAt": "2026-06-18T00:14:54.479Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45856051257",
-      "lastActivityDays": 35
+      "lastActivityDays": 36
     },
     {
       "id": "gsca-45321432436",
@@ -39,7 +39,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-05-15T02:05:38.952Z",
       "lastActivityAt": "2026-07-07T05:30:24.021Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45321432436",
-      "lastActivityDays": 16
+      "lastActivityDays": 17
     },
     {
       "id": "gsca-46683972264",
@@ -55,7 +55,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-07T01:42:03.083Z",
       "lastActivityAt": "2026-07-07T05:01:07.946Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46683972264",
-      "lastActivityDays": 16
+      "lastActivityDays": 17
     },
     {
       "id": "gsca-43030077060",
@@ -71,7 +71,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-03-04T22:48:09.892Z",
       "lastActivityAt": "2026-07-17T17:18:20.043Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43030077060",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-43646125656",
@@ -87,7 +87,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-03-24T16:18:33.028Z",
       "lastActivityAt": "2026-07-17T10:47:16.776Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43646125656",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-44398024518",
@@ -103,7 +103,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-04-10T05:21:41.648Z",
       "lastActivityAt": "2026-07-17T21:37:23.927Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44398024518",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-44536857363",
@@ -119,7 +119,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-04-17T17:12:55.641Z",
       "lastActivityAt": "2026-07-17T13:41:25.582Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44536857363",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-46843546226",
@@ -135,7 +135,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-17T04:02:34.980Z",
       "lastActivityAt": "2026-07-17T04:03:41.397Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46843546226",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-46851302046",
@@ -151,7 +151,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-17T20:55:07.154Z",
       "lastActivityAt": "2026-07-17T20:55:17.203Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46851302046",
-      "lastActivityDays": 6
+      "lastActivityDays": 7
     },
     {
       "id": "gsca-45552950066",
@@ -167,7 +167,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-05-27T14:39:46.463Z",
       "lastActivityAt": "2026-07-20T12:58:57.174Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45552950066",
-      "lastActivityDays": 3
+      "lastActivityDays": 4
     },
     {
       "id": "gsca-46946532015",
@@ -183,7 +183,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-21T14:04:23.572Z",
       "lastActivityAt": "2026-07-21T14:05:35.520Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46946532015",
-      "lastActivityDays": 2
+      "lastActivityDays": 3
     },
     {
       "id": "gsca-44333725525",
@@ -199,7 +199,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-04-09T16:12:33.291Z",
       "lastActivityAt": "2026-07-22T17:39:25.470Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44333725525",
-      "lastActivityDays": 1
+      "lastActivityDays": 2
     },
     {
       "id": "gsca-47050805564",
@@ -215,7 +215,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-21T20:07:52.677Z",
       "lastActivityAt": "2026-07-22T16:14:21.427Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47050805564",
-      "lastActivityDays": 1
+      "lastActivityDays": 2
     },
     {
       "id": "gsca-47089343879",
@@ -231,7 +231,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-22T15:21:51.131Z",
       "lastActivityAt": "2026-07-22T15:22:03.342Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47089343879",
-      "lastActivityDays": 1
+      "lastActivityDays": 2
     },
     {
       "id": "gsca-47120641800",
@@ -247,7 +247,7 @@ window.TASK_DATA__global_service_ca = {
       "createdAt": "2026-07-23T09:54:30.984Z",
       "lastActivityAt": "2026-07-23T09:54:39.811Z",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47120641800",
-      "lastActivityDays": 0
+      "lastActivityDays": 1
     }
   ]
 };

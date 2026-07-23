@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-23T12:00:52+00:00",
-    "generatedAt": "2026-07-23T12:00:52+00:00",
+    "refreshedAt": "2026-07-23T14:27:50+00:00",
+    "generatedAt": "2026-07-23T14:27:50+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -22,7 +22,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295898",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "opdDays": -2,
+      "opdDays": -3,
       "dealOwner": "Matt Salier",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890"
@@ -35,7 +35,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295898",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "opdDays": 53,
+      "opdDays": 52,
       "dealOwner": "Matt Salier",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46698494720"
@@ -48,7 +48,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45688790380"
@@ -61,7 +61,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-15",
-      "opdDays": 23,
+      "opdDays": 22,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37239912289"
@@ -74,7 +74,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46182573471"
@@ -87,7 +87,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46193242963"
@@ -100,7 +100,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46227032173"
@@ -113,7 +113,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46616123705"
@@ -126,7 +126,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46701046161"
@@ -139,7 +139,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46680442728"
@@ -152,7 +152,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-28",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
@@ -165,7 +165,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-09-01",
-      "opdDays": 40,
+      "opdDays": 39,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635435078"
@@ -178,7 +178,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46050830737"
@@ -191,7 +191,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-08-28",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43421301132"
@@ -204,7 +204,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283321",
       "stage": "Customer Information Received",
       "opd": "2026-09-27",
-      "opdDays": 66,
+      "opdDays": 65,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46700337957"
@@ -217,7 +217,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283320",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-03",
-      "opdDays": 11,
+      "opdDays": 10,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45046467644"
@@ -230,7 +230,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283320",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
@@ -243,7 +243,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-07-15",
-      "opdDays": -8,
+      "opdDays": -9,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule;Yes Approved For Delivery",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
@@ -256,7 +256,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-07-29",
-      "opdDays": 6,
+      "opdDays": 5,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
@@ -269,7 +269,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-01",
-      "opdDays": 9,
+      "opdDays": 8,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45692986750"
@@ -282,7 +282,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-10",
-      "opdDays": 18,
+      "opdDays": 17,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37817243955"
@@ -295,7 +295,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-10",
-      "opdDays": 18,
+      "opdDays": 17,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45141106493"
@@ -308,7 +308,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/39010599485"
@@ -321,7 +321,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45995993988"
@@ -334,7 +334,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45705406382"
@@ -347,7 +347,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-28",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46669100164"
@@ -360,7 +360,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-28",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46725439412"
@@ -373,7 +373,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-30",
-      "opdDays": 38,
+      "opdDays": 37,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46044021792"
@@ -386,7 +386,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-08-31",
-      "opdDays": 39,
+      "opdDays": 38,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45709111322"
@@ -399,7 +399,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-05",
-      "opdDays": 44,
+      "opdDays": 43,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45170569062"
@@ -412,7 +412,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-07",
-      "opdDays": 46,
+      "opdDays": 45,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/40481430574"
@@ -425,7 +425,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-14",
-      "opdDays": 53,
+      "opdDays": 52,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43689769857"
@@ -438,7 +438,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-09-18",
-      "opdDays": 57,
+      "opdDays": 56,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45067443986"
@@ -451,7 +451,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-03",
-      "opdDays": 72,
+      "opdDays": 71,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37220970901"
@@ -464,7 +464,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-04",
-      "opdDays": 73,
+      "opdDays": 72,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45672905521"
@@ -477,7 +477,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-10-16",
-      "opdDays": 85,
+      "opdDays": 84,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44420475481"
@@ -490,7 +490,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-11-03",
-      "opdDays": 103,
+      "opdDays": 102,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37849388433"
@@ -503,7 +503,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091283322",
       "stage": "Holding Status",
       "opd": "2026-11-06",
-      "opdDays": 106,
+      "opdDays": 105,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
@@ -516,7 +516,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-14",
-      "opdDays": 22,
+      "opdDays": 21,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45560453488"
@@ -529,7 +529,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-18",
-      "opdDays": 26,
+      "opdDays": 25,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45465713671"
@@ -542,7 +542,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-21",
-      "opdDays": 29,
+      "opdDays": 28,
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46034854238"
@@ -555,7 +555,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-08-28",
-      "opdDays": 36,
+      "opdDays": 35,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46628770729"
@@ -568,7 +568,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257712",
       "stage": "Install Prep",
       "opd": "2026-09-04",
-      "opdDays": 43,
+      "opdDays": 42,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46947451396"
@@ -581,7 +581,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-10",
-      "opdDays": -13,
+      "opdDays": -14,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635199926"
@@ -594,7 +594,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-07-24",
-      "opdDays": 1,
+      "opdDays": 0,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45753085230"
@@ -607,7 +607,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-08-03",
-      "opdDays": 11,
+      "opdDays": 10,
       "dealOwner": "Harry Steele",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45329756202"
@@ -620,7 +620,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-08-07",
-      "opdDays": 15,
+      "opdDays": 14,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46096398638"
@@ -633,7 +633,7 @@ window.TASK_DATA__aus_ops_board = {
       "stageId": "1091257713",
       "stage": "Installation Scheduled",
       "opd": "2026-08-12",
-      "opdDays": 20,
+      "opdDays": 19,
       "dealOwner": "Joe Marshall",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45571506009"

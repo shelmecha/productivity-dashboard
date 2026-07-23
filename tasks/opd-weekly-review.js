@@ -1,8 +1,8 @@
 window.TASK_DATA__opd_weekly_review = {
   "meta": {
-    "refreshedAt": "2026-07-23T12:00:49+00:00",
-    "generatedAt": "2026-07-23T12:00:49+00:00",
-    "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-23",
+    "refreshedAt": "2026-07-23T14:27:46+00:00",
+    "generatedAt": "2026-07-23T14:27:46+00:00",
+    "source": "GitHub Actions HubSpot pull — RED/OVERDUE vs Sydney 2026-07-24",
     "rule": "RED opd_days in [0,14] + OVERDUE opd_days < 0. repeat_push/delayed_pay need note scans — always 0 here.",
     "scope": "4 stages: New Ticket, Delivery Details/Pending SO, Customer Information Received, Approved for Scheduling"
   },
@@ -13,12 +13,12 @@ window.TASK_DATA__opd_weekly_review = {
       "customer": "Stool for Phone Booth - Delivery (AUS)",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "opdDays": -2,
+      "opdDays": -3,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD -2d"
+      "nextStep": "Review | OPD -3d"
     },
     {
       "id": "45046467644",
@@ -26,12 +26,12 @@ window.TASK_DATA__opd_weekly_review = {
       "customer": " SO-001828 | 45046467644 | Addsum Accountants (Repeat Business) | (level 19, 109 Pitt St Sydney, NSW, 2000)",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-03",
-      "opdDays": 11,
+      "opdDays": 10,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45046467644",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 11d"
+      "nextStep": "Review | OPD 10d"
     }
   ],
   "red": [
@@ -41,12 +41,12 @@ window.TASK_DATA__opd_weekly_review = {
       "customer": " SO-001828 | 45046467644 | Addsum Accountants (Repeat Business) | (level 19, 109 Pitt St Sydney, NSW, 2000)",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-03",
-      "opdDays": 11,
+      "opdDays": 10,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45046467644",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 11d"
+      "nextStep": "Review | OPD 10d"
     }
   ],
   "overdue": [
@@ -56,12 +56,12 @@ window.TASK_DATA__opd_weekly_review = {
       "customer": "Stool for Phone Booth - Delivery (AUS)",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "opdDays": -2,
+      "opdDays": -3,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46910719890",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD -2d"
+      "nextStep": "Review | OPD -3d"
     }
   ],
   "buckets": {

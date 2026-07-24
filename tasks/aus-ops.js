@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops = {
   "meta": {
-    "refreshedAt": "2026-07-24T03:38:48+00:00",
-    "generatedAt": "2026-07-24T03:38:48+00:00",
+    "refreshedAt": "2026-07-24T06:37:09+00:00",
+    "generatedAt": "2026-07-24T06:37:09+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -36,18 +36,35 @@ window.TASK_DATA__aus_ops = {
       "classifierNote": "no customisation notes — standard SO creation path",
       "logisticsNote": "",
       "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
+    },
+    {
+      "id": "47129640526",
+      "ticketId": "47129640526",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47129640526",
+      "hubspotLink": "https://app.hubspot.com/contacts/44093193/record/0-5/47129640526",
+      "customer": " | Peakstone, 637 Flinders St Melbourne (Intermain ) | ( 18 Oliver Lane  Melbourne, VIC , 3000)",
+      "stage": "New Ticket",
+      "opd": "2026-08-10",
+      "age": "0 days",
+      "owner": "Courtney Butler",
+      "lastContact": "2026-07-24",
+      "bucket": "standard",
+      "classifierNote": "no customisation notes — standard SO creation path",
+      "logisticsNote": "",
+      "nextStep": "Create SO in Inflow | move ticket to Delivery Details"
     }
   ],
   "buckets": {
     "standard": [
       "46698494720",
-      "46910719890"
+      "46910719890",
+      "47129640526"
     ],
     "customisation": []
   },
   "summary": {
-    "newTickets": 2,
+    "newTickets": 3,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-24T03:38:48+00:00"
+    "lastUpdated": "2026-07-24T06:37:09+00:00"
   }
 };

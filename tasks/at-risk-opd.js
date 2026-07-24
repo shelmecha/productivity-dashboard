@@ -1,8 +1,8 @@
 window.TASK_DATA__at_risk_opd = {
   "meta": {
-    "refreshedAt": "2026-07-24T11:54:06+00:00",
-    "generatedAt": "2026-07-24T11:54:06+00:00",
-    "source": "GitHub Actions HubSpot pull — AMBER 15-21d OPD window vs Sydney 2026-07-24",
+    "refreshedAt": "2026-07-24T14:08:31+00:00",
+    "generatedAt": "2026-07-24T14:08:31+00:00",
+    "source": "GitHub Actions HubSpot pull — AMBER 15-21d OPD window vs Sydney 2026-07-25",
     "rule": "AMBER opd_days in [15,21], pre-scheduled stages, confirmed_scheduled_date blank, flag-only",
     "note": "Deterministic pull — activity-history classification requires the Claude-side skill."
   },
@@ -13,12 +13,12 @@ window.TASK_DATA__at_risk_opd = {
       "customer": " | Peakstone, 637 Flinders St Melbourne (Intermain ) | ( 18 Oliver Lane  Melbourne, VIC , 3000)",
       "stage": "New Ticket",
       "opd": "2026-08-10",
-      "opdDays": 17,
+      "opdDays": 16,
       "owner": "Courtney Butler",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47129640526",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 17d"
+      "nextStep": "Review | OPD 16d"
     },
     {
       "id": "45688790380",
@@ -26,12 +26,12 @@ window.TASK_DATA__at_risk_opd = {
       "customer": " SO-001890 | Hesta Sydney L23, 44 Market Street, Sydney, NSW 2000(Pr-Ject)   | (L23, 44 Market Street Sydney, , NSW, 2000)",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-14",
-      "opdDays": 21,
+      "opdDays": 20,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45688790380",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 21d"
+      "nextStep": "Review | OPD 20d"
     },
     {
       "id": "46502172009",
@@ -39,15 +39,28 @@ window.TASK_DATA__at_risk_opd = {
       "customer": " SO-001928 | Stoddart, L1, Westlink Ct, Darra (Urban Fitout)  | (L1, 2 Westlink  Darra, QLD, 4076)",
       "stage": "Approved for Scheduling",
       "opd": "2026-08-14",
-      "opdDays": 21,
+      "opdDays": 20,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009",
+      "classification": "NO_CONTEXT",
+      "nextStep": "Review | OPD 20d"
+    },
+    {
+      "id": "37239912289",
+      "ticketId": "37239912289",
+      "customer": " SO-001488 | DoorDash Sydney (L18, 400 George St - Repeat Business) (DoorDash) | L18/400 George StSydney NSW 2000, Australia",
+      "stage": "Delivery Details/Pending Sales Order",
+      "opd": "2026-08-15",
+      "opdDays": 21,
+      "owner": "Courtney Butler",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37239912289",
       "classification": "NO_CONTEXT",
       "nextStep": "Review | OPD 21d"
     }
   ],
   "buckets": {
-    "amber": 3
+    "amber": 4
   }
 };

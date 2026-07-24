@@ -1,8 +1,8 @@
 window.TASK_DATA__opd_checklist = {
   "meta": {
-    "refreshedAt": "2026-07-24T11:54:08+00:00",
-    "generatedAt": "2026-07-24T11:54:08+00:00",
-    "source": "GitHub Actions HubSpot pull — Delivery Details/Pending SO, OPD <= 2026-07-24+30d",
+    "refreshedAt": "2026-07-24T14:08:35+00:00",
+    "generatedAt": "2026-07-24T14:08:35+00:00",
+    "source": "GitHub Actions HubSpot pull — Delivery Details/Pending SO, OPD <= 2026-07-25+30d",
     "rule": "Pass A only: OPD <= today+30d, Ella-owned deals excluded. manual_link (Pass B) needs note scans — Claude-side only.",
     "passACount": 3,
     "passBCount": 0
@@ -16,12 +16,12 @@ window.TASK_DATA__opd_checklist = {
       "customer": " SO-001488 | DoorDash Sydney (L18, 400 George St - Repeat Business) (DoorDash) | L18/400 George StSydney NSW 2000, Australia",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-15",
-      "opdDays": 22,
+      "opdDays": 21,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/37239912289",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 22d",
+      "nextStep": "Review | OPD 21d",
       "bucket": "pending",
       "draftReply": null
     },
@@ -31,12 +31,12 @@ window.TASK_DATA__opd_checklist = {
       "customer": " SO-001921 | Momentum Property | (Exact TBD Canberra, ACT, 2600)",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 28,
+      "opdDays": 27,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46182573471",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 28d",
+      "nextStep": "Review | OPD 27d",
       "bucket": "pending",
       "draftReply": null
     },
@@ -46,12 +46,12 @@ window.TASK_DATA__opd_checklist = {
       "customer": " SO-001931 | 46616123705 | Cicada Innovations | (Suite 145, 4 Cornwallis StreetEveleigh NSW, 2015 Sydney, NSW, 2015)",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-08-21",
-      "opdDays": 28,
+      "opdDays": 27,
       "owner": "Courtney Butler",
       "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46616123705",
       "classification": "NO_CONTEXT",
-      "nextStep": "Review | OPD 28d",
+      "nextStep": "Review | OPD 27d",
       "bucket": "pending",
       "draftReply": null
     }

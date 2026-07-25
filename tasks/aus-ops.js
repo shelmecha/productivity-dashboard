@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops = {
   "meta": {
-    "refreshedAt": "2026-07-25T13:58:44+00:00",
-    "generatedAt": "2026-07-25T13:58:44+00:00",
+    "refreshedAt": "2026-07-25T15:17:14+00:00",
+    "generatedAt": "2026-07-25T15:17:14+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562) stage New Ticket, country=Australia"
   },
   "rows": [
@@ -13,7 +13,7 @@ window.TASK_DATA__aus_ops = {
       "customer": " | Shiels (Furniture - Thebarton HQ) | (25 Compton St Adelaide , SA, 5000)",
       "stage": "New Ticket",
       "opd": "2026-09-14",
-      "age": "19 days",
+      "age": "20 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-24",
       "bucket": "standard",
@@ -29,7 +29,7 @@ window.TASK_DATA__aus_ops = {
       "customer": "Stool for Phone Booth - Delivery (AUS)",
       "stage": "New Ticket",
       "opd": "2026-07-21",
-      "age": "5 days",
+      "age": "6 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-24",
       "bucket": "standard",
@@ -45,7 +45,7 @@ window.TASK_DATA__aus_ops = {
       "customer": " | Peakstone, 637 Flinders St Melbourne (Intermain ) | ( 18 Oliver Lane  Melbourne, VIC , 3000)",
       "stage": "New Ticket",
       "opd": "2026-08-10",
-      "age": "1 days",
+      "age": "2 days",
       "owner": "Courtney Butler",
       "lastContact": "2026-07-24",
       "bucket": "standard",
@@ -65,6 +65,6 @@ window.TASK_DATA__aus_ops = {
   "summary": {
     "newTickets": 3,
     "customisationHolds": 0,
-    "lastUpdated": "2026-07-25T13:58:44+00:00"
+    "lastUpdated": "2026-07-25T15:17:14+00:00"
   }
 };

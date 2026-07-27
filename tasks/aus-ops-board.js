@@ -1,7 +1,7 @@
 window.TASK_DATA__aus_ops_board = {
   "meta": {
-    "refreshedAt": "2026-07-27T03:58:57+00:00",
-    "generatedAt": "2026-07-27T03:58:57+00:00",
+    "refreshedAt": "2026-07-27T07:47:06+00:00",
+    "generatedAt": "2026-07-27T07:47:06+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -158,19 +158,6 @@ window.TASK_DATA__aus_ops_board = {
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/47129640526"
     },
     {
-      "id": "46923161989",
-      "ticketId": "46923161989",
-      "subject": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
-      "customer": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
-      "stageId": "1105295899",
-      "stage": "Delivery Details/Pending Sales Order",
-      "opd": "2026-08-28",
-      "opdDays": 32,
-      "dealOwner": "Joe Marshall",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
-    },
-    {
       "id": "45635435078",
       "ticketId": "45635435078",
       "subject": " SO-001873 | 45635435078 | Telstra, L9 18 Smith St Parramatta (JLL)  | (L9, 18 Smith St Parramatta, NSW, 2150)",
@@ -182,6 +169,19 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": null,
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/45635435078"
+    },
+    {
+      "id": "46923161989",
+      "ticketId": "46923161989",
+      "subject": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "customer": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "stageId": "1105295899",
+      "stage": "Delivery Details/Pending Sales Order",
+      "opd": "2026-10-09",
+      "opdDays": 74,
+      "dealOwner": "Joe Marshall",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46923161989"
     },
     {
       "id": "46050830737",
@@ -247,32 +247,6 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46502172009"
-    },
-    {
-      "id": "43951432304",
-      "ticketId": "43951432304",
-      "subject": " SO-001799 | 43951432304 | L1 Capital Level 45 101 Collins St MELBOURNE (Madefor / Wildflower)  | 101 Collins St Melbourne - Loading Dock Via Flinders Lane",
-      "customer": " SO-001799 | 43951432304 | L1 Capital Level 45 101 Collins St MELBOURNE (Madefor / Wildflower)  | 101 Collins St Melbourne - Loading Dock Via Flinders Lane",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-07-15",
-      "opdDays": -12,
-      "dealOwner": "Ella Horner",
-      "approvedTicketStatus": "Yes Approved to Schedule;Yes Approved For Delivery",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
-    },
-    {
-      "id": "44994348395",
-      "ticketId": "44994348395",
-      "subject": " SO-001824 | 44994348395 - Lutheran Education (Custom LH door openings) | (L1, 137 Archer Street, North Adelaide, SA 5006 North Adelaide, SA, 5006)",
-      "customer": " SO-001824 | 44994348395 - Lutheran Education (Custom LH door openings) | (L1, 137 Archer Street, North Adelaide, SA 5006 North Adelaide, SA, 5006)",
-      "stageId": "1091283322",
-      "stage": "Holding Status",
-      "opd": "2026-07-29",
-      "opdDays": 2,
-      "dealOwner": "Harry Steele",
-      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
-      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
     },
     {
       "id": "45692986750",
@@ -520,6 +494,32 @@ window.TASK_DATA__aus_ops_board = {
       "dealOwner": "Ella Horner",
       "approvedTicketStatus": "Yes Approved to Schedule",
       "url": "https://app.hubspot.com/contacts/44093193/record/0-5/46187883189"
+    },
+    {
+      "id": "43951432304",
+      "ticketId": "43951432304",
+      "subject": " SO-001799 | 43951432304 | L1 Capital Level 45 101 Collins St MELBOURNE (Madefor / Wildflower)  | 101 Collins St Melbourne - Loading Dock Via Flinders Lane",
+      "customer": " SO-001799 | 43951432304 | L1 Capital Level 45 101 Collins St MELBOURNE (Madefor / Wildflower)  | 101 Collins St Melbourne - Loading Dock Via Flinders Lane",
+      "stageId": "1091257712",
+      "stage": "Install Prep",
+      "opd": "2026-07-15",
+      "opdDays": -12,
+      "dealOwner": "Ella Horner",
+      "approvedTicketStatus": "Yes Approved to Schedule;Yes Approved For Delivery",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/43951432304"
+    },
+    {
+      "id": "44994348395",
+      "ticketId": "44994348395",
+      "subject": " SO-001824 | 44994348395 - Lutheran Education (Custom LH door openings) | (L1, 137 Archer Street, North Adelaide, SA 5006 North Adelaide, SA, 5006)",
+      "customer": " SO-001824 | 44994348395 - Lutheran Education (Custom LH door openings) | (L1, 137 Archer Street, North Adelaide, SA 5006 North Adelaide, SA, 5006)",
+      "stageId": "1091257712",
+      "stage": "Install Prep",
+      "opd": "2026-07-29",
+      "opdDays": 2,
+      "dealOwner": "Harry Steele",
+      "approvedTicketStatus": "Yes Approved For Delivery;Yes Approved to Schedule",
+      "url": "https://app.hubspot.com/contacts/44093193/record/0-5/44994348395"
     },
     {
       "id": "45560453488",

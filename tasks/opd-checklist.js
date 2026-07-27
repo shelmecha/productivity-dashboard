@@ -1,7 +1,7 @@
 window.TASK_DATA__opd_checklist = {
   "meta": {
-    "refreshedAt": "2026-07-27T17:05:55+00:00",
-    "generatedAt": "2026-07-27T17:05:55+00:00",
+    "refreshedAt": "2026-07-27T18:44:34+00:00",
+    "generatedAt": "2026-07-27T18:44:34+00:00",
     "source": "GitHub Actions HubSpot pull — Delivery Details/Pending SO, OPD <= 2026-07-28+30d",
     "rule": "Pass A only: OPD <= today+30d, Ella-owned deals excluded. manual_link (Pass B) needs note scans — Claude-side only.",
     "passACount": 3,

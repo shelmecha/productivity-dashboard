@@ -1,7 +1,7 @@
 {
   "meta": {
-    "refreshedAt": "2026-07-27T15:10:32+00:00",
-    "generatedAt": "2026-07-27T15:10:32+00:00",
+    "refreshedAt": "2026-07-27T17:05:57+00:00",
+    "generatedAt": "2026-07-27T17:05:57+00:00",
     "source": "GitHub Actions HubSpot pull — AU Global Operations (749963562), stages New Ticket → Installation Scheduled",
     "stageOrder": [
       "New Ticket",
@@ -173,8 +173,8 @@
     {
       "id": "46923161989",
       "ticketId": "46923161989",
-      "subject": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
-      "customer": " SO-001959 | John Wollaston Anglican Community School  | (5 Centre Rd, Camillo WA 6111 Perth, WA, 6111)",
+      "subject": " SO-001959 | John Wollaston Anglican Community School  (John Wollaston Anglican Community School) | 5 Centre Road, Camillo WA 6111",
+      "customer": " SO-001959 | John Wollaston Anglican Community School  (John Wollaston Anglican Community School) | 5 Centre Road, Camillo WA 6111",
       "stageId": "1105295899",
       "stage": "Delivery Details/Pending Sales Order",
       "opd": "2026-10-09",
